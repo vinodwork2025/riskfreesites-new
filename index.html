@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RiskFreeSites — See Your Website Before You Pay for It</title>
-  <meta name="description" content="A custom website designed for your business. No upfront commitment. See it before you pay.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RiskFreeSites — See Your Website Before You Pay</title>
+  <meta name="description" content="We design your website first. You only pay if you love it. Custom websites for small businesses, delivered in 48 hours." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap" rel="stylesheet" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -15,197 +16,341 @@
         extend: {
           fontFamily: {
             sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-          }
+          },
         }
       }
     }
   </script>
 
   <style>
-    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    /* ── Design tokens ── */
+    :root {
+      --sand:     #faf9f6;
+      --sand-100: #f3f2ee;
+      --sand-200: #eae8e2;
+      --border:   #e2dfd7;
+      --white:    #ffffff;
+      --text:     #1a1918;
+      --text-2:   #6b6b72;
+      --text-3:   #a0a0a8;
+    }
 
-    /* Fade-up animation — applied on page load */
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; box-sizing: border-box; }
+    html { background: var(--sand); }
+    body { background: var(--sand); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+
+    /* ── Load animations ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0);    }
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .fade-up    { animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both; }
-    .fade-up-d1 { animation: fadeUp 0.75s 0.10s cubic-bezier(0.22, 1, 0.36, 1) both; }
-    .fade-up-d2 { animation: fadeUp 0.75s 0.20s cubic-bezier(0.22, 1, 0.36, 1) both; }
-    .fade-up-d3 { animation: fadeUp 0.75s 0.32s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes floatFrame {
+      0%,100% { transform: perspective(1400px) rotateX(4deg) translateY(0px);   }
+      50%      { transform: perspective(1400px) rotateX(4deg) translateY(-10px); }
+    }
+    @keyframes floatPill {
+      0%,100% { transform: translateY(0px)   rotate(-2deg); }
+      50%      { transform: translateY(-7px)  rotate(-2deg); }
+    }
+    @keyframes floatPill2 {
+      0%,100% { transform: translateY(0px)  rotate(1.5deg); }
+      50%      { transform: translateY(-9px) rotate(1.5deg); }
+    }
 
-    /* Hero background glow */
-    .hero-glow {
+    .h-fade    { animation: fadeUp 0.85s cubic-bezier(0.22,1,0.36,1) both; }
+    .h-fade-d1 { animation: fadeUp 0.85s 0.12s cubic-bezier(0.22,1,0.36,1) both; }
+    .h-fade-d2 { animation: fadeUp 0.85s 0.24s cubic-bezier(0.22,1,0.36,1) both; }
+    .h-fade-d3 { animation: fadeUp 0.85s 0.36s cubic-bezier(0.22,1,0.36,1) both; }
+    .h-fade-d4 { animation: fadeUp 0.85s 0.52s cubic-bezier(0.22,1,0.36,1) both; }
+
+    /* ── Scroll reveal ── */
+    .r {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.8s cubic-bezier(0.22,1,0.36,1);
+    }
+    .r.in         { opacity: 1; transform: translateY(0); }
+    .r.d1.in      { transition-delay: 0.08s; }
+    .r.d2.in      { transition-delay: 0.16s; }
+    .r.d3.in      { transition-delay: 0.24s; }
+    .r.d4.in      { transition-delay: 0.32s; }
+
+    /* ── Nav ── */
+    #nav {
+      background: rgba(250,249,246,0.82);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    #nav.scrolled { border-color: var(--border); background: rgba(250,249,246,0.95); }
+    .nav-link {
+      color: var(--text-2);
+      font-size: 0.875rem;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .nav-link:hover { color: var(--text); }
+
+    /* ── Browser mockup ── */
+    .browser-frame {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.09);
+      box-shadow:
+        0 1px 3px rgba(0,0,0,0.04),
+        0 16px 48px rgba(0,0,0,0.10),
+        0 48px 96px rgba(0,0,0,0.13);
+      overflow: hidden;
+      animation: floatFrame 7s ease-in-out infinite;
+    }
+    .browser-chrome {
+      background: var(--sand-100);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .b-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .browser-url {
+      flex: 1;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      color: var(--text-3);
+    }
+
+    /* ── Floating cards ── */
+    .float-card-l {
       position: absolute;
-      width: 900px;
-      height: 500px;
-      top: 42%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(ellipse at center, rgba(100, 80, 220, 0.055) 0%, transparent 68%);
-      pointer-events: none;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
+      animation: floatPill 5s ease-in-out infinite;
+      z-index: 10;
     }
-
-    /* Very faint dot grid on hero */
-    .hero-dots {
+    .float-card-r {
       position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 28px 28px;
-      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
+      animation: floatPill2 4.5s 1.2s ease-in-out infinite;
+      z-index: 10;
     }
 
-    /* Nav scrolled state */
-    nav.scrolled {
-      background: rgba(0, 0, 0, 0.88);
-      border-bottom-color: rgba(255, 255, 255, 0.07);
+    /* ── Cards ── */
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                  box-shadow 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 56px rgba(0,0,0,0.10);
     }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #000; }
-    ::-webkit-scrollbar-thumb { background: #1f1f1f; border-radius: 2px; }
+    /* ── CTA button ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--text);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 14px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.16);
+      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.20);
+    }
+    .btn-primary:active { transform: translateY(0); }
 
-    /* Form fields */
+    /* ── Form fields ── */
     .field {
       width: 100%;
-      background: #0f0f0f;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      color: #f5f5f7;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      color: var(--text);
       border-radius: 12px;
-      padding: 13px 15px;
-      font-size: 0.875rem;
-      font-family: inherit;
-      transition: border-color 0.2s;
+      padding: 13px 16px;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
     }
-    .field:focus  { outline: none; border-color: rgba(255, 255, 255, 0.28); }
-    .field::placeholder { color: rgba(255, 255, 255, 0.18); }
-    .field option { background: #0f0f0f; color: #f5f5f7; }
-
-    /* Select chevron */
-    .select-wrap { position: relative; }
-    .select-wrap::after {
+    .field:focus {
+      outline: none;
+      border-color: var(--text);
+      box-shadow: 0 0 0 3px rgba(26,25,24,0.07);
+    }
+    .field::placeholder { color: var(--text-3); }
+    .sel-wrap { position: relative; }
+    .sel-wrap::after {
       content: '';
       position: absolute;
-      right: 15px;
-      top: 50%;
+      right: 14px; top: 50%;
       transform: translateY(-50%);
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
-      border-top: 5px solid rgba(255, 255, 255, 0.25);
+      border-top: 5px solid var(--text-3);
       pointer-events: none;
     }
+    select.field { cursor: pointer; }
+    select.field option { background: #fff; color: var(--text); }
+
+    /* ── Section labels ── */
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    /* ── Headlines ── */
+    .display {
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 1.02;
+      color: var(--text);
+    }
+
+    /* ── Subtle star ── */
+    .star { fill: #f59e0b; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--sand); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
   </style>
 </head>
 
-<body class="bg-black text-white font-sans">
+<body>
 
-
-  <!-- ─────────────────────────── NAV ─────────────────────────── -->
-  <nav id="nav"
-       class="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.05] bg-black/50 backdrop-blur-xl transition-all duration-300">
+  <!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <span class="font-semibold text-[15px] tracking-tight">RiskFreeSites</span>
-      <a href="#form"
-         class="text-sm font-medium bg-white text-black px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 no-underline">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <rect width="24" height="24" rx="7" fill="#1a1918"/>
+          <path d="M7 12h10M12 7l5 5-5 5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span style="font-weight:700;font-size:15px;letter-spacing:-0.02em;color:var(--text)">RiskFreeSites</span>
+      </a>
+
+      <!-- Links (desktop) -->
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#how" class="nav-link">How it works</a>
+        <a href="#showcase" class="nav-link">Examples</a>
+        <a href="#form" class="nav-link">Get started</a>
+      </div>
+
+      <!-- CTA -->
+      <a href="#form" class="btn-primary" style="padding: 11px 22px; font-size: 0.84rem;">
         Get My Demo
       </a>
+
     </div>
   </nav>
 
 
-  <!-- ─────────────────────────── HERO ─────────────────────────── -->
-  <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-24 overflow-hidden">
-
-    <div class="hero-dots"></div>
-    <div class="hero-glow"></div>
-
-    <div class="max-w-3xl mx-auto text-center relative z-10">
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section style="padding-top: 110px; padding-bottom: 0; background: var(--sand); overflow: hidden;">
+    <div class="max-w-4xl mx-auto px-6 text-center">
 
       <!-- Badge -->
-      <div class="fade-up inline-flex items-center gap-2 border border-white/10 rounded-full px-4 py-1.5 mb-10">
-        <span class="w-1.5 h-1.5 rounded-full bg-white/30"></span>
-        <span class="text-xs text-white/40 tracking-wide">Free &middot; No commitment &middot; Delivered in 48 hours</span>
+      <div class="h-fade" style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 16px;margin-bottom:32px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:#22c55e;display:block;"></span>
+        <span style="font-size:12px;font-weight:500;color:var(--text-2);">Free &nbsp;·&nbsp; No commitment &nbsp;·&nbsp; Delivered in 48 hours</span>
       </div>
 
       <!-- Headline -->
-      <h1 class="fade-up-d1 font-semibold mb-6"
-          style="font-size: clamp(2.6rem, 8vw, 5.25rem); line-height: 1.04; letter-spacing: -0.04em;">
+      <h1 class="h-fade-d1 display" style="font-size:clamp(2.8rem,8vw,5.75rem);margin-bottom:24px;">
         See Your Website<br>
-        <span class="text-white/38">Before You Pay for It.</span>
+        <em style="font-style:normal;color:var(--text-2);">Before You Pay for It.</em>
       </h1>
 
-      <!-- Subheadline -->
-      <p class="fade-up-d2 text-white/35 max-w-sm mx-auto mb-10 leading-relaxed"
-         style="font-size: clamp(1rem, 2.5vw, 1.125rem);">
-        A custom website designed for your business.<br>No upfront commitment.
+      <!-- Sub -->
+      <p class="h-fade-d2" style="font-size:clamp(1rem,2.2vw,1.2rem);color:var(--text-2);max-width:38ch;margin:0 auto 40px;line-height:1.65;">
+        We design your website first.<br>You only pay when you love it.
       </p>
 
-      <!-- CTA -->
-      <div class="fade-up-d3">
-        <a href="#form"
-           class="inline-flex items-center gap-2.5 bg-white text-black font-medium px-8 py-4 rounded-full text-sm hover:opacity-90 transition-opacity">
+      <!-- CTA row -->
+      <div class="h-fade-d3" style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:64px;">
+        <a href="#form" class="btn-primary">
           Get My Demo
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
+        <span style="font-size:13px;color:var(--text-3);">No credit card required</span>
       </div>
 
-    </div>
-  </section>
+      <!-- Browser mockup -->
+      <div class="h-fade-d4" style="position:relative;max-width:840px;margin:0 auto;padding-bottom:64px;">
 
-
-  <!-- ─────────────────────────── TRUST STRIP ─────────────────────────── -->
-  <div class="border-y border-white/[0.05] py-5 px-6">
-    <p class="text-center text-xs text-white/22 tracking-wide">
-      Built for interior designers &nbsp;·&nbsp; clinics &nbsp;·&nbsp; real estate agents &nbsp;·&nbsp; contractors &nbsp;·&nbsp; local businesses
-    </p>
-  </div>
-
-
-  <!-- ─────────────────────────── HOW IT WORKS ─────────────────────────── -->
-  <section class="py-24 md:py-32 px-6">
-    <div class="max-w-5xl mx-auto">
-
-      <div class="text-center mb-16">
-        <p class="text-[10px] tracking-[0.18em] text-white/25 uppercase mb-4">How It Works</p>
-        <h2 class="font-semibold"
-            style="font-size: clamp(1.75rem, 4vw, 2.875rem); letter-spacing: -0.03em;">
-          Three steps. No surprises.
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-9">
-          <span class="block font-light text-white/[0.07] mb-7 select-none"
-                style="font-size: 3.5rem; letter-spacing: -0.04em;">01</span>
-          <h3 class="font-medium text-[15px] mb-3">Tell us about your business</h3>
-          <p class="text-sm text-white/32 leading-relaxed">
-            Fill in a short form — name, industry, a few basics. Under two minutes.
-          </p>
+        <!-- Left floating card -->
+        <div class="float-card-l" style="left:-36px;top:28%;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+            <div style="width:28px;height:28px;border-radius:8px;background:#f0fdf4;display:flex;align-items:center;justify-content:center;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span style="font-size:11px;font-weight:600;color:var(--text);">Delivered</span>
+          </div>
+          <div style="font-size:22px;font-weight:900;letter-spacing:-0.04em;color:var(--text);line-height:1;">48 hrs</div>
+          <div style="font-size:11px;color:var(--text-3);margin-top:2px;">avg. turnaround</div>
         </div>
 
-        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-9">
-          <span class="block font-light text-white/[0.07] mb-7 select-none"
-                style="font-size: 3.5rem; letter-spacing: -0.04em;">02</span>
-          <h3 class="font-medium text-[15px] mb-3">We design your site</h3>
-          <p class="text-sm text-white/32 leading-relaxed">
-            Within 48 hours, your website is ready — designed around your brand and services.
-          </p>
+        <!-- Browser frame -->
+        <div class="browser-frame">
+          <div class="browser-chrome">
+            <div style="display:flex;gap:5px;">
+              <div class="b-dot" style="background:#fc5f57;"></div>
+              <div class="b-dot" style="background:#fdbc2c;"></div>
+              <div class="b-dot" style="background:#33c748;"></div>
+            </div>
+            <div class="browser-url">riskfreesites.com/preview/acme-studio</div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85"
+            alt="Preview of a custom business website"
+            style="width:100%;display:block;height:360px;object-fit:cover;object-position:top;"
+          />
         </div>
 
-        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-9">
-          <span class="block font-light text-white/[0.07] mb-7 select-none"
-                style="font-size: 3.5rem; letter-spacing: -0.04em;">03</span>
-          <h3 class="font-medium text-[15px] mb-3">Approve it. Then pay.</h3>
-          <p class="text-sm text-white/32 leading-relaxed">
-            Like it? We talk next steps. Don't? Walk away — no charge, no follow-ups.
-          </p>
+        <!-- Right floating card -->
+        <div class="float-card-r" style="right:-40px;bottom:90px;">
+          <div style="display:flex;gap:2px;margin-bottom:6px;">
+            <svg width="12" height="12" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" class="star"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" class="star"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" class="star"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" class="star"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" class="star"/></svg>
+          </div>
+          <div style="font-size:13px;font-weight:800;letter-spacing:-0.02em;color:var(--text);">4.9/5</div>
+          <div style="font-size:11px;color:var(--text-3);margin-top:1px;">from 500+ businesses</div>
         </div>
 
       </div>
@@ -213,84 +358,173 @@
   </section>
 
 
-  <!-- ─────────────────────────── SHOWCASE ─────────────────────────── -->
-  <section class="py-24 md:py-32 px-6 bg-[#040404]">
+  <!-- ═══════════════════════════════════════ STATS STRIP ═══════════════════════════════════════ -->
+  <section style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:52px 24px;">
+    <div class="max-w-3xl mx-auto">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px;" class="md:grid-cols-4" id="stats-grid">
+
+        <div class="r" style="text-align:center;">
+          <div class="display" style="font-size:2.8rem;">
+            <span data-counter="500">0</span>+
+          </div>
+          <div style="font-size:13px;color:var(--text-2);margin-top:4px;">Sites delivered</div>
+        </div>
+
+        <div class="r d1" style="text-align:center;">
+          <div class="display" style="font-size:2.8rem;">
+            <span data-counter="48">0</span>h
+          </div>
+          <div style="font-size:13px;color:var(--text-2);margin-top:4px;">Average delivery</div>
+        </div>
+
+        <div class="r d2" style="text-align:center;">
+          <div class="display" style="font-size:2.8rem;">4.9<span style="font-size:1.6rem;">/5</span></div>
+          <div style="font-size:13px;color:var(--text-2);margin-top:4px;">Customer rating</div>
+        </div>
+
+        <div class="r d3" style="text-align:center;">
+          <div class="display" style="font-size:2.8rem;">$0</div>
+          <div style="font-size:13px;color:var(--text-2);margin-top:4px;">Upfront cost</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════ HOW IT WORKS ═══════════════════════════════════════ -->
+  <section id="how" style="padding:96px 24px;background:var(--sand);">
     <div class="max-w-5xl mx-auto">
 
-      <div class="text-center mb-16">
-        <p class="text-[10px] tracking-[0.18em] text-white/25 uppercase mb-4">Examples</p>
-        <h2 class="font-semibold"
-            style="font-size: clamp(1.75rem, 4vw, 2.875rem); letter-spacing: -0.03em;">
-          What yours could look like.
-        </h2>
+      <div style="text-align:center;margin-bottom:64px;">
+        <p class="eyebrow r" style="margin-bottom:16px;">How It Works</p>
+        <h2 class="display r d1" style="font-size:clamp(2rem,4.5vw,3.5rem);">Simple as it gets.</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div style="display:grid;grid-template-columns:1fr;gap:20px;" class="md:grid-cols-3">
+
+        <div class="card r" style="padding:36px 32px;">
+          <div style="width:44px;height:44px;border-radius:14px;background:var(--text);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:24px;letter-spacing:0.02em;">01</div>
+          <h3 style="font-size:1.1rem;font-weight:700;letter-spacing:-0.025em;margin-bottom:12px;color:var(--text);">Tell us about your business</h3>
+          <p style="font-size:0.9rem;color:var(--text-2);line-height:1.7;margin-bottom:28px;">Fill in a short form — your name, industry, and a few details. Takes under two minutes.</p>
+          <div style="border-top:1px solid var(--sand-200);padding-top:20px;display:flex;align-items:center;gap:8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span style="font-size:12px;color:var(--text-3);">Under 2 minutes</span>
+          </div>
+        </div>
+
+        <div class="card r d1" style="padding:36px 32px;">
+          <div style="width:44px;height:44px;border-radius:14px;background:var(--text);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:24px;letter-spacing:0.02em;">02</div>
+          <h3 style="font-size:1.1rem;font-weight:700;letter-spacing:-0.025em;margin-bottom:12px;color:var(--text);">We design your site</h3>
+          <p style="font-size:0.9rem;color:var(--text-2);line-height:1.7;margin-bottom:28px;">Within 48 hours, your custom website is ready — built around your brand and services.</p>
+          <div style="border-top:1px solid var(--sand-200);padding-top:20px;display:flex;align-items:center;gap:8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span style="font-size:12px;color:var(--text-3);">Ready in 48 hours</span>
+          </div>
+        </div>
+
+        <div class="card r d2" style="padding:36px 32px;">
+          <div style="width:44px;height:44px;border-radius:14px;background:var(--text);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:24px;letter-spacing:0.02em;">03</div>
+          <h3 style="font-size:1.1rem;font-weight:700;letter-spacing:-0.025em;margin-bottom:12px;color:var(--text);">Approve it. Then pay.</h3>
+          <p style="font-size:0.9rem;color:var(--text-2);line-height:1.7;margin-bottom:28px;">Like it? We talk next steps. Don't? Walk away — no charge, no awkward calls.</p>
+          <div style="border-top:1px solid var(--sand-200);padding-top:20px;display:flex;align-items:center;gap:8px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span style="font-size:12px;color:var(--text-3);">Zero obligation</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════ SHOWCASE ═══════════════════════════════════════ -->
+  <section id="showcase" style="padding:96px 24px;background:#fff;border-top:1px solid var(--border);">
+    <div class="max-w-5xl mx-auto">
+
+      <div style="text-align:center;margin-bottom:64px;">
+        <p class="eyebrow r" style="margin-bottom:16px;">Examples</p>
+        <h2 class="display r d1" style="font-size:clamp(2rem,4.5vw,3.5rem);">Built for real businesses.</h2>
+        <p class="r d2" style="margin-top:16px;font-size:1rem;color:var(--text-2);max-width:36ch;margin-left:auto;margin-right:auto;line-height:1.6;">Custom-designed for your industry. Not a template.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr;gap:20px;" class="md:grid-cols-3">
 
         <!-- Interior Design -->
-        <div class="rounded-2xl border border-white/[0.06] bg-[#080808] overflow-hidden
-                    hover:border-white/[0.11] transition-colors duration-300">
-          <div class="px-4 py-3 border-b border-white/[0.05] flex items-center gap-1.5">
-            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
-          </div>
-          <div class="p-4 h-56 space-y-2.5">
-            <div class="h-24 rounded-lg" style="background: linear-gradient(140deg, #1d1a14 0%, #231f18 100%);"></div>
-            <div class="flex gap-2">
-              <div class="h-8 flex-1 rounded-md bg-[#171410]"></div>
-              <div class="h-8 flex-1 rounded-md bg-[#171410]"></div>
+        <div class="card r" style="overflow:hidden;border-radius:20px;">
+          <div style="background:var(--sand-100);padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;">
+            <div style="display:flex;gap:5px;">
+              <div class="b-dot" style="background:#fc5f57;width:9px;height:9px;"></div>
+              <div class="b-dot" style="background:#fdbc2c;width:9px;height:9px;"></div>
+              <div class="b-dot" style="background:#33c748;width:9px;height:9px;"></div>
             </div>
-            <div class="h-2.5 rounded-full bg-white/[0.04] w-3/4"></div>
-            <div class="h-2.5 rounded-full bg-white/[0.03] w-1/2"></div>
+            <div style="flex:1;background:#fff;border:1px solid var(--border);border-radius:5px;padding:2px 8px;font-size:10px;color:var(--text-3);">
+              acme-interiors.com
+            </div>
           </div>
-          <div class="px-4 pb-4 pt-3 border-t border-white/[0.04]">
-            <p class="text-xs text-white/25 font-medium">Interior Design Studio</p>
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80"
+               alt="Interior design studio website"
+               style="width:100%;height:210px;object-fit:cover;display:block;" />
+          <div style="padding:20px 22px;background:#fff;display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Interior Design Studio</p>
+              <p style="font-size:11px;color:var(--text-3);">Portfolio &nbsp;·&nbsp; Booking &nbsp;·&nbsp; Gallery</p>
+            </div>
+            <div style="width:30px;height:30px;border-radius:50%;background:#f0fdf4;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
           </div>
         </div>
 
-        <!-- Medical Clinic -->
-        <div class="rounded-2xl border border-white/[0.06] bg-[#080808] overflow-hidden
-                    hover:border-white/[0.11] transition-colors duration-300">
-          <div class="px-4 py-3 border-b border-white/[0.05] flex items-center gap-1.5">
-            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
-          </div>
-          <div class="p-4 h-56 space-y-2.5">
-            <div class="flex items-center gap-2">
-              <div class="w-5 h-5 rounded bg-[#0c1a24]"></div>
-              <div class="h-2.5 rounded-full bg-white/[0.06] w-16"></div>
+        <!-- Medical -->
+        <div class="card r d1" style="overflow:hidden;border-radius:20px;">
+          <div style="background:var(--sand-100);padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;">
+            <div style="display:flex;gap:5px;">
+              <div class="b-dot" style="background:#fc5f57;width:9px;height:9px;"></div>
+              <div class="b-dot" style="background:#fdbc2c;width:9px;height:9px;"></div>
+              <div class="b-dot" style="background:#33c748;width:9px;height:9px;"></div>
             </div>
-            <div class="h-20 rounded-lg" style="background: linear-gradient(140deg, #0c1a22 0%, #0f2030 100%);"></div>
-            <div class="grid grid-cols-3 gap-1.5">
-              <div class="h-9 rounded-xl bg-[#0d1c28]"></div>
-              <div class="h-9 rounded-xl bg-[#0d1c28]"></div>
-              <div class="h-9 rounded-xl bg-[#0d1c28]"></div>
+            <div style="flex:1;background:#fff;border:1px solid var(--border);border-radius:5px;padding:2px 8px;font-size:10px;color:var(--text-3);">
+              sunrisemedical.clinic
             </div>
           </div>
-          <div class="px-4 pb-4 pt-3 border-t border-white/[0.04]">
-            <p class="text-xs text-white/25 font-medium">Medical Clinic</p>
+          <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=700&q=80"
+               alt="Medical clinic website"
+               style="width:100%;height:210px;object-fit:cover;display:block;" />
+          <div style="padding:20px 22px;background:#fff;display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Medical Clinic</p>
+              <p style="font-size:11px;color:var(--text-3);">Appointments &nbsp;·&nbsp; Team &nbsp;·&nbsp; Trust</p>
+            </div>
+            <div style="width:30px;height:30px;border-radius:50%;background:#f0fdf4;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
           </div>
         </div>
 
         <!-- Real Estate -->
-        <div class="rounded-2xl border border-white/[0.06] bg-[#080808] overflow-hidden
-                    hover:border-white/[0.11] transition-colors duration-300">
-          <div class="px-4 py-3 border-b border-white/[0.05] flex items-center gap-1.5">
-            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
-          </div>
-          <div class="p-4 h-56 space-y-2.5">
-            <div class="h-28 rounded-lg" style="background: linear-gradient(140deg, #1c1a10 0%, #22200f 100%);"></div>
-            <div class="flex gap-2">
-              <div class="h-11 flex-1 rounded-xl bg-[#181610]"></div>
-              <div class="h-11 flex-1 rounded-xl bg-[#181610]"></div>
+        <div class="card r d2" style="overflow:hidden;border-radius:20px;">
+          <div style="background:var(--sand-100);padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;">
+            <div style="display:flex;gap:5px;">
+              <div class="b-dot" style="background:#fc5f57;width:9px;height:9px;"></div>
+              <div class="b-dot" style="background:#fdbc2c;width:9px;height:9px;"></div>
+              <div class="b-dot" style="background:#33c748;width:9px;height:9px;"></div>
+            </div>
+            <div style="flex:1;background:#fff;border:1px solid var(--border);border-radius:5px;padding:2px 8px;font-size:10px;color:var(--text-3);">
+              eliterealty.co
             </div>
           </div>
-          <div class="px-4 pb-4 pt-3 border-t border-white/[0.04]">
-            <p class="text-xs text-white/25 font-medium">Real Estate Agency</p>
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=700&q=80"
+               alt="Real estate agency website"
+               style="width:100%;height:210px;object-fit:cover;display:block;" />
+          <div style="padding:20px 22px;background:#fff;display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Real Estate Agency</p>
+              <p style="font-size:11px;color:var(--text-3);">Listings &nbsp;·&nbsp; Professional &nbsp;·&nbsp; Bold</p>
+            </div>
+            <div style="width:30px;height:30px;border-radius:50%;background:#f0fdf4;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
           </div>
         </div>
 
@@ -299,104 +533,112 @@
   </section>
 
 
-  <!-- ─────────────────────────── VALUE / RISK-FREE ─────────────────────────── -->
-  <section class="py-24 md:py-32 px-6">
-    <div class="max-w-4xl mx-auto">
+  <!-- ═══════════════════════════════════════ VALUE / RISK-FREE ═══════════════════════════════════════ -->
+  <section style="padding:96px 24px;background:var(--sand);border-top:1px solid var(--border);">
+    <div class="max-w-5xl mx-auto">
+      <div style="display:grid;grid-template-columns:1fr;gap:64px;align-items:center;" class="md:grid-cols-2">
 
-      <div class="text-center mb-16">
-        <p class="text-[10px] tracking-[0.18em] text-white/25 uppercase mb-4">Why Risk-Free</p>
-        <h2 class="font-semibold mb-5"
-            style="font-size: clamp(1.75rem, 4vw, 2.875rem); letter-spacing: -0.03em;">
-          No deposit. No guessing.<br>No agencies that disappear.
-        </h2>
-        <p class="text-white/32 text-base max-w-md mx-auto leading-relaxed">
-          Most agencies ask for payment before you've seen a single pixel.<br>We do the opposite.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-7">
-          <div class="w-8 h-8 rounded-xl bg-white/[0.05] flex items-center justify-center mb-5">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                 stroke="rgba(255,255,255,0.45)" stroke-width="2.5"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-          </div>
-          <h3 class="font-medium text-[14px] mb-2.5">See it before paying</h3>
-          <p class="text-xs text-white/28 leading-relaxed">
-            Your full website is built and delivered — before any money changes hands.
-          </p>
-        </div>
-
-        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-7">
-          <div class="w-8 h-8 rounded-xl bg-white/[0.05] flex items-center justify-center mb-5">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                 stroke="rgba(255,255,255,0.45)" stroke-width="2.5"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-          </div>
-          <h3 class="font-medium text-[14px] mb-2.5">Custom to your business</h3>
-          <p class="text-xs text-white/28 leading-relaxed">
-            Not a template. Built around your name, your services, your industry.
-          </p>
-        </div>
-
-        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-7">
-          <div class="w-8 h-8 rounded-xl bg-white/[0.05] flex items-center justify-center mb-5">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-                 stroke="rgba(255,255,255,0.45)" stroke-width="2.5"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-          </div>
-          <h3 class="font-medium text-[14px] mb-2.5">Walk away anytime</h3>
-          <p class="text-xs text-white/28 leading-relaxed">
-            Don't love it? No charge. No awkward calls. Just honest work.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ─────────────────────────── LEAD FORM ─────────────────────────── -->
-  <section id="form" class="py-24 md:py-32 px-6 bg-[#040404]">
-    <div class="max-w-[480px] mx-auto">
-
-      <div class="bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-8 md:p-10">
-
-        <div class="mb-8">
-          <h2 class="font-semibold text-[1.5rem] mb-2" style="letter-spacing: -0.025em;">
-            Request your free demo
+        <!-- Text side -->
+        <div>
+          <p class="eyebrow r" style="margin-bottom:20px;">Why Risk-Free</p>
+          <h2 class="display r d1" style="font-size:clamp(2rem,4vw,3.25rem);margin-bottom:24px;">
+            No deposit.<br>No guessing.<br>No surprises.
           </h2>
-          <p class="text-sm text-white/32">We'll have your site ready within 48 hours.</p>
+          <p class="r d2" style="font-size:1.05rem;color:var(--text-2);line-height:1.7;margin-bottom:40px;">
+            Most agencies charge before you've seen a pixel.<br>We do the opposite.
+          </p>
+
+          <div style="display:flex;flex-direction:column;gap:24px;">
+
+            <div class="r d2" style="display:flex;align-items:flex-start;gap:16px;">
+              <div style="width:34px;height:34px;border-radius:10px;background:#f0fdf4;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;">See it before paying</h4>
+                <p style="font-size:13px;color:var(--text-2);line-height:1.7;">Your full website is built and delivered — before any money changes hands.</p>
+              </div>
+            </div>
+
+            <div class="r d3" style="display:flex;align-items:flex-start;gap:16px;">
+              <div style="width:34px;height:34px;border-radius:10px;background:#f0fdf4;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;">Built for your business</h4>
+                <p style="font-size:13px;color:var(--text-2);line-height:1.7;">Not a template. Designed around your name, your services, your industry.</p>
+              </div>
+            </div>
+
+            <div class="r d4" style="display:flex;align-items:flex-start;gap:16px;">
+              <div style="width:34px;height:34px;border-radius:10px;background:#f0fdf4;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <h4 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;">Walk away, no cost</h4>
+                <p style="font-size:13px;color:var(--text-2);line-height:1.7;">Don't love it? Walk away. No charge. No awkward follow-ups.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <form action="YOUR_GOOGLE_FORM_URL" method="POST" class="space-y-4">
+        <!-- Image side -->
+        <div class="r d2" style="position:relative;">
+          <div style="border-radius:24px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,0.12);">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=85"
+                 alt="Business owner reviewing their new website"
+                 style="width:100%;display:block;height:460px;object-fit:cover;" />
+          </div>
+          <!-- Floating success chip -->
+          <div style="position:absolute;bottom:-20px;left:-20px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.10);display:flex;align-items:center;gap:12px;min-width:195px;">
+            <div style="width:36px;height:36px;border-radius:10px;background:#22c55e;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="font-size:13px;font-weight:700;color:var(--text);line-height:1.2;">Site delivered!</p>
+              <p style="font-size:11px;color:var(--text-3);margin-top:2px;">Check your inbox</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════ LEAD FORM ═══════════════════════════════════════ -->
+  <section id="form" style="padding:96px 24px;background:#fff;border-top:1px solid var(--border);">
+    <div style="max-width:480px;margin:0 auto;">
+
+      <div style="text-align:center;margin-bottom:40px;">
+        <p class="eyebrow r" style="margin-bottom:16px;">Get Started</p>
+        <h2 class="display r d1" style="font-size:clamp(1.8rem,4vw,2.75rem);margin-bottom:12px;">Your website is<br>48 hours away.</h2>
+        <p class="r d2" style="font-size:14px;color:var(--text-2);">Request your free demo. No credit card. No commitment.</p>
+      </div>
+
+      <div class="r d1" style="background:var(--sand);border:1px solid var(--border);border-radius:24px;padding:40px;">
+        <form action="YOUR_GOOGLE_FORM_URL" method="POST" style="display:flex;flex-direction:column;gap:18px;">
 
           <div>
-            <label class="block text-xs text-white/32 font-medium mb-1.5">Your Name</label>
-            <input type="text" name="name" required placeholder="Jane Smith" class="field">
+            <label style="display:block;font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:6px;">Your Name</label>
+            <input type="text" name="name" required placeholder="Jane Smith" class="field" />
           </div>
 
           <div>
-            <label class="block text-xs text-white/32 font-medium mb-1.5">Business Name</label>
-            <input type="text" name="business" required placeholder="Acme Studio" class="field">
+            <label style="display:block;font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:6px;">Business Name</label>
+            <input type="text" name="business" required placeholder="Acme Studio" class="field" />
           </div>
 
           <div>
-            <label class="block text-xs text-white/32 font-medium mb-1.5">WhatsApp Number</label>
-            <input type="tel" name="phone" required placeholder="+1 555 000 0000" class="field">
+            <label style="display:block;font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:6px;">WhatsApp Number</label>
+            <input type="tel" name="phone" required placeholder="+1 555 000 0000" class="field" />
           </div>
 
           <div>
-            <label class="block text-xs text-white/32 font-medium mb-1.5">Industry</label>
-            <div class="select-wrap">
-              <select name="industry" required class="field cursor-pointer">
+            <label style="display:block;font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:6px;">Industry</label>
+            <div class="sel-wrap">
+              <select name="industry" required class="field">
                 <option value="" disabled selected>Select your industry</option>
                 <option value="interior-design">Interior Design</option>
                 <option value="medical">Medical / Clinic</option>
@@ -413,20 +655,19 @@
           </div>
 
           <div>
-            <label class="block text-xs text-white/32 font-medium mb-1.5">
-              Existing Website
-              <span class="text-white/18 font-normal">(optional)</span>
+            <label style="display:block;font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:6px;">
+              Existing Website <span style="font-weight:400;color:var(--text-3)">(optional)</span>
             </label>
-            <input type="url" name="website" placeholder="https://yoursite.com" class="field">
+            <input type="url" name="website" placeholder="https://yoursite.com" class="field" />
           </div>
 
-          <div class="pt-1">
-            <button type="submit"
-                    class="w-full bg-white text-black font-medium py-4 rounded-xl text-sm
-                           hover:opacity-90 transition-opacity">
+          <div style="padding-top:4px;">
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:15px;">
               Get My Demo
             </button>
-            <p class="text-xs text-white/18 text-center mt-3">We'll never share your information.</p>
+            <p style="font-size:12px;text-align:center;color:var(--text-3);margin-top:12px;">
+              We'll never share your information.
+            </p>
           </div>
 
         </form>
@@ -436,29 +677,106 @@
   </section>
 
 
-  <!-- ─────────────────────────── FOOTER ─────────────────────────── -->
-  <footer class="border-t border-white/[0.05] py-8 px-6">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-      <span class="text-sm font-medium text-white/40">RiskFreeSites</span>
-      <p class="text-xs text-white/18">© 2025 RiskFreeSites. All rights reserved.</p>
-      <div class="flex gap-5">
-        <a href="#" class="text-xs text-white/18 hover:text-white/40 transition-colors">Privacy</a>
-        <a href="#" class="text-xs text-white/18 hover:text-white/40 transition-colors">Terms</a>
+  <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+  <footer style="padding:32px 24px;border-top:1px solid var(--border);background:var(--sand);">
+    <div class="max-w-6xl mx-auto" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <rect width="24" height="24" rx="7" fill="#1a1918"/>
+          <path d="M7 12h10M12 7l5 5-5 5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span style="font-size:14px;font-weight:700;letter-spacing:-0.02em;color:var(--text);">RiskFreeSites</span>
       </div>
+
+      <p style="font-size:12px;color:var(--text-3);">© 2025 RiskFreeSites. All rights reserved.</p>
+
+      <div style="display:flex;gap:20px;">
+        <a href="#" style="font-size:12px;color:var(--text-3);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-3)'">Privacy</a>
+        <a href="#" style="font-size:12px;color:var(--text-3);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-3)'">Terms</a>
+      </div>
+
     </div>
   </footer>
 
 
+  <!-- ═══════════════════════════════════════ SCRIPTS ═══════════════════════════════════════ -->
   <script>
-    // Nav: add blur/dark on scroll
+    // ── Nav scroll effect
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', function () {
-      if (window.scrollY > 30) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
+      nav.classList.toggle('scrolled', window.scrollY > 24);
     }, { passive: true });
+
+    // ── Scroll reveal (IntersectionObserver)
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+    document.querySelectorAll('.r').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+
+    // ── Counter animation (springs to target)
+    function animateCounter(el) {
+      var target = parseInt(el.getAttribute('data-counter'), 10);
+      var duration = 1500;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 4); // quartic ease-out
+        el.textContent = Math.round(eased * target).toLocaleString();
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll('[data-counter]').forEach(function (el) {
+      counterObserver.observe(el);
+    });
+
+    // ── Stats grid responsive (2-col → 4-col)
+    var statsGrid = document.getElementById('stats-grid');
+    if (statsGrid) {
+      function setStatsCols() {
+        statsGrid.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(4,1fr)' : 'repeat(2,1fr)';
+      }
+      setStatsCols();
+      window.addEventListener('resize', setStatsCols, { passive: true });
+    }
+
+    // ── Responsive 3-col grids
+    document.querySelectorAll('.md\\:grid-cols-3').forEach(function (el) {
+      function setCols() {
+        el.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(3,1fr)' : '1fr';
+      }
+      setCols();
+      window.addEventListener('resize', setCols, { passive: true });
+    });
+
+    // ── Responsive 2-col grids
+    document.querySelectorAll('.md\\:grid-cols-2').forEach(function (el) {
+      function setCols() {
+        el.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(2,1fr)' : '1fr';
+      }
+      setCols();
+      window.addEventListener('resize', setCols, { passive: true });
+    });
   </script>
 
 </body>
