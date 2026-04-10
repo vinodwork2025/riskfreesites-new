@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RiskFreeSites — See Your Website Before You Pay for It</title>
+  <meta name="description" content="A custom website designed for your business. No upfront commitment. See it before you pay.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    /* Fade-up animation — applied on page load */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+    .fade-up    { animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .fade-up-d1 { animation: fadeUp 0.75s 0.10s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .fade-up-d2 { animation: fadeUp 0.75s 0.20s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .fade-up-d3 { animation: fadeUp 0.75s 0.32s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+    /* Hero background glow */
+    .hero-glow {
+      position: absolute;
+      width: 900px;
+      height: 500px;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse at center, rgba(100, 80, 220, 0.055) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    /* Very faint dot grid on hero */
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 100%);
+    }
+
+    /* Nav scrolled state */
+    nav.scrolled {
+      background: rgba(0, 0, 0, 0.88);
+      border-bottom-color: rgba(255, 255, 255, 0.07);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: #1f1f1f; border-radius: 2px; }
+
+    /* Form fields */
+    .field {
+      width: 100%;
+      background: #0f0f0f;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      color: #f5f5f7;
+      border-radius: 12px;
+      padding: 13px 15px;
+      font-size: 0.875rem;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .field:focus  { outline: none; border-color: rgba(255, 255, 255, 0.28); }
+    .field::placeholder { color: rgba(255, 255, 255, 0.18); }
+    .field option { background: #0f0f0f; color: #f5f5f7; }
+
+    /* Select chevron */
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: '';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid rgba(255, 255, 255, 0.25);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white font-sans">
+
+
+  <!-- ─────────────────────────── NAV ─────────────────────────── -->
+  <nav id="nav"
+       class="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.05] bg-black/50 backdrop-blur-xl transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <span class="font-semibold text-[15px] tracking-tight">RiskFreeSites</span>
+      <a href="#form"
+         class="text-sm font-medium bg-white text-black px-5 py-2.5 rounded-full hover:opacity-90 transition-opacity">
+        Get My Demo
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ─────────────────────────── HERO ─────────────────────────── -->
+  <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-24 overflow-hidden">
+
+    <div class="hero-dots"></div>
+    <div class="hero-glow"></div>
+
+    <div class="max-w-3xl mx-auto text-center relative z-10">
+
+      <!-- Badge -->
+      <div class="fade-up inline-flex items-center gap-2 border border-white/10 rounded-full px-4 py-1.5 mb-10">
+        <span class="w-1.5 h-1.5 rounded-full bg-white/30"></span>
+        <span class="text-xs text-white/40 tracking-wide">Free &middot; No commitment &middot; Delivered in 48 hours</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="fade-up-d1 font-semibold mb-6"
+          style="font-size: clamp(2.6rem, 8vw, 5.25rem); line-height: 1.04; letter-spacing: -0.04em;">
+        See Your Website<br>
+        <span class="text-white/38">Before You Pay for It.</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="fade-up-d2 text-white/35 max-w-sm mx-auto mb-10 leading-relaxed"
+         style="font-size: clamp(1rem, 2.5vw, 1.125rem);">
+        A custom website designed for your business.<br>No upfront commitment.
+      </p>
+
+      <!-- CTA -->
+      <div class="fade-up-d3">
+        <a href="#form"
+           class="inline-flex items-center gap-2.5 bg-white text-black font-medium px-8 py-4 rounded-full text-sm hover:opacity-90 transition-opacity">
+          Get My Demo
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────── TRUST STRIP ─────────────────────────── -->
+  <div class="border-y border-white/[0.05] py-5 px-6">
+    <p class="text-center text-xs text-white/22 tracking-wide">
+      Built for interior designers &nbsp;·&nbsp; clinics &nbsp;·&nbsp; real estate agents &nbsp;·&nbsp; contractors &nbsp;·&nbsp; local businesses
+    </p>
+  </div>
+
+
+  <!-- ─────────────────────────── HOW IT WORKS ─────────────────────────── -->
+  <section class="py-24 md:py-32 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-[10px] tracking-[0.18em] text-white/25 uppercase mb-4">How It Works</p>
+        <h2 class="font-semibold"
+            style="font-size: clamp(1.75rem, 4vw, 2.875rem); letter-spacing: -0.03em;">
+          Three steps. No surprises.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-9">
+          <span class="block font-light text-white/[0.07] mb-7 select-none"
+                style="font-size: 3.5rem; letter-spacing: -0.04em;">01</span>
+          <h3 class="font-medium text-[15px] mb-3">Tell us about your business</h3>
+          <p class="text-sm text-white/32 leading-relaxed">
+            Fill in a short form — name, industry, a few basics. Under two minutes.
+          </p>
+        </div>
+
+        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-9">
+          <span class="block font-light text-white/[0.07] mb-7 select-none"
+                style="font-size: 3.5rem; letter-spacing: -0.04em;">02</span>
+          <h3 class="font-medium text-[15px] mb-3">We design your site</h3>
+          <p class="text-sm text-white/32 leading-relaxed">
+            Within 48 hours, your website is ready — designed around your brand and services.
+          </p>
+        </div>
+
+        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-9">
+          <span class="block font-light text-white/[0.07] mb-7 select-none"
+                style="font-size: 3.5rem; letter-spacing: -0.04em;">03</span>
+          <h3 class="font-medium text-[15px] mb-3">Approve it. Then pay.</h3>
+          <p class="text-sm text-white/32 leading-relaxed">
+            Like it? We talk next steps. Don't? Walk away — no charge, no follow-ups.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────── SHOWCASE ─────────────────────────── -->
+  <section class="py-24 md:py-32 px-6 bg-[#040404]">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-[10px] tracking-[0.18em] text-white/25 uppercase mb-4">Examples</p>
+        <h2 class="font-semibold"
+            style="font-size: clamp(1.75rem, 4vw, 2.875rem); letter-spacing: -0.03em;">
+          What yours could look like.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <!-- Interior Design -->
+        <div class="rounded-2xl border border-white/[0.06] bg-[#080808] overflow-hidden
+                    hover:border-white/[0.11] transition-colors duration-300">
+          <div class="px-4 py-3 border-b border-white/[0.05] flex items-center gap-1.5">
+            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
+          </div>
+          <div class="p-4 h-56 space-y-2.5">
+            <div class="h-24 rounded-lg" style="background: linear-gradient(140deg, #1d1a14 0%, #231f18 100%);"></div>
+            <div class="flex gap-2">
+              <div class="h-8 flex-1 rounded-md bg-[#171410]"></div>
+              <div class="h-8 flex-1 rounded-md bg-[#171410]"></div>
+            </div>
+            <div class="h-2.5 rounded-full bg-white/[0.04] w-3/4"></div>
+            <div class="h-2.5 rounded-full bg-white/[0.03] w-1/2"></div>
+          </div>
+          <div class="px-4 pb-4 pt-3 border-t border-white/[0.04]">
+            <p class="text-xs text-white/25 font-medium">Interior Design Studio</p>
+          </div>
+        </div>
+
+        <!-- Medical Clinic -->
+        <div class="rounded-2xl border border-white/[0.06] bg-[#080808] overflow-hidden
+                    hover:border-white/[0.11] transition-colors duration-300">
+          <div class="px-4 py-3 border-b border-white/[0.05] flex items-center gap-1.5">
+            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
+          </div>
+          <div class="p-4 h-56 space-y-2.5">
+            <div class="flex items-center gap-2">
+              <div class="w-5 h-5 rounded bg-[#0c1a24]"></div>
+              <div class="h-2.5 rounded-full bg-white/[0.06] w-16"></div>
+            </div>
+            <div class="h-20 rounded-lg" style="background: linear-gradient(140deg, #0c1a22 0%, #0f2030 100%);"></div>
+            <div class="grid grid-cols-3 gap-1.5">
+              <div class="h-9 rounded-xl bg-[#0d1c28]"></div>
+              <div class="h-9 rounded-xl bg-[#0d1c28]"></div>
+              <div class="h-9 rounded-xl bg-[#0d1c28]"></div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-3 border-t border-white/[0.04]">
+            <p class="text-xs text-white/25 font-medium">Medical Clinic</p>
+          </div>
+        </div>
+
+        <!-- Real Estate -->
+        <div class="rounded-2xl border border-white/[0.06] bg-[#080808] overflow-hidden
+                    hover:border-white/[0.11] transition-colors duration-300">
+          <div class="px-4 py-3 border-b border-white/[0.05] flex items-center gap-1.5">
+            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/[0.08]"></div>
+          </div>
+          <div class="p-4 h-56 space-y-2.5">
+            <div class="h-28 rounded-lg" style="background: linear-gradient(140deg, #1c1a10 0%, #22200f 100%);"></div>
+            <div class="flex gap-2">
+              <div class="h-11 flex-1 rounded-xl bg-[#181610]"></div>
+              <div class="h-11 flex-1 rounded-xl bg-[#181610]"></div>
+            </div>
+          </div>
+          <div class="px-4 pb-4 pt-3 border-t border-white/[0.04]">
+            <p class="text-xs text-white/25 font-medium">Real Estate Agency</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────── VALUE / RISK-FREE ─────────────────────────── -->
+  <section class="py-24 md:py-32 px-6">
+    <div class="max-w-4xl mx-auto">
+
+      <div class="text-center mb-16">
+        <p class="text-[10px] tracking-[0.18em] text-white/25 uppercase mb-4">Why Risk-Free</p>
+        <h2 class="font-semibold mb-5"
+            style="font-size: clamp(1.75rem, 4vw, 2.875rem); letter-spacing: -0.03em;">
+          No deposit. No guessing.<br>No agencies that disappear.
+        </h2>
+        <p class="text-white/32 text-base max-w-md mx-auto leading-relaxed">
+          Most agencies ask for payment before you've seen a single pixel.<br>We do the opposite.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-7">
+          <div class="w-8 h-8 rounded-xl bg-white/[0.05] flex items-center justify-center mb-5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="rgba(255,255,255,0.45)" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h3 class="font-medium text-[14px] mb-2.5">See it before paying</h3>
+          <p class="text-xs text-white/28 leading-relaxed">
+            Your full website is built and delivered — before any money changes hands.
+          </p>
+        </div>
+
+        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-7">
+          <div class="w-8 h-8 rounded-xl bg-white/[0.05] flex items-center justify-center mb-5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="rgba(255,255,255,0.45)" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h3 class="font-medium text-[14px] mb-2.5">Custom to your business</h3>
+          <p class="text-xs text-white/28 leading-relaxed">
+            Not a template. Built around your name, your services, your industry.
+          </p>
+        </div>
+
+        <div class="bg-[#090909] border border-white/[0.06] rounded-2xl p-7">
+          <div class="w-8 h-8 rounded-xl bg-white/[0.05] flex items-center justify-center mb-5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="rgba(255,255,255,0.45)" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          <h3 class="font-medium text-[14px] mb-2.5">Walk away anytime</h3>
+          <p class="text-xs text-white/28 leading-relaxed">
+            Don't love it? No charge. No awkward calls. Just honest work.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────── LEAD FORM ─────────────────────────── -->
+  <section id="form" class="py-24 md:py-32 px-6 bg-[#040404]">
+    <div class="max-w-[480px] mx-auto">
+
+      <div class="bg-[#0a0a0a] border border-white/[0.08] rounded-2xl p-8 md:p-10">
+
+        <div class="mb-8">
+          <h2 class="font-semibold text-[1.5rem] mb-2" style="letter-spacing: -0.025em;">
+            Request your free demo
+          </h2>
+          <p class="text-sm text-white/32">We'll have your site ready within 48 hours.</p>
+        </div>
+
+        <form action="YOUR_GOOGLE_FORM_URL" method="POST" class="space-y-4">
+
+          <div>
+            <label class="block text-xs text-white/32 font-medium mb-1.5">Your Name</label>
+            <input type="text" name="name" required placeholder="Jane Smith" class="field">
+          </div>
+
+          <div>
+            <label class="block text-xs text-white/32 font-medium mb-1.5">Business Name</label>
+            <input type="text" name="business" required placeholder="Acme Studio" class="field">
+          </div>
+
+          <div>
+            <label class="block text-xs text-white/32 font-medium mb-1.5">WhatsApp Number</label>
+            <input type="tel" name="phone" required placeholder="+1 555 000 0000" class="field">
+          </div>
+
+          <div>
+            <label class="block text-xs text-white/32 font-medium mb-1.5">Industry</label>
+            <div class="select-wrap">
+              <select name="industry" required class="field cursor-pointer">
+                <option value="" disabled selected>Select your industry</option>
+                <option value="interior-design">Interior Design</option>
+                <option value="medical">Medical / Clinic</option>
+                <option value="real-estate">Real Estate</option>
+                <option value="restaurant">Restaurant / Café</option>
+                <option value="salon">Salon / Beauty</option>
+                <option value="legal">Legal / Law Firm</option>
+                <option value="construction">Construction / Contractor</option>
+                <option value="fitness">Fitness / Wellness</option>
+                <option value="retail">Retail / Shop</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs text-white/32 font-medium mb-1.5">
+              Existing Website
+              <span class="text-white/18 font-normal">(optional)</span>
+            </label>
+            <input type="url" name="website" placeholder="https://yoursite.com" class="field">
+          </div>
+
+          <div class="pt-1">
+            <button type="submit"
+                    class="w-full bg-white text-black font-medium py-4 rounded-xl text-sm
+                           hover:opacity-90 transition-opacity">
+              Get My Demo
+            </button>
+            <p class="text-xs text-white/18 text-center mt-3">We'll never share your information.</p>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ─────────────────────────── FOOTER ─────────────────────────── -->
+  <footer class="border-t border-white/[0.05] py-8 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <span class="text-sm font-medium text-white/40">RiskFreeSites</span>
+      <p class="text-xs text-white/18">© 2025 RiskFreeSites. All rights reserved.</p>
+      <div class="flex gap-5">
+        <a href="#" class="text-xs text-white/18 hover:text-white/40 transition-colors">Privacy</a>
+        <a href="#" class="text-xs text-white/18 hover:text-white/40 transition-colors">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // Nav: add blur/dark on scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 30) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
