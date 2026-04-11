@@ -14,7 +14,7 @@
 
 var SHEET_ID = '1qtro9JTDogZ3Ox3edFs2VhlL5YOO7IxLnJTM9XDvp6A';
 
-var HEADERS = ['Timestamp', 'Name', 'Business Name', 'Phone (WhatsApp)', 'Industry', 'Website'];
+var HEADERS = ['Timestamp', 'Name', 'Business Name', 'Phone (WhatsApp)', 'Industry', 'Website', 'Email'];
 
 // ── Handle GET (health check / browser test)
 function doGet(e) {
@@ -50,13 +50,14 @@ function doPost(e) {
     // This must happen before setValues — formatting after is too late.
     sheet.getRange(nextRow, 4).setNumberFormat('@');
 
-    sheet.getRange(nextRow, 1, 1, 6).setValues([[
+    sheet.getRange(nextRow, 1, 1, 7).setValues([[
       new Date(),
       params.name     || '',
       params.business || '',
       params.phone    || '',
       params.industry || '',
-      params.website  || ''
+      params.website  || '',
+      params.email    || ''
     ]]);
 
     // Auto-resize columns for readability
