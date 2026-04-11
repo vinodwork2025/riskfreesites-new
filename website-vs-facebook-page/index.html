@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website vs Facebook Page for Business: What You Actually Need | RiskFreeSites</title>
+  <meta name="description" content="A Facebook page and a website are not the same thing. Here is what each one does, where each one falls short, and why most small businesses need both." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://riskfreesites.com/website-vs-facebook-page/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://riskfreesites.com/website-vs-facebook-page/" />
+  <meta property="og:title" content="Website vs Facebook Page for Business: What You Actually Need" />
+  <meta property="og:description" content="A Facebook page and a website are not the same thing. Here is what each one does, where each falls short, and why most small businesses need both." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Website vs Facebook Page for Business: What You Actually Need",
+    "description": "A Facebook page and a website are not the same thing. Here is what each one does, where each one falls short, and why most small businesses need both.",
+    "datePublished": "2025-04-11",
+    "author": { "@type": "Organization", "name": "RiskFreeSites", "url": "https://riskfreesites.com" },
+    "publisher": { "@type": "Organization", "name": "RiskFreeSites", "url": "https://riskfreesites.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://riskfreesites.com/website-vs-facebook-page/" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{--sand:#faf9f6;--sand-100:#f3f2ee;--sand-200:#eae8e2;--border:#e4e2dc;--text:#1a1918;--text-2:#4a4a52;--text-3:#78787f;--green:#16a34a;--red:#dc2626;--fb:#1877f2;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--sand);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;}
+    .display{font-weight:900;letter-spacing:-0.045em;line-height:1.05;}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;padding:16px 34px;background:var(--text);color:#fff;font-weight:700;font-size:15px;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;letter-spacing:-0.01em;}
+    .btn-primary:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 32px rgba(26,25,24,0.22);}
+    #nav{background:rgba(250,249,246,0.92);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color 0.3s;}
+    #nav.scrolled{border-bottom-color:var(--border);}
+    .r{opacity:0;transform:translateY(24px);transition:opacity 0.6s,transform 0.6s;}
+    .r.in{opacity:1;transform:none;}
+    .d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
+
+    /* split cards */
+    .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:20px;overflow:hidden;}
+    @media(max-width:640px){.vs-grid{grid-template-columns:1fr;}}
+    .vs-col{padding:36px 32px;}
+    .vs-col.fb{background:#e7f0fd;border:1px solid #b8d0f9;}
+    .vs-col.web{background:#f0fdf4;border:1px solid #bbf7d0;}
+
+    /* comparison table */
+    .compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+    .ctable{width:100%;min-width:540px;border-collapse:separate;border-spacing:0;}
+    .ctable th{padding:14px 18px;font-size:12px;font-weight:700;text-align:center;border-bottom:2px solid var(--border);letter-spacing:-0.01em;}
+    .ctable th.hl{background:var(--text);color:#fff;border-radius:14px 14px 0 0;}
+    .ctable th.lbl{text-align:left;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);}
+    .ctable td{padding:14px 18px;font-size:14px;text-align:center;border-bottom:1px solid var(--border);color:var(--text-2);vertical-align:middle;}
+    .ctable td.hl{background:#fafafa;border-left:1px solid var(--border);border-right:1px solid var(--border);}
+    .ctable td.lbl{text-align:left;font-weight:600;color:var(--text);font-size:14px;}
+    .ctable tr:last-child td.hl{border-radius:0 0 14px 14px;border-bottom:1px solid var(--border);}
+    .yes{color:var(--green);font-weight:700;}
+    .no{color:var(--red);font-weight:700;}
+    .chk{display:inline-flex;width:22px;height:22px;border-radius:50%;background:#f0fdf4;align-items:center;justify-content:center;}
+    .xmark{display:inline-flex;width:22px;height:22px;border-radius:50%;background:#fef2f2;align-items:center;justify-content:center;}
+    .warn{display:inline-flex;width:22px;height:22px;border-radius:50%;background:#fffbeb;align-items:center;justify-content:center;}
+
+    .scenario{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin-bottom:16px;display:flex;gap:16px;align-items:flex-start;}
+    .scenario-icon{width:40px;height:40px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+    details summary::-webkit-details-marker{display:none;}
+    details[open] summary svg{transform:rotate(180deg);}
+    details summary svg{transition:transform 0.2s;}
+  </style>
+</head>
+<body>
+
+<nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:50;">
+  <div style="max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="7" fill="#1a1918"/><path d="M7 12h10M12 7l5 5-5 5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span style="font-weight:700;font-size:15px;letter-spacing:-0.02em;color:var(--text);">RiskFreeSites</span>
+    </a>
+    <div class="hidden md:flex" style="align-items:center;gap:28px;">
+      <a href="/compare/" style="font-size:14px;color:var(--text-2);text-decoration:none;font-weight:500;">Compare</a>
+      <a href="/blog/" style="font-size:14px;color:var(--text-2);text-decoration:none;font-weight:500;">Blog</a>
+    </div>
+    <a href="/#form" class="btn-primary" style="padding:11px 22px;font-size:0.84rem;">See My Website</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section style="padding-top:120px;padding-bottom:72px;background:var(--sand);">
+    <div style="max-width:760px;margin:0 auto;padding:0 24px;text-align:center;">
+      <p class="eyebrow r" style="margin-bottom:20px;">Website vs Facebook Page</p>
+      <h1 class="display r d1" style="font-size:clamp(2.2rem,5.5vw,4.2rem);margin-bottom:24px;">
+        Your Facebook Page Is Not Your Website.
+      </h1>
+      <p class="r d2" style="font-size:clamp(1rem,2vw,1.15rem);color:var(--text-2);max-width:46ch;margin:0 auto 16px;line-height:1.75;">
+        A lot of small businesses run only on a Facebook page and think that covers them online. It does not. Here is exactly what each one does, where each one fails, and what you actually need.
+      </p>
+      <p class="r d2" style="font-size:0.95rem;color:var(--text-3);margin-bottom:40px;">The short answer: Facebook is good for staying in front of people who already know you. A website is how people who have never heard of you find you.</p>
+      <a href="#comparison" class="r d3" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--text);text-decoration:none;border:1.5px solid var(--border);padding:12px 22px;border-radius:100px;background:#fff;">
+        See the comparison
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- SPLIT CARDS -->
+  <section id="comparison" style="padding:0 24px 80px;background:var(--sand);">
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="vs-grid r">
+
+        <!-- Facebook column -->
+        <div class="vs-col fb">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+            <div style="width:36px;height:36px;border-radius:10px;background:var(--fb);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </div>
+            <h2 style="font-size:1.1rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);">Facebook Business Page</h2>
+          </div>
+
+          <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);margin-bottom:12px;">What it does well</p>
+          <ul style="list-style:none;padding:0;margin-bottom:24px;">
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>Keeps existing customers updated with posts</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>Collects reviews from real customers</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>Word-of-mouth sharing when someone tags you</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>Facebook ads can target the right local audience</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>Free to set up and use</li>
+          </ul>
+
+          <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--red);margin-bottom:12px;">Where it falls short</p>
+          <ul style="list-style:none;padding:0;">
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--red);">-</span>Organic posts reach only 1 to 5% of your followers</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--red);">-</span>Does not show up in Google search for your services</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--red);">-</span>You do not own it. Facebook controls the rules</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--red);">-</span>Account can be restricted or removed at any time</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--red);">-</span>Looks the same as every other business page</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--red);">-</span>No 24/7 lead capture when people are ready to buy</li>
+          </ul>
+        </div>
+
+        <!-- Website column -->
+        <div class="vs-col web">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+            <div style="width:36px;height:36px;border-radius:10px;background:var(--text);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h2 style="font-size:1.1rem;font-weight:800;letter-spacing:-0.03em;color:var(--text);">Your Own Website</h2>
+          </div>
+
+          <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--green);margin-bottom:12px;">What it does well</p>
+          <ul style="list-style:none;padding:0;margin-bottom:24px;">
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>Shows up in Google when people search your service</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>You own it completely. No platform rules apply</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>Captures leads 24/7 through a contact form</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>Looks professional and builds trust on first visit</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--green);">+</span>Fully custom design that matches your brand</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--green);">+</span>Works even if Facebook shuts down tomorrow</li>
+          </ul>
+
+          <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--red);margin-bottom:12px;">Where it falls short</p>
+          <ul style="list-style:none;padding:0;">
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;margin-bottom:8px;"><span style="position:absolute;left:0;color:var(--red);">-</span>Does not replace ongoing community and social engagement</li>
+            <li style="font-size:14px;color:var(--text-2);line-height:1.7;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--red);">-</span>Has upfront setup cost (unless you use RiskFreeSites)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section style="padding:0 24px 80px;background:var(--sand);">
+    <div style="max-width:780px;margin:0 auto;">
+      <div class="compare-wrap r">
+        <table class="ctable">
+          <thead>
+            <tr>
+              <th class="lbl" style="width:44%;"></th>
+              <th class="hl" style="width:28%;">Your Website</th>
+              <th style="width:28%;color:var(--text);">Facebook Page</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lbl">Shows up on Google search</td>
+              <td class="hl"><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+              <td><span class="xmark"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="lbl">You own it fully</td>
+              <td class="hl"><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+              <td><span class="xmark"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="lbl">Custom design and branding</td>
+              <td class="hl"><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+              <td><span class="xmark"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="lbl">24/7 lead capture form</td>
+              <td class="hl"><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+              <td><span class="warn"><svg width="10" height="2" viewBox="0 0 10 2" fill="none"><rect width="10" height="2" rx="1" fill="#d97706"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="lbl">Free to start</td>
+              <td class="hl"><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span style="display:block;font-size:11px;color:#16a34a;margin-top:2px;">with RiskFreeSites</span></td>
+              <td><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="lbl">Builds customer loyalty</td>
+              <td class="hl"><span class="warn"><svg width="10" height="2" viewBox="0 0 10 2" fill="none"><rect width="10" height="2" rx="1" fill="#d97706"/></svg></span></td>
+              <td><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="lbl">Collects customer reviews</td>
+              <td class="hl"><span class="warn"><svg width="10" height="2" viewBox="0 0 10 2" fill="none"><rect width="10" height="2" rx="1" fill="#d97706"/></svg></span></td>
+              <td><span class="chk"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></td>
+            </tr>
+            <tr>
+              <td class="lbl">Platform can remove your account</td>
+              <td class="hl"><span class="xmark"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span style="display:block;font-size:11px;color:#16a34a;margin-top:2px;">Never</span></td>
+              <td><span class="xmark"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span style="display:block;font-size:11px;color:#dc2626;margin-top:2px;">Any time</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL SCENARIOS -->
+  <section style="padding:80px 24px;background:#fff;border-top:1px solid var(--border);">
+    <div style="max-width:700px;margin:0 auto;">
+      <p class="eyebrow r" style="margin-bottom:16px;">Real situations</p>
+      <h2 class="display r d1" style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:12px;">Where each one wins. Where each one loses.</h2>
+      <p class="r d2" style="font-size:1rem;color:var(--text-2);line-height:1.75;margin-bottom:40px;">This is not a theory. Here is how each plays out in real customer moments.</p>
+
+      <div class="r d2">
+        <div class="scenario">
+          <div class="scenario-icon" style="background:#fef2f2;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <div>
+            <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;">Someone searches "best salon in [your city]" at 10pm on Sunday</p>
+            <p style="font-size:14px;color:var(--text-2);line-height:1.7;">Google returns a list of salons with websites. Your Facebook page does not appear in that list. The customer books with a competitor who has a website. You never knew they were looking.</p>
+          </div>
+        </div>
+
+        <div class="scenario">
+          <div class="scenario-icon" style="background:#fef2f2;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;">Facebook changes its algorithm or restricts business reach</p>
+            <p style="font-size:14px;color:var(--text-2);line-height:1.7;">This has happened multiple times. Organic reach for business pages dropped from around 16% in 2012 to under 5% today. If Facebook changes its rules again, your reach drops overnight. A website is not subject to any of that.</p>
+          </div>
+        </div>
+
+        <div class="scenario">
+          <div class="scenario-icon" style="background:#fef2f2;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div>
+            <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;">Your Facebook account gets flagged or locked</p>
+            <p style="font-size:14px;color:var(--text-2);line-height:1.7;">It happens. Automated flags, a reported post, a payment issue. Getting back in can take days or weeks. During that time your entire online presence is gone. A website cannot be locked by someone else.</p>
+          </div>
+        </div>
+
+        <div class="scenario">
+          <div class="scenario-icon" style="background:#f0fdf4;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;">A happy customer tags your Facebook page in a post</p>
+            <p style="font-size:14px;color:var(--text-2);line-height:1.7;">This is where Facebook genuinely wins. Word-of-mouth sharing, recommendations in local groups, and customer photos are all things a website does not replicate. For community and loyalty, Facebook is strong.</p>
+          </div>
+        </div>
+
+        <div class="scenario">
+          <div class="scenario-icon" style="background:#f0fdf4;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;">Someone Googles your business name to check if you are legitimate</p>
+            <p style="font-size:14px;color:var(--text-2);line-height:1.7;">Your website comes up first. They see your services, your photos, your contact details, and a professional design. They call. A Facebook page in that same search looks like a temporary placeholder, not an established business.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ANSWER -->
+  <section style="padding:80px 24px;background:var(--sand);border-top:1px solid var(--border);">
+    <div style="max-width:700px;margin:0 auto;">
+      <p class="eyebrow r" style="margin-bottom:16px;">The answer</p>
+      <h2 class="display r d1" style="font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:24px;">Use both. But get the website first.</h2>
+      <div style="font-size:1rem;color:var(--text-2);line-height:1.8;display:flex;flex-direction:column;gap:16px;">
+        <p class="r d2">Facebook and a website are not competing tools. They do different jobs. Facebook keeps your existing customers engaged and creates word-of-mouth. Your website reaches people who have never heard of you and gives them a reason to trust you enough to make contact.</p>
+        <p class="r d3">The businesses that grow the fastest online use both. They have a website that ranks on Google and captures leads, and a Facebook page where customers follow along and share their experience. Each feeds the other.</p>
+        <p class="r d4">But if you had to start with one, start with the website. Facebook reach for business pages is at an all-time low and continues to shrink. Google search traffic for local businesses is steady and predictable. A website is the asset that keeps working for you regardless of what any social platform decides to do next.</p>
+      </div>
+      <div class="r d4" style="margin-top:40px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;">See your website before you pay anything.</p>
+          <p style="font-size:13px;color:var(--text-2);">We build it in 48 hours. You decide after you see it.</p>
+        </div>
+        <a href="/#form" class="btn-primary" style="flex-shrink:0;">See My Website</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding:80px 24px;background:#fff;border-top:1px solid var(--border);">
+    <div style="max-width:640px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:48px;">
+        <p class="eyebrow r" style="margin-bottom:16px;">Questions</p>
+        <h2 class="display r d1" style="font-size:clamp(1.6rem,3.5vw,2.4rem);">Common questions on this topic</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+
+        <details class="r" style="background:var(--sand);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+          <summary style="padding:20px 22px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+            Can my Facebook page rank on Google?
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div style="padding:0 22px 20px;font-size:14px;color:var(--text-2);line-height:1.75;">Sometimes your Facebook page will appear when someone searches your exact business name. But it almost never appears for service searches like "plumber in Austin" or "hair salon near me." Those results go to websites. That is the gap a Facebook-only presence cannot fill.</div>
+        </details>
+
+        <details class="r d1" style="background:var(--sand);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+          <summary style="padding:20px 22px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+            What if most of my customers come from Facebook already?
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div style="padding:0 22px 20px;font-size:14px;color:var(--text-2);line-height:1.75;">That is a good position to be in. Keep doing what works. But think about what happens if Facebook changes its algorithm, your account gets restricted, or the platform loses popularity in your market. A website makes sure your business does not depend entirely on one company's decisions.</div>
+        </details>
+
+        <details class="r d2" style="background:var(--sand);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+          <summary style="padding:20px 22px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+            Is a Google Business Profile the same as a website?
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div style="padding:0 22px 20px;font-size:14px;color:var(--text-2);line-height:1.75;">No. A Google Business Profile is a listing that appears in local search results and on Google Maps. It shows your hours, phone number, photos, and reviews. It is important to have and helps with local SEO. But it does not replace a website. Google even links from your Business Profile to your website, because it expects you to have one.</div>
+        </details>
+
+        <details class="r d3" style="background:var(--sand);border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+          <summary style="padding:20px 22px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+            How much does a website cost compared to running Facebook ads?
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div style="padding:0 22px 20px;font-size:14px;color:var(--text-2);line-height:1.75;">Facebook ads require ongoing spend. Stop paying and the results stop immediately. A website is a one-time build cost that keeps working for you every day without any further spending. Over 12 months, a website usually delivers better return than the same amount spent on ads, because it keeps attracting organic search traffic long after it is built.</div>
+        </details>
+
+      </div>
+
+      <div style="text-align:center;margin-top:48px;">
+        <p class="r" style="font-size:14px;color:var(--text-2);margin-bottom:20px;">Want to see what your website could look like?</p>
+        <a href="/#form" class="btn-primary r d1">
+          See My Website Free
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p class="r d1" style="font-size:12px;color:var(--text-3);margin-top:12px;">Built in 48 hours. No upfront cost.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section style="padding:64px 24px;background:var(--sand);border-top:1px solid var(--border);">
+    <div style="max-width:700px;margin:0 auto;">
+      <p class="eyebrow r" style="margin-bottom:24px;">Related reading</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="sm:grid-cols-2">
+        <a href="/blog/do-you-need-a-website-for-business/" style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px;text-decoration:none;display:block;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.07)'" onmouseout="this.style.boxShadow='none'">
+          <p style="font-size:13px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:8px;">Do You Need a Website for Your Business?</p>
+          <p style="font-size:12px;color:var(--text-3);">Blog post</p>
+        </a>
+        <a href="/compare/" style="background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px;text-decoration:none;display:block;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.07)'" onmouseout="this.style.boxShadow='none'">
+          <p style="font-size:13px;font-weight:700;color:var(--text);line-height:1.4;margin-bottom:8px;">RiskFreeSites vs Wix vs Freelancer vs Agency</p>
+          <p style="font-size:12px;color:var(--text-3);">Full comparison</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer style="padding:28px 24px;border-top:1px solid var(--border);background:var(--sand);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+    <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="7" fill="#1a1918"/><path d="M7 12h10M12 7l5 5-5 5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span style="font-size:14px;font-weight:700;letter-spacing:-0.02em;color:var(--text);">RiskFreeSites</span>
+    </a>
+    <p style="font-size:12px;color:var(--text-3);">2025 RiskFreeSites. All rights reserved.</p>
+    <div style="display:flex;gap:20px;">
+      <a href="/compare/" style="font-size:12px;color:var(--text-3);text-decoration:none;">Compare</a>
+      <a href="/blog/" style="font-size:12px;color:var(--text-3);text-decoration:none;">Blog</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>24),{passive:true});
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
