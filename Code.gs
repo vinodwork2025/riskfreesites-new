@@ -37,20 +37,27 @@ function doPost(e) {
            .setBackground('#1a1918')
            .setFontColor('#ffffff');
       sheet.setFrozenRows(1);
+      // Pre-format entire phone column as plain text so '+' is never
+      // misread as a formula operator (column D = phone field)
+      sheet.getRange('D:D').setNumberFormat('@');
     }
 
     // Parse submitted fields
-    var params = e.parameter;
-    var row = [
+    var params  = e.parameter;
+    var nextRow = sheet.getLastRow() + 1;
+
+    // Pre-format the specific phone cell as text BEFORE writing the value.
+    // This must happen before setValues — formatting after is too late.
+    sheet.getRange(nextRow, 4).setNumberFormat('@');
+
+    sheet.getRange(nextRow, 1, 1, 6).setValues([[
       new Date(),
       params.name     || '',
       params.business || '',
       params.phone    || '',
       params.industry || '',
       params.website  || ''
-    ];
-
-    sheet.appendRow(row);
+    ]]);
 
     // Auto-resize columns for readability
     sheet.autoResizeColumns(1, HEADERS.length);
