@@ -14,7 +14,11 @@
 
 var SHEET_ID = '1qtro9JTDogZ3Ox3edFs2VhlL5YOO7IxLnJTM9XDvp6A';
 
-var HEADERS = ['Timestamp', 'Name', 'Business Name', 'Phone (WhatsApp)', 'Industry', 'Website', 'Email'];
+var HEADERS = [
+  'Timestamp', 'Name', 'Business Name', 'Email', 'Phone',
+  'Industry', 'Website', 'Status', 'Source', 'Notes',
+  'Demo URL', 'Assigned To', 'Follow Up Date'
+];
 
 // ── Handle GET (health check / browser test)
 function doGet(e) {
@@ -37,27 +41,32 @@ function doPost(e) {
            .setBackground('#1a1918')
            .setFontColor('#ffffff');
       sheet.setFrozenRows(1);
-      // Pre-format entire phone column as plain text so '+' is never
-      // misread as a formula operator (column D = phone field)
-      sheet.getRange('D:D').setNumberFormat('@');
+      // Pre-format phone column (E) as plain text so '+' prefix is never
+      // misread as a formula operator
+      sheet.getRange('E:E').setNumberFormat('@');
     }
 
     // Parse submitted fields
     var params  = e.parameter;
     var nextRow = sheet.getLastRow() + 1;
 
-    // Pre-format the specific phone cell as text BEFORE writing the value.
-    // This must happen before setValues — formatting after is too late.
-    sheet.getRange(nextRow, 4).setNumberFormat('@');
+    // Pre-format phone cell (col E = 5) as text BEFORE writing.
+    sheet.getRange(nextRow, 5).setNumberFormat('@');
 
-    sheet.getRange(nextRow, 1, 1, 7).setValues([[
-      new Date(),
-      params.name     || '',
-      params.business || '',
-      params.phone    || '',
-      params.industry || '',
-      params.website  || '',
-      params.email    || ''
+    sheet.getRange(nextRow, 1, 1, 13).setValues([[
+      new Date(),           // A  Timestamp
+      params.name     || '',// B  Name
+      params.business || '',// C  Business Name
+      params.email    || '',// D  Email
+      params.phone    || '',// E  Phone
+      params.industry || '',// F  Industry
+      params.website  || '',// G  Website
+      '',                   // H  Status       (filled manually)
+      'Website Form',       // I  Source        (auto-tagged)
+      '',                   // J  Notes         (filled manually)
+      '',                   // K  Demo URL      (filled manually)
+      '',                   // L  Assigned To   (filled manually)
+      ''                    // M  Follow Up Date (filled manually)
     ]]);
 
     // Auto-resize columns for readability
