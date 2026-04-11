@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RiskFreeSites — See Your Website Before You Pay</title>
-  <meta name="description" content="We design your website first. You only pay if you love it. Custom websites for small businesses, delivered in 48 hours." />
+  <title>RiskFreeSites — A Better Website. Built Before You Pay.</title>
+  <meta name="description" content="Experience your website before you commit. We design it first — you only pay if it feels right. Custom websites delivered in 48 hours." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,400&display=swap" rel="stylesheet" />
@@ -170,22 +170,22 @@
       gap: 8px;
       background: var(--text);
       color: #fff;
-      font-weight: 600;
-      font-size: 0.9rem;
-      padding: 14px 28px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 16px 34px;
       border-radius: 100px;
       text-decoration: none;
       border: none;
       cursor: pointer;
       box-shadow: 0 4px 20px rgba(0,0,0,0.16);
-      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+      transition: opacity 0.2s, transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s;
     }
     .btn-primary:hover {
-      opacity: 0.88;
-      transform: translateY(-1px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.20);
+      opacity: 0.9;
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.22);
     }
-    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:active { transform: translateY(0) scale(1); }
 
     /* ── Form fields ── */
     .field {
@@ -271,7 +271,7 @@
 
       <!-- CTA -->
       <a href="#form" class="btn-primary" style="padding: 11px 22px; font-size: 0.84rem;">
-        Get My Demo
+        Request a Free Demo
       </a>
 
     </div>
@@ -285,27 +285,55 @@
       <!-- Badge -->
       <div class="h-fade" style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:100px;padding:6px 16px;margin-bottom:32px;">
         <span style="width:7px;height:7px;border-radius:50%;background:#22c55e;display:block;"></span>
-        <span style="font-size:12px;font-weight:500;color:var(--text-2);">Free &nbsp;·&nbsp; No commitment &nbsp;·&nbsp; Delivered in 48 hours</span>
+        <span style="font-size:12px;font-weight:500;color:var(--text-2);">Experience your website before you commit.</span>
       </div>
 
       <!-- Headline -->
       <h1 class="h-fade-d1 display" style="font-size:clamp(2.8rem,8vw,5.75rem);margin-bottom:24px;">
-        See Your Website<br>
-        <em style="font-style:normal;color:var(--text-2);">Before You Pay for It.</em>
+        A Better Website.<br>
+        <em style="font-style:normal;color:var(--text-2);">Built Before You Pay.</em>
       </h1>
 
       <!-- Sub -->
-      <p class="h-fade-d2" style="font-size:clamp(1rem,2.2vw,1.2rem);color:var(--text-2);max-width:38ch;margin:0 auto 40px;line-height:1.65;">
-        We design your website first.<br>You only pay when you love it.
+      <p class="h-fade-d2" style="font-size:clamp(1rem,2.2vw,1.15rem);color:var(--text-2);max-width:34ch;margin:0 auto 12px;line-height:1.65;">
+        We design your website first. You only pay if it feels right.
+      </p>
+
+      <!-- Curiosity trigger -->
+      <p class="h-fade-d2" style="font-size:0.95rem;color:var(--text-3);margin-bottom:36px;font-style:italic;">
+        We'll design your website before you decide.
       </p>
 
       <!-- CTA row -->
-      <div class="h-fade-d3" style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:64px;">
+      <div class="h-fade-d3" style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:32px;">
         <a href="#form" class="btn-primary">
-          Get My Demo
+          Request a Free Demo
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <span style="font-size:13px;color:var(--text-3);">No credit card required</span>
+        <span style="font-size:12px;color:var(--text-3);">Takes less than 30 seconds</span>
+      </div>
+
+      <!-- Trust checkmarks -->
+      <div class="h-fade-d3" style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:16px;">
+        <span style="font-size:13px;color:var(--text-2);display:flex;align-items:center;gap:5px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          No upfront cost
+        </span>
+        <span style="font-size:13px;color:var(--text-2);display:flex;align-items:center;gap:5px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Delivered in 48 hours
+        </span>
+        <span style="font-size:13px;color:var(--text-2);display:flex;align-items:center;gap:5px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          No obligation
+        </span>
+      </div>
+
+      <!-- Urgency -->
+      <div class="h-fade-d3" style="margin-bottom:52px;">
+        <span style="font-size:12px;color:var(--text-3);background:var(--sand-100);border:1px solid var(--border);border-radius:100px;padding:5px 14px;display:inline-block;">
+          ⚡ Limited demo slots available each week
+        </span>
       </div>
 
       <!-- Browser mockup -->
@@ -444,8 +472,8 @@
 
       <div style="text-align:center;margin-bottom:64px;">
         <p class="eyebrow r" style="margin-bottom:16px;">Examples</p>
-        <h2 class="display r d1" style="font-size:clamp(2rem,4.5vw,3.5rem);">Built for real businesses.</h2>
-        <p class="r d2" style="margin-top:16px;font-size:1rem;color:var(--text-2);max-width:36ch;margin-left:auto;margin-right:auto;line-height:1.6;">Custom-designed for your industry. Not a template.</p>
+        <h2 class="display r d1" style="font-size:clamp(2rem,4.5vw,3.5rem);">What Your Website Could Look Like</h2>
+        <p class="r d2" style="margin-top:16px;font-size:1rem;color:var(--text-2);max-width:34ch;margin-left:auto;margin-right:auto;line-height:1.6;">Custom-built for your industry. Not a template. Yours in 48 hours.</p>
       </div>
 
       <div style="display:grid;grid-template-columns:1fr;gap:20px;" class="md:grid-cols-3">
@@ -467,7 +495,7 @@
                style="width:100%;height:210px;object-fit:cover;display:block;" />
           <div style="padding:20px 22px;background:#fff;display:flex;align-items:center;justify-content:space-between;">
             <div>
-              <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Interior Design Studio</p>
+              <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Interior Design Demo</p>
               <p style="font-size:11px;color:var(--text-3);">Portfolio &nbsp;·&nbsp; Booking &nbsp;·&nbsp; Gallery</p>
             </div>
             <div style="width:30px;height:30px;border-radius:50%;background:#f0fdf4;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -493,7 +521,7 @@
                style="width:100%;height:210px;object-fit:cover;display:block;" />
           <div style="padding:20px 22px;background:#fff;display:flex;align-items:center;justify-content:space-between;">
             <div>
-              <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Medical Clinic</p>
+              <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Clinic Demo</p>
               <p style="font-size:11px;color:var(--text-3);">Appointments &nbsp;·&nbsp; Team &nbsp;·&nbsp; Trust</p>
             </div>
             <div style="width:30px;height:30px;border-radius:50%;background:#f0fdf4;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -519,7 +547,7 @@
                style="width:100%;height:210px;object-fit:cover;display:block;" />
           <div style="padding:20px 22px;background:#fff;display:flex;align-items:center;justify-content:space-between;">
             <div>
-              <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Real Estate Agency</p>
+              <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px;">Real Estate Demo</p>
               <p style="font-size:11px;color:var(--text-3);">Listings &nbsp;·&nbsp; Professional &nbsp;·&nbsp; Bold</p>
             </div>
             <div style="width:30px;height:30px;border-radius:50%;background:#f0fdf4;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -540,12 +568,12 @@
 
         <!-- Text side -->
         <div>
-          <p class="eyebrow r" style="margin-bottom:20px;">Why Risk-Free</p>
-          <h2 class="display r d1" style="font-size:clamp(2rem,4vw,3.25rem);margin-bottom:24px;">
-            No deposit.<br>No guessing.<br>No surprises.
+          <p class="eyebrow r" style="margin-bottom:20px;">Why This Works</p>
+          <h2 class="display r d1" style="font-size:clamp(2rem,4vw,3.25rem);margin-bottom:20px;">
+            You don't pay us to start.
           </h2>
-          <p class="r d2" style="font-size:1.05rem;color:var(--text-2);line-height:1.7;margin-bottom:40px;">
-            Most agencies charge before you've seen a pixel.<br>We do the opposite.
+          <p class="r d2" style="font-size:1.1rem;color:var(--text-2);line-height:1.7;margin-bottom:40px;">
+            You pay only if it feels right.
           </p>
 
           <div style="display:flex;flex-direction:column;gap:24px;">
@@ -555,8 +583,8 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div>
-                <h4 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;">See it before paying</h4>
-                <p style="font-size:13px;color:var(--text-2);line-height:1.7;">Your full website is built and delivered — before any money changes hands.</p>
+                <h4 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;">No upfront payment</h4>
+                <p style="font-size:13px;color:var(--text-2);line-height:1.7;">Your website is built and ready before we ask for anything.</p>
               </div>
             </div>
 
@@ -565,8 +593,8 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div>
-                <h4 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;">Built for your business</h4>
-                <p style="font-size:13px;color:var(--text-2);line-height:1.7;">Not a template. Designed around your name, your services, your industry.</p>
+                <h4 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;">No contracts</h4>
+                <p style="font-size:13px;color:var(--text-2);line-height:1.7;">No lock-in, no fine print, no long-term commitment required.</p>
               </div>
             </div>
 
@@ -575,8 +603,8 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div>
-                <h4 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;">Walk away, no cost</h4>
-                <p style="font-size:13px;color:var(--text-2);line-height:1.7;">Don't love it? Walk away. No charge. No awkward follow-ups.</p>
+                <h4 style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px;">No risk</h4>
+                <p style="font-size:13px;color:var(--text-2);line-height:1.7;">Don't love it? Walk away. No awkward conversations, no charges.</p>
               </div>
             </div>
 
@@ -613,8 +641,8 @@
 
       <div style="text-align:center;margin-bottom:40px;">
         <p class="eyebrow r" style="margin-bottom:16px;">Get Started</p>
-        <h2 class="display r d1" style="font-size:clamp(1.8rem,4vw,2.75rem);margin-bottom:12px;">Your website is<br>48 hours away.</h2>
-        <p class="r d2" style="font-size:14px;color:var(--text-2);">Request your free demo. No credit card. No commitment.</p>
+        <h2 class="display r d1" style="font-size:clamp(1.8rem,4vw,2.75rem);margin-bottom:12px;">Start Your Free Website</h2>
+        <p class="r d2" style="font-size:14px;color:var(--text-2);">Takes less than 30 seconds</p>
       </div>
 
       <div class="r d1" style="background:var(--sand);border:1px solid var(--border);border-radius:24px;padding:40px;">
@@ -623,8 +651,8 @@
           <div style="width:60px;height:60px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <h3 style="font-size:1.2rem;font-weight:800;letter-spacing:-0.025em;color:var(--text);margin-bottom:10px;">We got your request!</h3>
-          <p style="font-size:14px;color:var(--text-2);line-height:1.7;">Your demo site will be ready within 48 hours.<br>We'll send it straight to your WhatsApp.</p>
+          <h3 style="font-size:1.2rem;font-weight:800;letter-spacing:-0.025em;color:var(--text);margin-bottom:10px;">We're already working on your website.</h3>
+          <p style="font-size:14px;color:var(--text-2);line-height:1.7;">Your free demo will be ready within 48 hours.<br>We'll reach out as soon as it's live.</p>
         </div>
 
         <form id="lead-form" action="https://script.google.com/macros/s/AKfycbzJpwnqEMskxZPzCvNuwegu34M4giL4p0u5WD6v93wBiQxjgUMapfd2E110XtXRjLSo/exec" method="POST" style="display:flex;flex-direction:column;gap:18px;">
@@ -677,9 +705,12 @@
 
           <div style="padding-top:4px;">
             <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:16px;font-size:15px;">
-              Get My Demo
+              Request a Free Demo
             </button>
-            <p style="font-size:12px;text-align:center;color:var(--text-3);margin-top:12px;">
+            <p style="font-size:12px;text-align:center;color:var(--text-3);margin-top:10px;">
+              We'll send your demo within 48 hours.
+            </p>
+            <p style="font-size:12px;text-align:center;color:var(--text-3);margin-top:4px;">
               We'll never share your information.
             </p>
           </div>
