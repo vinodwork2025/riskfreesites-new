@@ -618,7 +618,16 @@
       </div>
 
       <div class="r d1" style="background:var(--sand);border:1px solid var(--border);border-radius:24px;padding:40px;">
-        <form action="YOUR_GOOGLE_FORM_URL" method="POST" style="display:flex;flex-direction:column;gap:18px;">
+        <!-- Success state (shown after submit) -->
+        <div id="form-success" style="display:none;text-align:center;padding:32px 0;">
+          <div style="width:60px;height:60px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 style="font-size:1.2rem;font-weight:800;letter-spacing:-0.025em;color:var(--text);margin-bottom:10px;">We got your request!</h3>
+          <p style="font-size:14px;color:var(--text-2);line-height:1.7;">Your demo site will be ready within 48 hours.<br>We'll send it straight to your WhatsApp.</p>
+        </div>
+
+        <form id="lead-form" action="YOUR_APPS_SCRIPT_URL" method="POST" style="display:flex;flex-direction:column;gap:18px;">
 
           <div>
             <label style="display:block;font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:6px;">Your Name</label>
@@ -777,6 +786,39 @@
       setCols();
       window.addEventListener('resize', setCols, { passive: true });
     });
+
+    // ── Lead form: submit via fetch → no-cors → show success state
+    var form = document.getElementById('lead-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var btn        = form.querySelector('button[type="submit"]');
+        var btnOrig    = btn.innerHTML;
+        var successDiv = document.getElementById('form-success');
+
+        // Loading state
+        btn.disabled     = true;
+        btn.innerHTML    = 'Sending&hellip;';
+        btn.style.opacity = '0.7';
+
+        // Build URL-encoded body (required for no-cors simple request)
+        var body = new URLSearchParams(new FormData(form)).toString();
+
+        fetch(form.action, {
+          method:  'POST',
+          mode:    'no-cors',          // Apps Script requires no-cors from external origins
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body:    body
+        })
+        .finally(function () {
+          // no-cors returns opaque response — treat any resolution as success
+          form.style.display        = 'none';
+          successDiv.style.display  = 'block';
+          form.reset();
+        });
+      });
+    }
   </script>
 
 </body>
