@@ -14,75 +14,89 @@
 
   <style>
     :root {
-      --navy:   #0A1628;
-      --navy2:  #0f1f3d;
-      --accent: #0EA5E9;
-      --accentd:#0284C7;
-      --off:    #F8FAFC;
-      --text:   #0F172A;
-      --text2:  #475569;
-      --text3:  #94A3B8;
-      --border: #E2E8F0;
+      --navy:    #0A1628;
+      --navy2:   #0f1f3d;
+      --accent:  #0EA5E9;
+      --accentd: #0284C7;
+      --off:     #F8FAFC;
+      --text:    #0F172A;
+      --text2:   #475569;
+      --text3:   #94A3B8;
+      --border:  #E2E8F0;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; color: var(--text); background: #fff; -webkit-font-smoothing: antialiased; }
     .pf { font-family: 'Playfair Display', serif; }
 
-    /* Scroll reveal */
-    .r { opacity: 0; transform: translateY(28px); transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
+    /* ── Scroll reveal ─────────────────────────────── */
+    .r { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
     .r.in { opacity: 1; transform: none; }
-    .r.d1 { transition-delay: 0.1s; } .r.d2 { transition-delay: 0.2s; }
-    .r.d3 { transition-delay: 0.3s; } .r.d4 { transition-delay: 0.4s; }
-    .r.d5 { transition-delay: 0.5s; } .r.d6 { transition-delay: 0.6s; }
+    .d1 { transition-delay: 0.10s; } .d2 { transition-delay: 0.20s; }
+    .d3 { transition-delay: 0.30s; } .d4 { transition-delay: 0.40s; }
+    .d5 { transition-delay: 0.50s; } .d6 { transition-delay: 0.60s; }
 
-    /* Hero word animation */
-    @keyframes wIn { to { opacity: 1; transform: none; } }
-    .wi { display: inline-block; opacity: 0; transform: translateY(18px); animation: wIn 0.5s cubic-bezier(0.22,1,0.36,1) forwards; }
+    /* ── Hero animations ───────────────────────────── */
+    @keyframes wIn      { to { opacity: 1; transform: none; } }
+    @keyframes heroZoom { from { transform: scale(1.10); } to { transform: scale(1); } }
+    @keyframes pulse    { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+    @keyframes bounce   { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(9px); } }
+    .wi { display: inline-block; opacity: 0; transform: translateY(18px); animation: wIn 0.52s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .hero-bg-img { animation: heroZoom 9s cubic-bezier(0.25,0,0.5,1) forwards; }
 
-    /* Nav */
-    #nav { transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s; }
-    #nav.scrolled { background: rgba(10,22,40,0.96) !important; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(255,255,255,0.07); }
+    /* ── Nav ───────────────────────────────────────── */
+    #nav { transition: background 0.35s, box-shadow 0.35s; }
+    #nav.scrolled { background: rgba(10,22,40,0.97) !important; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(255,255,255,0.07); }
 
-    /* Buttons */
+    /* ── Buttons ───────────────────────────────────── */
     .btn-a { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; border-radius: 9999px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
-    .btn-a:hover { background: var(--accentd); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(14,165,233,0.35); }
+    .btn-a:hover { background: var(--accentd); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(14,165,233,0.4); }
     .btn-o { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; background: transparent; color: #fff; font-weight: 600; font-size: 14px; border-radius: 9999px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.35); transition: border-color 0.2s, background 0.2s; }
     .btn-o:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
 
-    /* Service card */
-    .sc { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s; }
-    .sc:hover { box-shadow: 0 16px 48px rgba(14,165,233,0.13); border-color: var(--accent); transform: translateY(-4px); }
+    /* ── Service cards ─────────────────────────────── */
+    .sc { background: #fff; border: 1px solid var(--border); border-radius: 18px; overflow: hidden; transition: box-shadow 0.28s, border-color 0.28s, transform 0.28s; }
+    .sc:hover { box-shadow: 0 20px 56px rgba(14,165,233,0.14); border-color: var(--accent); transform: translateY(-5px); }
+    .sc-img { position: relative; height: 158px; overflow: hidden; }
+    .sc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); display: block; }
+    .sc:hover .sc-img img { transform: scale(1.07); }
+    .sc-overlay { position: absolute; inset: 0; }
+    .sc-icon { position: absolute; bottom: 14px; left: 16px; width: 44px; height: 44px; background: rgba(255,255,255,0.12); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); border-radius: 11px; display: flex; align-items: center; justify-content: center; }
+    .sc-body { padding: 22px 22px 26px; }
 
-    /* Review card */
-    .rc { background: #fff; border-radius: 16px; padding: 28px 24px; box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+    /* ── Review cards ──────────────────────────────── */
+    .rc { background: #fff; border-radius: 18px; padding: 28px 24px; box-shadow: 0 2px 24px rgba(0,0,0,0.07); border: 1px solid var(--border); }
 
-    /* Field */
-    .fld { width: 100%; padding: 13px 16px; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 10px; font-size: 14px; font-family: 'Inter', sans-serif; background: rgba(255,255,255,0.06); color: #fff; outline: none; transition: border-color 0.2s; }
-    .fld::placeholder { color: rgba(255,255,255,0.3); }
-    .fld:focus { border-color: var(--accent); }
+    /* ── Gallery ───────────────────────────────────── */
+    .gal-item { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 4/3; }
+    .gal-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
+    .gal-item:hover img { transform: scale(1.07); }
+    .gal-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,22,40,0.65) 0%, transparent 55%); opacity: 0; transition: opacity 0.3s; }
+    .gal-item:hover .gal-overlay { opacity: 1; }
+
+    /* ── Form fields ───────────────────────────────── */
+    .fld { width: 100%; padding: 13px 16px; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 10px; font-size: 14px; font-family: 'Inter', sans-serif; background: rgba(255,255,255,0.07); color: #fff; outline: none; transition: border-color 0.2s; }
+    .fld::placeholder { color: rgba(255,255,255,0.32); }
+    .fld:focus { border-color: var(--accent); background: rgba(255,255,255,0.1); }
     .fld option { color: var(--text); background: #fff; }
 
-    /* FAQ */
-    details { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+    /* ── FAQ accordion ─────────────────────────────── */
+    details { border: 1px solid var(--border); border-radius: 13px; overflow: hidden; margin-bottom: 10px; }
     details summary { padding: 20px 22px; font-weight: 600; font-size: 0.95rem; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; background: #fff; color: var(--text); }
     details summary::-webkit-details-marker { display: none; }
     details summary::after { content: "+"; font-size: 1.3rem; font-weight: 300; color: var(--accent); flex-shrink: 0; margin-left: 12px; }
     details[open] summary::after { content: "−"; }
-    .fb { padding: 0 22px 20px; font-size: 0.92rem; color: var(--text2); line-height: 1.8; }
+    .fb { padding: 0 22px 20px; font-size: 0.92rem; color: var(--text2); line-height: 1.82; }
     .fb a { color: var(--accent); text-decoration: none; }
 
-    /* Stat number */
+    /* ── Stat numbers ──────────────────────────────── */
     .sn { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem,5vw,3.2rem); font-weight: 800; color: #fff; letter-spacing: -0.03em; line-height: 1; }
 
-    /* Bounce */
-    @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
-
-    /* Section padding */
-    .sp { padding: 100px 24px; }
+    /* ── Section padding ───────────────────────────── */
+    .sp { padding: 104px 24px; }
     @media (max-width: 640px) { .sp { padding: 72px 20px; } }
 
-    /* Mobile sticky bar */
+    /* ── Mobile sticky bar ─────────────────────────── */
     #mbar { display: none; }
     @media (max-width: 768px) {
       #mbar { display: flex; }
@@ -92,131 +106,145 @@
 </head>
 <body>
 
-<!-- ════════ NAV ════════ -->
+<!-- ════════════════════════════════════════ NAV ════════════════════════════════════════ -->
 <nav id="nav" style="position:fixed;top:0;left:0;right:0;z-index:100;background:transparent;">
   <div style="max-width:1200px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;">
     <a href="#" style="text-decoration:none;">
       <span class="pf" style="font-size:1.25rem;font-weight:700;color:#fff;letter-spacing:-0.02em;">Bright Smile Dental</span>
     </a>
-    <div class="hidden md:flex" style="align-items:center;gap:28px;">
+    <div class="hidden md:flex" style="align-items:center;gap:30px;">
       <a href="#services" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Services</a>
-      <a href="#doctor"   style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;font-weight:500;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">About</a>
-      <a href="#reviews"  style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;font-weight:500;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Reviews</a>
-      <a href="#contact"  style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;font-weight:500;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Contact</a>
+      <a href="#doctor"   style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">About</a>
+      <a href="#reviews"  style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Reviews</a>
+      <a href="#contact"  style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;font-weight:500;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Contact</a>
     </div>
     <a href="#contact" class="btn-a" style="padding:10px 22px;font-size:13px;">Book Appointment</a>
   </div>
 </nav>
 
 
-<!-- ════════ HERO ════════ -->
-<section style="min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:120px 24px 80px;position:relative;">
-  <div style="max-width:1200px;margin:0 auto;width:100%;" class="grid grid-cols-1 md:grid-cols-5 gap-12">
+<!-- ════════════════════════════════════════ HERO ════════════════════════════════════════ -->
+<section style="min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 24px 80px;">
+
+  <!-- Cinematic background image with slow zoom -->
+  <div style="position:absolute;inset:0;z-index:0;">
+    <div class="hero-bg-img" style="position:absolute;inset:-6%;background:url('https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=1920&q=90') center/cover no-repeat;will-change:transform;"></div>
+    <!-- Dark gradient: opaque left for text, reveals image on right -->
+    <div style="position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,22,40,0.97) 32%,rgba(10,22,40,0.80) 58%,rgba(10,22,40,0.55) 100%);"></div>
+    <!-- Subtle vignette -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,transparent 40%,rgba(10,22,40,0.4) 100%);"></div>
+  </div>
+
+  <div style="max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1;" class="grid grid-cols-1 md:grid-cols-5 gap-12">
 
     <!-- Left 60% -->
     <div style="grid-column:span 3">
-      <div style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.16);border-radius:9999px;padding:7px 18px;margin-bottom:28px;opacity:0;animation:wIn 0.5s 0.1s forwards;">
-        <span style="color:#FACC15;font-size:14px;">★</span>
-        <span style="font-size:13px;color:rgba(255,255,255,0.82);font-weight:500;">Rated 4.9/5 by 214+ patients in Austin, Texas</span>
+      <!-- Badge with pulsing live dot -->
+      <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,0.15);border-radius:9999px;padding:8px 20px 8px 12px;margin-bottom:32px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;animation:wIn 0.5s 0.1s forwards;">
+        <span style="width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s ease-in-out infinite;flex-shrink:0;box-shadow:0 0 0 3px rgba(34,197,94,0.2);"></span>
+        <span style="color:#FACC15;font-size:12px;letter-spacing:0.04em;">★★★★★</span>
+        <span style="font-size:13px;color:rgba(255,255,255,0.85);font-weight:500;">Rated 4.9/5 by 214+ patients in Austin</span>
       </div>
 
-      <h1 id="hero-hl" class="pf" style="font-size:clamp(2.6rem,6vw,4.4rem);color:#fff;line-height:1.08;margin-bottom:22px;font-weight:700;"></h1>
+      <h1 id="hero-hl" class="pf" style="font-size:clamp(2.7rem,6vw,4.5rem);color:#fff;line-height:1.06;margin-bottom:24px;font-weight:700;"></h1>
 
-      <p style="font-size:clamp(1rem,2vw,1.12rem);color:#CBD5E1;line-height:1.78;max-width:46ch;margin-bottom:36px;opacity:0;animation:wIn 0.6s 0.75s forwards;">
+      <p style="font-size:clamp(1rem,2vw,1.12rem);color:#CBD5E1;line-height:1.80;max-width:46ch;margin-bottom:38px;opacity:0;animation:wIn 0.6s 0.78s forwards;">
         Serving Austin families for 12 years. General dentistry, cosmetic care, and everything in between — all under one roof.
       </p>
 
-      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:32px;opacity:0;animation:wIn 0.5s 0.95s forwards;">
-        <a href="#contact" class="btn-a" style="font-size:15px;padding:15px 32px;">Book Your Appointment</a>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:38px;opacity:0;animation:wIn 0.5s 0.98s forwards;">
+        <a href="#contact" class="btn-a" style="font-size:15px;padding:15px 34px;box-shadow:0 10px 36px rgba(14,165,233,0.45);">Book Your Appointment</a>
         <a href="#services" class="btn-o" style="font-size:15px;padding:14px 28px;">See Our Services</a>
       </div>
 
-      <div style="display:flex;flex-wrap:wrap;gap:22px;opacity:0;animation:wIn 0.5s 1.1s forwards;">
-        <span style="font-size:13px;color:#64748B;display:flex;align-items:center;gap:7px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Same-day emergency slots
+      <div style="display:flex;flex-wrap:wrap;gap:22px;opacity:0;animation:wIn 0.5s 1.14s forwards;">
+        <span style="font-size:13px;color:rgba(255,255,255,0.50);display:flex;align-items:center;gap:8px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Same-day emergency slots
         </span>
-        <span style="font-size:13px;color:#64748B;display:flex;align-items:center;gap:7px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          0% payment plans
+        <span style="font-size:13px;color:rgba(255,255,255,0.50);display:flex;align-items:center;gap:8px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>0% payment plans
         </span>
-        <span style="font-size:13px;color:#64748B;display:flex;align-items:center;gap:7px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          All insurance accepted
+        <span style="font-size:13px;color:rgba(255,255,255,0.50);display:flex;align-items:center;gap:8px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>All insurance accepted
         </span>
       </div>
     </div>
 
-    <!-- Right 40% — new patient card -->
+    <!-- Right 40% — glass new patient card -->
     <div class="hero-r" style="grid-column:span 2;display:flex;align-items:center;justify-content:center;">
-      <div style="width:100%;max-width:320px;background:linear-gradient(135deg,#0f1f3d,#163255);border:1px solid rgba(14,165,233,0.22);border-radius:20px;padding:36px 28px;box-shadow:0 0 64px rgba(14,165,233,0.1);opacity:0;animation:wIn 0.7s 0.65s forwards;">
-        <span style="display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;border-radius:9999px;margin-bottom:20px;">New Patient Special</span>
-        <h3 class="pf" style="font-size:1.65rem;color:#fff;font-weight:700;line-height:1.2;margin-bottom:10px;">Free Consultation + X-Rays</h3>
+      <div style="width:100%;max-width:320px;background:rgba(15,31,61,0.80);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid rgba(14,165,233,0.28);border-radius:22px;padding:36px 28px;box-shadow:0 0 80px rgba(14,165,233,0.14),0 40px 80px rgba(0,0,0,0.5);opacity:0;animation:wIn 0.7s 0.65s forwards;">
+        <span style="display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 14px;border-radius:9999px;margin-bottom:22px;">New Patient Special</span>
+        <h3 class="pf" style="font-size:1.7rem;color:#fff;font-weight:700;line-height:1.18;margin-bottom:10px;">Free Consultation + X-Rays</h3>
         <p style="font-size:0.88rem;color:#475569;text-decoration:line-through;margin-bottom:4px;">Normally $180</p>
-        <p style="font-size:1rem;color:#22c55e;font-weight:700;margin-bottom:24px;">Yours free this month</p>
+        <p style="font-size:1.02rem;color:#4ade80;font-weight:700;margin-bottom:28px;">Yours free this month</p>
         <a href="#contact" class="btn-a" style="width:100%;justify-content:center;">Claim Now →</a>
-        <p style="font-size:12px;color:#334155;text-align:center;margin-top:12px;">New patients only. Limited slots available.</p>
+        <div style="display:flex;align-items:center;gap:9px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07);">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <p style="font-size:12px;color:#334155;">No credit card required · Limited slots</p>
+        </div>
       </div>
     </div>
 
   </div>
 
-  <!-- Scroll arrow -->
-  <div style="position:absolute;bottom:32px;left:50%;animation:bounce 1.8s ease-in-out infinite;">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+  <!-- Scroll indicator -->
+  <div style="position:absolute;bottom:32px;left:50%;animation:bounce 2s ease-in-out infinite;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
   </div>
 </section>
 
 
-<!-- ════════ STATS ════════ -->
-<section style="background:var(--accent);padding:52px 24px;">
-  <div style="max-width:960px;margin:0 auto;" class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+<!-- ════════════════════════════════════════ STATS ════════════════════════════════════════ -->
+<section style="background:var(--accent);padding:56px 24px;position:relative;overflow:hidden;">
+  <!-- Diagonal stripe texture -->
+  <div style="position:absolute;inset:0;opacity:0.06;background:repeating-linear-gradient(45deg,rgba(255,255,255,0) 0,rgba(255,255,255,0) 5px,rgba(255,255,255,1) 5px,rgba(255,255,255,1) 6px);pointer-events:none;"></div>
+  <div style="max-width:960px;margin:0 auto;position:relative;" class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
     <div class="r">
       <div class="sn" data-target="12">0</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.72);margin-top:6px;font-weight:500;">Years of Care</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.78);margin-top:7px;font-weight:500;letter-spacing:0.03em;">Years of Care</div>
     </div>
     <div class="r d1">
       <div class="sn" data-target="214">0</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.72);margin-top:6px;font-weight:500;">Verified Reviews</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.78);margin-top:7px;font-weight:500;letter-spacing:0.03em;">Verified Reviews</div>
     </div>
     <div class="r d2">
       <div class="sn" data-target="4800">0</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.72);margin-top:6px;font-weight:500;">Happy Patients</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.78);margin-top:7px;font-weight:500;letter-spacing:0.03em;">Happy Patients</div>
     </div>
     <div class="r d3">
       <div class="sn">4.9 ★</div>
-      <div style="font-size:13px;color:rgba(255,255,255,0.72);margin-top:6px;font-weight:500;">Google Rating</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.78);margin-top:7px;font-weight:500;letter-spacing:0.03em;">Google Rating</div>
     </div>
   </div>
 </section>
 
 
-<!-- ════════ PAIN ════════ -->
+<!-- ════════════════════════════════════════ PAIN ════════════════════════════════════════ -->
 <section class="sp" style="background:#fff;">
   <div style="max-width:1000px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:56px;">
+    <div style="text-align:center;margin-bottom:58px;">
       <h2 class="pf r" style="font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);font-weight:700;line-height:1.2;margin-bottom:16px;">Most dental websites make patients<br>nervous before they even call.</h2>
       <p class="r d1" style="font-size:1.05rem;color:var(--text2);">Yours should do the opposite.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <div class="r" style="background:#FFF5F5;border:1px solid #FED7D7;border-radius:16px;padding:32px 28px;">
-        <p style="font-size:11px;font-weight:700;color:#DC2626;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:20px;">What patients hate</p>
-        <div style="display:flex;flex-direction:column;gap:13px;">
-          <div style="display:flex;gap:12px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">Hard to find what services you offer</span></div>
-          <div style="display:flex;gap:12px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">No idea about pricing or payment options</span></div>
-          <div style="display:flex;gap:12px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">Can't book online — have to call during hours</span></div>
-          <div style="display:flex;gap:12px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">Looks old, outdated, and untrustworthy</span></div>
-          <div style="display:flex;gap:12px;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">No reviews visible anywhere on the site</span></div>
+      <div class="r" style="background:#FFF5F5;border:1px solid #FED7D7;border-radius:18px;padding:34px 30px;">
+        <p style="font-size:11px;font-weight:700;color:#DC2626;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px;">What patients hate</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;margin-top:1px;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">Hard to find what services you offer</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;margin-top:1px;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">No idea about pricing or payment options</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;margin-top:1px;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">Can't book online — have to call during hours</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;margin-top:1px;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">Looks old, outdated, and untrustworthy</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:#DC2626;font-weight:700;flex-shrink:0;margin-top:1px;">×</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">No reviews visible anywhere on the site</span></div>
         </div>
       </div>
-      <div class="r d1" style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:16px;padding:32px 28px;">
-        <p style="font-size:11px;font-weight:700;color:#16a34a;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:20px;">What Bright Smile gives them</p>
-        <div style="display:flex;flex-direction:column;gap:13px;">
-          <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">Clear services with detailed descriptions</span></div>
-          <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">Transparent pricing and 0% payment plans</span></div>
-          <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">One-click appointment booking, any time</span></div>
-          <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">Modern, calming, professional design</span></div>
-          <div style="display:flex;gap:12px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.65;">214+ verified Google reviews front and center</span></div>
+      <div class="r d1" style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:18px;padding:34px 30px;">
+        <p style="font-size:11px;font-weight:700;color:#16a34a;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px;">What Bright Smile gives them</p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">Clear services with detailed descriptions</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">Transparent pricing and 0% payment plans</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">One-click appointment booking, any time</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">Modern, calming, professional design</span></div>
+          <div style="display:flex;gap:13px;align-items:flex-start;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;margin-top:1px;">✓</span><span style="font-size:0.92rem;color:var(--text2);line-height:1.68;">214+ verified Google reviews front and center</span></div>
         </div>
       </div>
     </div>
@@ -224,67 +252,109 @@
 </section>
 
 
-<!-- ════════ SERVICES ════════ -->
+<!-- ════════════════════════════════════════ SERVICES ════════════════════════════════════════ -->
 <section id="services" class="sp" style="background:var(--off);">
   <div style="max-width:1100px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:56px;">
-      <p class="r" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">What We Offer</p>
-      <h2 class="pf r d1" style="font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);font-weight:700;">Everything Your Family Needs,<br>In One Place</h2>
+    <div style="text-align:center;margin-bottom:58px;">
+      <p class="r" style="font-size:11px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">What We Offer</p>
+      <h2 class="pf r d1" style="font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);font-weight:700;line-height:1.18;">Everything Your Family Needs,<br>In One Place</h2>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
 
+      <!-- General Dentistry -->
       <div class="sc r">
-        <div style="width:48px;height:48px;background:#EFF6FF;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 2 2 7 2 10c0 4 2 6 3 9 .5 1.5 1 3 3 3s2.5-1.5 3-3c.25-.75.5-1.5 1-1.5s.75.75 1 1.5c.5 1.5 1 3 3 3s2.5-1.5 3-3c1-3 3-5 3-9 0-3-4-8-10-8z"/></svg>
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffbb26e64f2?auto=format&fit=crop&w=600&q=90" alt="General Dentistry" loading="lazy" />
+          <div class="sc-overlay" style="background:linear-gradient(to bottom,rgba(10,22,40,0.30) 0%,rgba(10,22,40,0.72) 100%);"></div>
+          <div class="sc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 2 2 7 2 10c0 4 2 6 3 9 .5 1.5 1 3 3 3s2.5-1.5 3-3c.25-.75.5-1.5 1-1.5s.75.75 1 1.5c.5 1.5 1 3 3 3s2.5-1.5 3-3c1-3 3-5 3-9 0-3-4-8-10-8z"/></svg>
+          </div>
         </div>
-        <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">General Dentistry</h3>
-        <p style="font-size:0.87rem;color:var(--text2);line-height:1.72;margin-bottom:14px;">Comprehensive check-ups, cleanings, fillings, and preventive care to keep your smile healthy year-round.</p>
-        <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        <div class="sc-body">
+          <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">General Dentistry</h3>
+          <p style="font-size:0.87rem;color:var(--text2);line-height:1.74;margin-bottom:14px;">Comprehensive check-ups, cleanings, fillings, and preventive care to keep your smile healthy year-round.</p>
+          <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        </div>
       </div>
 
+      <!-- Teeth Whitening -->
       <div class="sc r d1">
-        <div style="width:48px;height:48px;background:#EFF6FF;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?auto=format&fit=crop&w=600&q=90" alt="Teeth Whitening" loading="lazy" />
+          <div class="sc-overlay" style="background:linear-gradient(to bottom,rgba(2,132,199,0.35) 0%,rgba(10,22,40,0.78) 100%);"></div>
+          <div class="sc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
         </div>
-        <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Teeth Whitening</h3>
-        <p style="font-size:0.87rem;color:var(--text2);line-height:1.72;margin-bottom:14px;">Professional-grade whitening up to 8 shades brighter — safely, quickly, and with results that last.</p>
-        <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        <div class="sc-body">
+          <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Teeth Whitening</h3>
+          <p style="font-size:0.87rem;color:var(--text2);line-height:1.74;margin-bottom:14px;">Professional-grade whitening up to 8 shades brighter — safely, quickly, and with results that last.</p>
+          <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        </div>
       </div>
 
+      <!-- Invisalign -->
       <div class="sc r d2">
-        <div style="width:48px;height:48px;background:#EFF6FF;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=90" alt="Invisalign" loading="lazy" />
+          <div class="sc-overlay" style="background:linear-gradient(to bottom,rgba(124,58,237,0.30) 0%,rgba(10,22,40,0.78) 100%);"></div>
+          <div class="sc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </div>
         </div>
-        <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Invisalign</h3>
-        <p style="font-size:0.87rem;color:var(--text2);line-height:1.72;margin-bottom:14px;">Straighten your teeth without wires or brackets. Clear, removable aligners that fit your lifestyle.</p>
-        <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        <div class="sc-body">
+          <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Invisalign</h3>
+          <p style="font-size:0.87rem;color:var(--text2);line-height:1.74;margin-bottom:14px;">Straighten your teeth without wires or brackets. Clear, removable aligners that fit your lifestyle.</p>
+          <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        </div>
       </div>
 
+      <!-- Dental Implants -->
       <div class="sc r d3">
-        <div style="width:48px;height:48px;background:#EFF6FF;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=90" alt="Dental Implants" loading="lazy" />
+          <div class="sc-overlay" style="background:linear-gradient(to bottom,rgba(10,22,40,0.35) 0%,rgba(10,22,40,0.80) 100%);"></div>
+          <div class="sc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
         </div>
-        <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Dental Implants</h3>
-        <p style="font-size:0.87rem;color:var(--text2);line-height:1.72;margin-bottom:14px;">Replace missing teeth with permanent, natural-looking implants that restore function and confidence.</p>
-        <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        <div class="sc-body">
+          <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Dental Implants</h3>
+          <p style="font-size:0.87rem;color:var(--text2);line-height:1.74;margin-bottom:14px;">Replace missing teeth with permanent, natural-looking implants that restore function and confidence.</p>
+          <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        </div>
       </div>
 
+      <!-- Emergency Care -->
       <div class="sc r d4">
-        <div style="width:48px;height:48px;background:#EFF6FF;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=90" alt="Emergency Care" loading="lazy" />
+          <div class="sc-overlay" style="background:linear-gradient(to bottom,rgba(153,27,27,0.35) 0%,rgba(10,22,40,0.80) 100%);"></div>
+          <div class="sc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
         </div>
-        <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Emergency Care</h3>
-        <p style="font-size:0.87rem;color:var(--text2);line-height:1.72;margin-bottom:14px;">Dental pain can't wait. We keep same-day slots open for emergencies — call and we'll see you today.</p>
-        <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        <div class="sc-body">
+          <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Emergency Care</h3>
+          <p style="font-size:0.87rem;color:var(--text2);line-height:1.74;margin-bottom:14px;">Dental pain can't wait. We keep same-day slots open for emergencies — call and we'll see you today.</p>
+          <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        </div>
       </div>
 
+      <!-- Children's Dentistry -->
       <div class="sc r d5">
-        <div style="width:48px;height:48px;background:#EFF6FF;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <div class="sc-img">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=90" alt="Children's Dentistry" loading="lazy" />
+          <div class="sc-overlay" style="background:linear-gradient(to bottom,rgba(6,78,59,0.30) 0%,rgba(10,22,40,0.78) 100%);"></div>
+          <div class="sc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
         </div>
-        <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Children's Dentistry</h3>
-        <p style="font-size:0.87rem;color:var(--text2);line-height:1.72;margin-bottom:14px;">A gentle, fun experience that builds healthy habits early. Kids actually look forward to visiting us.</p>
-        <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        <div class="sc-body">
+          <h3 class="pf" style="font-size:1.08rem;font-weight:700;margin-bottom:8px;">Children's Dentistry</h3>
+          <p style="font-size:0.87rem;color:var(--text2);line-height:1.74;margin-bottom:14px;">A gentle, fun experience that builds healthy habits early. Kids actually look forward to visiting us.</p>
+          <a href="#contact" style="font-size:13px;color:var(--accent);font-weight:600;text-decoration:none;">Learn more →</a>
+        </div>
       </div>
 
     </div>
@@ -292,48 +362,45 @@
 </section>
 
 
-<!-- ════════ DOCTOR ════════ -->
+<!-- ════════════════════════════════════════ DOCTOR ════════════════════════════════════════ -->
 <section id="doctor" class="sp" style="background:#fff;">
   <div style="max-width:1100px;margin:0 auto;" class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-    <!-- Left card -->
+    <!-- Left: Real doctor photo -->
     <div class="r" style="position:relative;">
-      <div style="background:linear-gradient(135deg,var(--navy),#1a3460);border-radius:20px;padding:52px 36px;text-align:center;min-height:360px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-        <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#0369a1);display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
-          <span style="font-size:1.8rem;color:#fff;font-weight:700;">SC</span>
-        </div>
-        <h3 class="pf" style="font-size:1.8rem;color:#fff;font-weight:700;margin-bottom:6px;">Dr. Sarah Chen</h3>
-        <p style="font-size:0.88rem;color:#64748B;margin-bottom:24px;">DDS, FAGD &middot; Austin, Texas</p>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
-          <span style="background:rgba(14,165,233,0.14);color:var(--accent);font-size:12px;font-weight:600;padding:5px 12px;border-radius:9999px;border:1px solid rgba(14,165,233,0.28);">12+ Years</span>
-          <span style="background:rgba(14,165,233,0.14);color:var(--accent);font-size:12px;font-weight:600;padding:5px 12px;border-radius:9999px;border:1px solid rgba(14,165,233,0.28);">UT Austin DDS</span>
-          <span style="background:rgba(14,165,233,0.14);color:var(--accent);font-size:12px;font-weight:600;padding:5px 12px;border-radius:9999px;border:1px solid rgba(14,165,233,0.28);">ADA Member</span>
+      <div style="border-radius:22px;overflow:hidden;position:relative;min-height:500px;">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=90" alt="Dr. Sarah Chen" loading="lazy" style="width:100%;min-height:500px;object-fit:cover;object-position:top center;display:block;" />
+        <!-- Bottom gradient with name overlay -->
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,22,40,0.95) 0%,rgba(10,22,40,0.45) 45%,transparent 100%);padding:28px 26px;">
+          <h3 class="pf" style="font-size:1.55rem;color:#fff;font-weight:700;margin-bottom:5px;">Dr. Sarah Chen</h3>
+          <p style="font-size:0.88rem;color:rgba(255,255,255,0.60);">DDS, FAGD &middot; Austin, Texas</p>
         </div>
       </div>
-      <div style="position:absolute;top:-14px;right:-14px;background:var(--accent);color:#fff;border-radius:12px;padding:12px 16px;text-align:center;box-shadow:0 8px 24px rgba(14,165,233,0.4);">
-        <div style="font-size:1.5rem;font-weight:900;line-height:1;">12</div>
-        <div style="font-size:11px;font-weight:600;opacity:0.88;">yrs exp.</div>
+      <!-- Experience badge -->
+      <div style="position:absolute;top:18px;right:18px;background:var(--accent);color:#fff;border-radius:14px;padding:14px 18px;text-align:center;box-shadow:0 10px 32px rgba(14,165,233,0.50);">
+        <div style="font-size:1.65rem;font-weight:900;line-height:1;">12</div>
+        <div style="font-size:11px;font-weight:600;opacity:0.90;white-space:nowrap;">yrs exp.</div>
       </div>
     </div>
 
     <!-- Right content -->
     <div>
-      <p class="r" style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Meet Dr. Sarah Chen</p>
-      <h2 class="pf r d1" style="font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--text);font-weight:700;line-height:1.2;margin-bottom:20px;">Dentistry Built on Kindness and Precision</h2>
-      <p class="r d2" style="font-size:0.94rem;color:var(--text2);line-height:1.82;margin-bottom:14px;">Dr. Sarah Chen founded Bright Smile Dental with one mission: to give Austin patients a dental experience that feels nothing like the one they dread. Her approach pairs clinical precision with genuine warmth — patients often forget they are at the dentist at all.</p>
-      <p class="r d2" style="font-size:0.94rem;color:var(--text2);line-height:1.82;margin-bottom:28px;">A graduate of UT Austin Dental School and Fellow of the Academy of General Dentistry, Dr. Chen has spent 12 years earning a 4.9-star rating from over 214 patients across Austin.</p>
-      <div class="r d3" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;">
-        <div style="background:var(--off);border:1px solid var(--border);border-radius:10px;padding:13px 16px;text-align:center;">
-          <div style="font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Education</div>
-          <div style="font-size:13px;font-weight:600;color:var(--text);">UT Austin DDS</div>
+      <p class="r" style="font-size:12px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Meet Dr. Sarah Chen</p>
+      <h2 class="pf r d1" style="font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--text);font-weight:700;line-height:1.18;margin-bottom:20px;">Dentistry Built on Kindness and Precision</h2>
+      <p class="r d2" style="font-size:0.94rem;color:var(--text2);line-height:1.84;margin-bottom:14px;">Dr. Sarah Chen founded Bright Smile Dental with one mission: to give Austin patients a dental experience that feels nothing like the one they dread. Her approach pairs clinical precision with genuine warmth — patients often forget they are at the dentist at all.</p>
+      <p class="r d2" style="font-size:0.94rem;color:var(--text2);line-height:1.84;margin-bottom:30px;">A graduate of UT Austin Dental School and Fellow of the Academy of General Dentistry, Dr. Chen has spent 12 years earning a 4.9-star rating from over 214 patients across Austin.</p>
+      <div class="r d3" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px;">
+        <div style="background:var(--off);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-align:center;">
+          <div style="font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;">Education</div>
+          <div style="font-size:13px;font-weight:700;color:var(--text);">UT Austin DDS</div>
         </div>
-        <div style="background:var(--off);border:1px solid var(--border);border-radius:10px;padding:13px 16px;text-align:center;">
-          <div style="font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Recognition</div>
-          <div style="font-size:13px;font-weight:600;color:var(--text);">FAGD Fellow</div>
+        <div style="background:var(--off);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-align:center;">
+          <div style="font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;">Recognition</div>
+          <div style="font-size:13px;font-weight:700;color:var(--text);">FAGD Fellow</div>
         </div>
-        <div style="background:var(--off);border:1px solid var(--border);border-radius:10px;padding:13px 16px;text-align:center;">
-          <div style="font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Membership</div>
-          <div style="font-size:13px;font-weight:600;color:var(--text);">ADA &amp; TDA</div>
+        <div style="background:var(--off);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-align:center;">
+          <div style="font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:5px;">Membership</div>
+          <div style="font-size:13px;font-weight:700;color:var(--text);">ADA &amp; TDA</div>
         </div>
       </div>
       <a href="#contact" class="btn-a r d4">Book with Dr. Chen →</a>
@@ -343,59 +410,135 @@
 </section>
 
 
-<!-- ════════ REVIEWS ════════ -->
+<!-- ════════════════════════════════════════ GALLERY ════════════════════════════════════════ -->
+<section class="sp" style="background:var(--navy);position:relative;overflow:hidden;">
+  <!-- Atmospheric glow -->
+  <div style="position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(ellipse at center,rgba(14,165,233,0.10) 0%,transparent 65%);pointer-events:none;"></div>
+  <div style="max-width:1100px;margin:0 auto;position:relative;">
+    <div style="text-align:center;margin-bottom:56px;">
+      <p class="r" style="font-size:11px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Patient Results</p>
+      <h2 class="pf r d1" style="font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;font-weight:700;margin-bottom:14px;">Real Smiles. Real Results.</h2>
+      <p class="r d2" style="font-size:0.97rem;color:#64748B;max-width:44ch;margin:0 auto;">Every smile here belongs to a real Austin patient. Yours could be next.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 r d1">
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=90" alt="Happy patient" loading="lazy" />
+        <div class="gal-overlay"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=90" alt="Happy patient" loading="lazy" />
+        <div class="gal-overlay"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=90" alt="Happy patient" loading="lazy" />
+        <div class="gal-overlay"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=90" alt="Happy patient" loading="lazy" />
+        <div class="gal-overlay"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=90" alt="Happy patient" loading="lazy" />
+        <div class="gal-overlay"></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=90" alt="Happy patient" loading="lazy" />
+        <div class="gal-overlay"></div>
+      </div>
+    </div>
+    <div class="r d2" style="text-align:center;margin-top:40px;">
+      <a href="#contact" class="btn-a" style="background:transparent;border:1.5px solid rgba(14,165,233,0.45);color:#fff;font-weight:600;">Book Your Transformation →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════ REVIEWS ════════════════════════════════════════ -->
 <section id="reviews" class="sp" style="background:var(--off);">
   <div style="max-width:1100px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:52px;">
-      <p class="r" style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Patient Reviews</p>
+      <p class="r" style="font-size:11px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Patient Reviews</p>
       <h2 class="pf r d1" style="font-size:clamp(1.8rem,4vw,2.8rem);color:var(--text);font-weight:700;margin-bottom:12px;">What Austin Patients Are Saying</h2>
       <p class="r d2" style="font-size:0.97rem;color:var(--text2);">4.9 stars from 214+ verified Google reviews</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <div class="rc r">
-        <div style="color:var(--accent);font-size:1.1rem;margin-bottom:14px;">★★★★★</div>
-        <p style="font-size:0.91rem;color:var(--text2);line-height:1.78;margin-bottom:20px;">"Best dental experience I've ever had. Dr. Chen is incredibly gentle and the results are amazing. I actually look forward to my appointments now."</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <span style="font-size:0.9rem;font-weight:700;color:var(--text);">James T.</span>
-          <span style="font-size:11px;color:var(--text3);">Verified Google Review</span>
-        </div>
-      </div>
-      <div class="rc r d1">
-        <div style="color:var(--accent);font-size:1.1rem;margin-bottom:14px;">★★★★★</div>
-        <p style="font-size:0.91rem;color:var(--text2);line-height:1.78;margin-bottom:20px;">"Finally a dentist I actually look forward to visiting. The whole team made me feel so comfortable from the moment I walked in."</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <span style="font-size:0.9rem;font-weight:700;color:var(--text);">Maria S.</span>
-          <span style="font-size:11px;color:var(--text3);">Verified Google Review</span>
-        </div>
-      </div>
-      <div class="rc r d2">
-        <div style="color:var(--accent);font-size:1.1rem;margin-bottom:14px;">★★★★★</div>
-        <p style="font-size:0.91rem;color:var(--text2);line-height:1.78;margin-bottom:20px;">"Got my Invisalign done here. Finished ahead of schedule and my smile has completely transformed. Couldn't be happier."</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <span style="font-size:0.9rem;font-weight:700;color:var(--text);">David K.</span>
-          <span style="font-size:11px;color:var(--text3);">Verified Google Review</span>
+
+    <!-- Featured hero review -->
+    <div class="r d1" style="background:var(--navy);border-radius:22px;padding:42px 40px;margin-bottom:22px;position:relative;overflow:hidden;">
+      <!-- Decorative quote mark -->
+      <div style="position:absolute;top:-20px;right:20px;font-size:16rem;color:rgba(14,165,233,0.05);font-family:'Playfair Display',serif;line-height:1;pointer-events:none;user-select:none;">"</div>
+      <div style="color:#FACC15;font-size:1.2rem;margin-bottom:18px;letter-spacing:0.06em;">★★★★★</div>
+      <p class="pf" style="font-size:clamp(1.05rem,2.2vw,1.45rem);color:#fff;line-height:1.64;margin-bottom:26px;font-style:italic;position:relative;z-index:1;max-width:68ch;">"Dr. Chen changed the way I think about going to the dentist. I actually look forward to my appointments now. The team is warm, the office is beautiful, and the results speak for themselves. I've recommended Bright Smile to everyone I know."</p>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=80&q=90" alt="Sarah M." style="width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid rgba(14,165,233,0.45);" loading="lazy" />
+        <div>
+          <div style="font-weight:700;color:#fff;font-size:0.95rem;">Sarah M.</div>
+          <div style="font-size:12px;color:#475569;margin-top:2px;">Austin, Texas &middot; Verified Google Patient</div>
         </div>
       </div>
     </div>
-    <div class="r" style="text-align:center;margin-top:36px;">
+
+    <!-- 3 review cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="rc r">
+        <div style="color:#FACC15;font-size:1.05rem;margin-bottom:14px;letter-spacing:0.06em;">★★★★★</div>
+        <p style="font-size:0.91rem;color:var(--text2);line-height:1.80;margin-bottom:22px;">"Best dental experience I've ever had. Dr. Chen is incredibly gentle and the results are amazing. I actually look forward to my appointments now."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=90" alt="James T." style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" loading="lazy" />
+          <div>
+            <div style="font-size:0.9rem;font-weight:700;color:var(--text);">James T.</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:2px;">Verified Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="rc r d1">
+        <div style="color:#FACC15;font-size:1.05rem;margin-bottom:14px;letter-spacing:0.06em;">★★★★★</div>
+        <p style="font-size:0.91rem;color:var(--text2);line-height:1.80;margin-bottom:22px;">"Finally a dentist I actually look forward to visiting. The whole team made me feel so comfortable from the moment I walked in. Absolutely wonderful."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=80&q=90" alt="Maria S." style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" loading="lazy" />
+          <div>
+            <div style="font-size:0.9rem;font-weight:700;color:var(--text);">Maria S.</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:2px;">Verified Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="rc r d2">
+        <div style="color:#FACC15;font-size:1.05rem;margin-bottom:14px;letter-spacing:0.06em;">★★★★★</div>
+        <p style="font-size:0.91rem;color:var(--text2);line-height:1.80;margin-bottom:22px;">"Got my Invisalign done here. Finished ahead of schedule and my smile has completely transformed. Couldn't be happier with the results."</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=90" alt="David K." style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--border);" loading="lazy" />
+          <div>
+            <div style="font-size:0.9rem;font-weight:700;color:var(--text);">David K.</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:2px;">Verified Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="r d3" style="text-align:center;margin-top:36px;">
       <a href="#" style="font-size:14px;color:var(--accent);font-weight:600;text-decoration:none;">See all 214 reviews on Google →</a>
     </div>
   </div>
 </section>
 
 
-<!-- ════════ BOOKING CTA ════════ -->
-<section id="contact" class="sp" style="background:var(--navy);">
-  <div style="max-width:580px;margin:0 auto;text-align:center;">
-    <h2 class="pf r" style="font-size:clamp(2rem,5vw,3rem);color:#fff;font-weight:700;line-height:1.15;margin-bottom:14px;">Ready to Love Your Smile?</h2>
-    <p class="r d1" style="font-size:1rem;color:#64748B;margin-bottom:40px;">New patients welcome. Same-day appointments often available.</p>
+<!-- ════════════════════════════════════════ BOOKING CTA ════════════════════════════════════════ -->
+<section id="contact" class="sp" style="position:relative;overflow:hidden;">
+  <!-- Background: real dental office with deep overlay -->
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1920&q=90" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center;" loading="lazy" />
+    <div style="position:absolute;inset:0;background:rgba(10,22,40,0.93);"></div>
+  </div>
+
+  <div style="max-width:580px;margin:0 auto;text-align:center;position:relative;z-index:1;">
+    <h2 class="pf r" style="font-size:clamp(2rem,5vw,3.1rem);color:#fff;font-weight:700;line-height:1.12;margin-bottom:14px;">Ready to Love Your Smile?</h2>
+    <p class="r d1" style="font-size:1rem;color:#64748B;margin-bottom:42px;">New patients welcome. Same-day appointments often available.</p>
 
     <div id="form-wrap" class="r d2">
-      <div id="form-success" style="display:none;padding:48px 0;text-align:center;">
-        <div style="width:64px;height:64px;background:rgba(14,165,233,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;border:1px solid rgba(14,165,233,0.3);">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <div id="form-success" style="display:none;padding:52px 0;text-align:center;">
+        <div style="width:68px;height:68px;background:rgba(14,165,233,0.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;border:1px solid rgba(14,165,233,0.32);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        <h3 class="pf" style="font-size:1.4rem;color:#fff;margin-bottom:10px;">Appointment request received!</h3>
+        <h3 class="pf" style="font-size:1.45rem;color:#fff;margin-bottom:10px;">Appointment request received!</h3>
         <p style="font-size:14px;color:#64748B;">We'll call you within 2 hours to confirm your slot.</p>
       </div>
 
@@ -415,27 +558,27 @@
           <option>Free New Patient Consultation</option>
         </select>
         <input class="fld" type="email" placeholder="Email Address" required />
-        <button type="submit" class="btn-a" style="width:100%;justify-content:center;padding:16px;font-size:15px;margin-top:4px;">Book My Appointment →</button>
+        <button type="submit" class="btn-a" style="width:100%;justify-content:center;padding:16px;font-size:15px;margin-top:4px;box-shadow:0 10px 36px rgba(14,165,233,0.5);">Book My Appointment →</button>
       </form>
     </div>
 
-    <p class="r d3" style="font-size:14px;color:#334155;margin-top:20px;">
-      Or call us: <a href="tel:+15124890012" style="color:#64748B;font-weight:600;text-decoration:none;">+1 (512) 489-0012</a>
+    <p class="r d3" style="font-size:14px;color:#334155;margin-top:22px;">
+      Or call us directly: <a href="tel:+15124890012" style="color:#64748B;font-weight:700;text-decoration:none;">+1 (512) 489-0012</a>
       &nbsp;&middot;&nbsp; We respond within 2 hours
     </p>
 
-    <div class="r d4" style="margin-top:36px;border:1px solid rgba(14,165,233,0.22);border-radius:14px;padding:22px 24px;background:rgba(14,165,233,0.05);">
-      <p style="font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;">You see it first. You pay only if you love it. Zero risk.</p>
+    <div class="r d4" style="margin-top:38px;border:1px solid rgba(14,165,233,0.22);border-radius:14px;padding:24px 26px;background:rgba(14,165,233,0.06);">
+      <p style="font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;">You see it first. You pay only if you love it. Zero risk.</p>
       <p style="font-size:12px;color:#334155;">This demo was built by <a href="https://riskfreesites.com" style="color:#475569;font-weight:600;text-decoration:none;">RiskFreeSites</a> — no upfront cost, no contracts.</p>
     </div>
   </div>
 </section>
 
 
-<!-- ════════ FAQ ════════ -->
+<!-- ════════════════════════════════════════ FAQ ════════════════════════════════════════ -->
 <section class="sp" style="background:#fff;">
-  <div style="max-width:680px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:48px;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:52px;">
       <h2 class="pf r" style="font-size:clamp(1.8rem,4vw,2.6rem);color:var(--text);font-weight:700;">Questions? We've Got Answers.</h2>
     </div>
     <div class="r d1">
@@ -468,29 +611,29 @@
 </section>
 
 
-<!-- ════════ FOOTER ════════ -->
+<!-- ════════════════════════════════════════ FOOTER ════════════════════════════════════════ -->
 <footer style="background:var(--navy);padding:64px 24px 32px;">
   <div style="max-width:1100px;margin:0 auto;">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10" style="padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.07);">
       <div>
-        <span class="pf" style="font-size:1.25rem;font-weight:700;color:#fff;display:block;margin-bottom:10px;">Bright Smile Dental</span>
-        <p style="font-size:0.87rem;color:#334155;line-height:1.75;">Serving Austin families with compassionate dental care since 2013.</p>
+        <span class="pf" style="font-size:1.25rem;font-weight:700;color:#fff;display:block;margin-bottom:12px;">Bright Smile Dental</span>
+        <p style="font-size:0.87rem;color:#334155;line-height:1.78;max-width:26ch;">Serving Austin families with compassionate, expert dental care since 2013.</p>
       </div>
       <div>
-        <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:16px;">Quick Links</p>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="#services" style="font-size:14px;color:#334155;text-decoration:none;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">Services</a>
+        <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:18px;">Quick Links</p>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="#services" style="font-size:14px;color:#334155;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">Services</a>
           <a href="#doctor"   style="font-size:14px;color:#334155;text-decoration:none;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">About Dr. Chen</a>
           <a href="#reviews"  style="font-size:14px;color:#334155;text-decoration:none;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">Patient Reviews</a>
           <a href="#contact"  style="font-size:14px;color:#334155;text-decoration:none;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">Book Appointment</a>
         </div>
       </div>
       <div>
-        <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:16px;">Contact</p>
-        <div style="display:flex;flex-direction:column;gap:10px;">
+        <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:18px;">Contact</p>
+        <div style="display:flex;flex-direction:column;gap:11px;">
           <a href="tel:+15124890012" style="font-size:14px;color:#334155;text-decoration:none;" onmouseover="this.style.color='#64748B'" onmouseout="this.style.color='#334155'">+1 (512) 489-0012</a>
-          <span style="font-size:14px;color:#334155;line-height:1.65;">142 Congress Ave<br>Austin, TX 78701</span>
-          <div style="display:flex;gap:16px;margin-top:4px;">
+          <span style="font-size:14px;color:#334155;line-height:1.68;">142 Congress Ave<br>Austin, TX 78701</span>
+          <div style="display:flex;gap:18px;margin-top:4px;">
             <a href="#" style="font-size:13px;color:#334155;text-decoration:none;font-weight:500;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#334155'">Facebook</a>
             <a href="#" style="font-size:13px;color:#334155;text-decoration:none;font-weight:500;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#334155'">Instagram</a>
             <a href="#" style="font-size:13px;color:#334155;text-decoration:none;font-weight:500;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='#334155'">Google</a>
@@ -498,7 +641,7 @@
         </div>
       </div>
     </div>
-    <div style="padding-top:24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
+    <div style="padding-top:26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;">
       <p style="font-size:12px;color:#1e293b;">© 2025 Bright Smile Dental. All rights reserved.</p>
       <p style="font-size:12px;color:#1e293b;">Demo by <a href="https://riskfreesites.com" style="color:#334155;font-weight:600;text-decoration:none;">RiskFreeSites</a></p>
     </div>
@@ -506,37 +649,37 @@
 </footer>
 
 
-<!-- ════════ MOBILE STICKY BAR ════════ -->
+<!-- ════════════════════════════════════════ MOBILE STICKY BAR ════════════════════════════════════════ -->
 <div id="mbar" style="position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--navy);border-top:1px solid rgba(255,255,255,0.08);padding:12px 16px;gap:10px;align-items:center;">
-  <a href="tel:+15124890012" style="flex:1;text-align:center;background:rgba(255,255,255,0.07);color:#fff;font-size:14px;font-weight:700;padding:12px;border-radius:9999px;text-decoration:none;border:1px solid rgba(255,255,255,0.12);">📞 Call Now</a>
-  <a href="#contact" style="flex:1;text-align:center;background:var(--accent);color:#fff;font-size:14px;font-weight:700;padding:12px;border-radius:9999px;text-decoration:none;">Book Online</a>
+  <a href="tel:+15124890012" style="flex:1;text-align:center;background:rgba(255,255,255,0.07);color:#fff;font-size:14px;font-weight:700;padding:13px;border-radius:9999px;text-decoration:none;border:1px solid rgba(255,255,255,0.12);">📞 Call Now</a>
+  <a href="#contact" style="flex:1;text-align:center;background:var(--accent);color:#fff;font-size:14px;font-weight:700;padding:13px;border-radius:9999px;text-decoration:none;">Book Online</a>
 </div>
-<div class="md:hidden" style="height:72px;"></div>
+<div class="md:hidden" style="height:76px;"></div>
 
 
 <script>
-  // Nav scroll
+  // ── Nav scroll state
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 
-  // Hero headline word-by-word stagger
+  // ── Hero headline word-by-word stagger
   const hl = document.getElementById('hero-hl');
   const words = 'The Smile You Deserve. The Care You Trust.'.split(' ');
   hl.innerHTML = words.map((w, i) =>
-    `<span class="wi" style="animation-delay:${0.18 + i * 0.08}s">${w}</span> `
+    `<span class="wi" style="animation-delay:${0.20 + i * 0.08}s">${w}</span> `
   ).join('');
 
-  // Scroll reveal
+  // ── Scroll reveal (IntersectionObserver)
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
   document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
-  // Stat counters
+  // ── Stat counters with cubic easing
   const cObs = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
-      const el = e.target, target = +el.dataset.target, dur = 1600, start = performance.now();
+      const el = e.target, target = +el.dataset.target, dur = 1800, start = performance.now();
       const tick = now => {
         const p = Math.min((now - start) / dur, 1);
         const v = Math.round((1 - Math.pow(1 - p, 3)) * target);
@@ -549,17 +692,20 @@
   }, { threshold: 0.5 });
   document.querySelectorAll('[data-target]').forEach(el => cObs.observe(el));
 
-  // Booking form success state
+  // ── Booking form success state
   document.getElementById('booking-form').addEventListener('submit', e => {
     e.preventDefault();
     document.getElementById('booking-form').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
   });
 
-  // Reduced motion
+  // ── Respect prefers-reduced-motion
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.wi, .r').forEach(el => {
-      el.style.opacity = '1'; el.style.transform = 'none'; el.style.animation = 'none';
+    document.querySelectorAll('.wi, .r, .hero-bg-img').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.animation = 'none';
+      el.style.transition = 'none';
     });
   }
 </script>
