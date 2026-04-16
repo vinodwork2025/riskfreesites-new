@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import ErrorBoundary from './components/ErrorBoundary'
 import LoadingScreen from './components/LoadingScreen'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -13,7 +14,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   return (
-    <>
+    <ErrorBoundary>
       <AnimatePresence>
         {isLoading && (
           <LoadingScreen key="loader" onComplete={() => setIsLoading(false)} />
@@ -29,6 +30,6 @@ export default function App() {
         <Stats />
         <Contact />
       </div>
-    </>
+    </ErrorBoundary>
   )
 }
