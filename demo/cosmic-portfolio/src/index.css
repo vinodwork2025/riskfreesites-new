@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties ── */
+:root {
+  --bg:      0 0% 4%;
+  --surface: 0 0% 8%;
+  --text:    0 0% 96%;
+  --muted:   0 0% 53%;
+  --stroke:  0 0% 12%;
+  --accent:  0 0% 96%;
+}
+
+/* ── Base ── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-bg text-text-primary font-body overflow-x-hidden;
+    margin: 0;
+  }
+
+  ::selection {
+    background: rgba(137, 170, 204, 0.25);
+  }
+}
+
+/* ── Utilities ── */
+@layer utilities {
+  .accent-gradient {
+    background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+  }
+
+  .accent-gradient-animated {
+    background: linear-gradient(90deg, #89AACC, #4E85BF, #89AACC);
+    background-size: 200%;
+    animation: gradient-shift 6s ease infinite;
+  }
+
+  /* Gradient border technique */
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(90deg, #89AACC, #4E85BF);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .gradient-border:hover::before {
+    opacity: 1;
+  }
+}
+
+/* ── Keyframes ── */
+@keyframes scroll-down {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(200%); }
+}
+
+@keyframes role-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%;   }
+  50%       { background-position: 100% 50%; }
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s ease-in-out infinite;
+}
+
+/* ── Halftone overlay ── */
+.halftone {
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 4px 4px;
+}
