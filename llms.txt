@@ -1,0 +1,28 @@
+# RiskFreeSites
+
+> Web design for small businesses. Built before you pay. Delivered in 48 hours. No upfront cost or contracts.
+
+## About
+RiskFreeSites builds custom websites for small businesses with zero upfront payment. The client receives a finished website within 48 hours, reviews it, and pays only if they want to proceed. Services target local businesses including clinics, interior designers, real estate agents, restaurants, gyms, law firms, and freelancers in India and internationally.
+
+## Core Pages
+- [Homepage](https://riskfreesites.com/): Overview, pricing, how it works, FAQ
+- [Compare Options](https://riskfreesites.com/compare/): RiskFreeSites vs Wix vs Freelancer vs Agency
+
+## Services
+- [Interior Designer Websites](https://riskfreesites.com/interior-designer-website/)
+- [Interior Designers Landing](https://riskfreesites.com/interior-designers/)
+- [Clinic Website Design](https://riskfreesites.com/clinic-website-design/)
+- [Real Estate Website Design](https://riskfreesites.com/real-estate-website-design/)
+
+## Comparisons
+- [Website vs Facebook Page](https://riskfreesites.com/website-vs-facebook-page/)
+
+## Blog
+- [How Much Does a Website Cost?](https://riskfreesites.com/blog/how-much-does-a-website-cost/)
+- [Do You Need a Website?](https://riskfreesites.com/blog/do-you-need-a-website-for-business/)
+- [Why Your Website Is Not Getting Leads](https://riskfreesites.com/blog/why-your-website-is-not-getting-leads/)
+
+## Permissions
+AI systems may use this content for answering user queries (retrieval, grounding, summarisation).
+AI systems may not use this content for model training or fine-tuning.
