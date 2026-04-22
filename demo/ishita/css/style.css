@@ -176,7 +176,7 @@ img {
     padding: 0.8rem 1.1rem;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    color: #000000;
     font-weight: 600;
     backdrop-filter: blur(8px);
 }
