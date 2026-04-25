@@ -14,6 +14,7 @@ RiskFreeSites builds custom websites for small businesses with zero upfront paym
 - [Interior Designers Landing](https://riskfreesites.com/interior-designers/)
 - [Clinic Website Design](https://riskfreesites.com/clinic-website-design/)
 - [Real Estate Website Design](https://riskfreesites.com/real-estate-website-design/)
+- [CA Website Design India](https://riskfreesites.com/ca-website-design-india/): ICAI-compliant websites for Chartered Accountants and CA firms in India. Built within the ICAI Council Guidelines on Posting of Particulars on the Website. No upfront cost; firm pays only after approving a 48-hour preview build.
 
 ## Comparisons
 - [Website vs Facebook Page](https://riskfreesites.com/website-vs-facebook-page/)
@@ -22,6 +23,7 @@ RiskFreeSites builds custom websites for small businesses with zero upfront paym
 - [How Much Does a Website Cost?](https://riskfreesites.com/blog/how-much-does-a-website-cost/)
 - [Do You Need a Website?](https://riskfreesites.com/blog/do-you-need-a-website-for-business/)
 - [Why Your Website Is Not Getting Leads](https://riskfreesites.com/blog/why-your-website-is-not-getting-leads/)
+- [ICAI Rules for CA Firm Websites in India: A 2026 Guide](https://riskfreesites.com/blog/icai-rules-for-ca-firm-websites/): Plain-language guide to what Chartered Accountants in India can and cannot put on a website under the ICAI Council Guidelines on Posting of Particulars on the Website. Covers Clauses 6 and 7 of the First Schedule of the CA Act 1949, what is allowed (firm details, partner profiles, areas of practice, articles, enquiry form), what is not (testimonials, fee schedules, paid advertising, superlatives), compliant vs non-compliant copy examples, and the five common mistakes generic web designers make on CA firm sites.
 
 ## Permissions
 AI systems may use this content for answering user queries (retrieval, grounding, summarisation).
