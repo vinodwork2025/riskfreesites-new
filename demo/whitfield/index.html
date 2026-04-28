@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitfield Aesthetics — Dr. James Whitfield, Consultant Plastic &amp; Cosmetic Surgeon. Harley Street, London.</title>
+<meta name="description" content="The private Harley Street practice of Dr. James Whitfield. Consultant Plastic &amp; Cosmetic Surgeon. FRCS (Plast). GMC registered. 18 years. Precision. Discretion. Results.">
+<meta name="theme-color" content="#0C1523">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" /></noscript>
+<style>
+:root{
+  --ink:#0C1523;
+  --ink-2:#1A2738;
+  --ink-3:#3A4758;
+  --gold:#BC9A5C;
+  --gold-2:#D4B877;
+  --gold-3:#8F7233;
+  --paper:#F4F0E6;
+  --paper-2:#EAE4D4;
+  --paper-3:#DDD5BF;
+  --text:#2B3342;
+  --text-2:#5A6170;
+  --text-3:#8A8F98;
+  --line:rgba(12,21,35,.1);
+  --line-gold:rgba(188,154,92,.25);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-swift:cubic-bezier(.77,0,.175,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+::selection{background:var(--gold);color:var(--ink)}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth;background:var(--paper)}
+body{font-family:'Inter',sans-serif;font-weight:400;color:var(--text);background:var(--paper);line-height:1.7;font-size:15px;overflow-x:hidden;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4,h5,h6{font-family:'Fraunces',serif;font-weight:400;color:var(--ink);letter-spacing:-.022em;line-height:1}
+p{color:var(--text-2);line-height:1.8;font-weight:400}
+a{color:inherit;text-decoration:none;transition:color .4s var(--ease)}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+.container{max-width:1440px;margin:0 auto;padding:0 4rem}
+section{position:relative;padding:10rem 0}
+@media(max-width:960px){section{padding:6rem 0}.container{padding:0 1.5rem}}
+
+/* ===== Typography utilities ===== */
+.serif{font-family:'Fraunces',serif}
+.italic{font-style:italic}
+.small-caps{text-transform:uppercase;letter-spacing:.32em;font-size:.72rem;font-weight:500}
+.chapter{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:3rem;font-family:'Fraunces',serif;font-weight:400}
+.chapter-n{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:3.5rem;color:var(--gold);line-height:1;letter-spacing:-.02em}
+.chapter-l{font-size:.7rem;letter-spacing:.38em;text-transform:uppercase;color:var(--text-3);font-weight:500;font-family:'Inter',sans-serif;padding-bottom:.6rem;border-bottom:1px solid var(--line);flex:0 0 auto;padding-right:4rem}
+
+/* ===== Noise grain ===== */
+.grain{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.045;mix-blend-mode:multiply}
+.grain::before{content:'';position:absolute;inset:-50%;background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:180px 180px;animation:grain 7s steps(6) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}16%{transform:translate(-4%,-4%)}33%{transform:translate(-7%,3%)}50%{transform:translate(3%,-6%)}66%{transform:translate(-2%,6%)}83%{transform:translate(-5%,2%)}}
+
+/* ===== Cursor ===== */
+.cursor{position:fixed;top:0;left:0;width:12px;height:12px;border-radius:50%;background:var(--gold);pointer-events:none;z-index:10000;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:width .3s var(--ease-out),height .3s var(--ease-out),background .3s var(--ease-out);will-change:transform}
+.cursor.hover{width:48px;height:48px;background:var(--paper);mix-blend-mode:difference}
+.cursor.view{width:88px;height:88px;background:var(--gold);mix-blend-mode:normal}
+.cursor-label{position:fixed;top:0;left:0;pointer-events:none;z-index:10001;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink);font-weight:600;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s var(--ease-out)}
+.cursor-label.show{opacity:1}
+@media(max-width:900px),(hover:none){.cursor,.cursor-label{display:none}body{cursor:auto}}
+@media(hover:hover){body{cursor:none}a,button,.clickable{cursor:none}}
+
+/* ===== Preloader ===== */
+.preloader{position:fixed;inset:0;z-index:9998;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;transition:transform 1s var(--ease-swift) .3s;will-change:transform}
+.preloader.gone{transform:translateY(-100%)}
+.pre-wrap{text-align:center;overflow:hidden}
+.pre-brand{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3.5rem);color:var(--paper);font-weight:300;letter-spacing:.02em;display:block;overflow:hidden}
+.pre-brand span{display:inline-block;transform:translateY(110%);animation:preRise 1s var(--ease-out) .2s forwards}
+.pre-brand em{font-style:italic;color:var(--gold);display:inline-block;transform:translateY(110%);animation:preRise 1s var(--ease-out) .4s forwards}
+.pre-sub{font-size:.68rem;letter-spacing:.45em;text-transform:uppercase;color:rgba(244,240,230,.5);font-weight:500;margin-top:1.5rem;opacity:0;animation:preFade 1s var(--ease-out) .9s forwards}
+.pre-count{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:.95rem;color:rgba(244,240,230,.45);letter-spacing:.02em}
+.pre-count span{font-variant-numeric:tabular-nums}
+@keyframes preRise{to{transform:translateY(0)}}
+@keyframes preFade{to{opacity:1}}
+
+/* ===== Scroll progress ===== */
+.prog{position:fixed;top:0;left:0;right:0;height:1px;z-index:9997;background:transparent}
+.prog-bar{height:100%;background:var(--gold);width:0;transition:width .15s linear;transform-origin:left}
+
+/* ===== Reveal ===== */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease-out),transform 1.2s var(--ease-out)}
+.rv.in{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+
+.line-mask{display:block;overflow:hidden;padding:.05em 0}
+.line-mask>span{display:inline-block;transform:translateY(110%);transition:transform 1.1s var(--ease-out);will-change:transform}
+.in .line-mask>span,.line-mask.in>span{transform:translateY(0)}
+
+.clip-up{clip-path:inset(100% 0 0 0);transition:clip-path 1.5s var(--ease-out);will-change:clip-path}
+.clip-up.in{clip-path:inset(0 0 0 0)}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;gap:1rem;padding:0;background:transparent;border:none;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);position:relative;padding-bottom:.5rem;transition:color .4s var(--ease-out)}
+.btn::after{content:'';position:absolute;bottom:0;left:0;height:1px;width:100%;background:var(--ink);transform-origin:right;transition:transform .5s var(--ease-out)}
+.btn:hover::after{transform:scaleX(0)}
+.btn::before{content:'';position:absolute;bottom:0;right:0;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-out) .15s}
+.btn:hover::before{transform:scaleX(1)}
+.btn:hover{color:var(--gold)}
+.btn-arr{display:inline-block;width:32px;height:1px;background:currentColor;position:relative;transition:width .4s var(--ease-out)}
+.btn-arr::after{content:'';position:absolute;right:0;top:-3px;width:8px;height:8px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.btn:hover .btn-arr{width:44px}
+
+.btn-solid{display:inline-flex;align-items:center;gap:1rem;padding:1.3rem 2.6rem;background:var(--ink);color:var(--paper);border:1px solid var(--ink);font-family:'Inter',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;position:relative;overflow:hidden;isolation:isolate;transition:color .5s var(--ease-out),border-color .5s var(--ease-out)}
+.btn-solid::before{content:'';position:absolute;inset:0;background:var(--gold);z-index:-1;transform:translateY(101%);transition:transform .55s var(--ease-swift)}
+.btn-solid:hover{color:var(--ink);border-color:var(--gold)}
+.btn-solid:hover::before{transform:translateY(0)}
+.btn-solid .btn-arr{background:currentColor}
+
+.btn-ghost{display:inline-flex;align-items:center;gap:1rem;padding:1.3rem 2.6rem;background:transparent;color:var(--ink);border:1px solid rgba(12,21,35,.25);font-family:'Inter',sans-serif;font-size:.72rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;position:relative;overflow:hidden;isolation:isolate;transition:color .5s var(--ease-out),border-color .5s var(--ease-out)}
+.btn-ghost::before{content:'';position:absolute;inset:0;background:var(--ink);z-index:-1;transform:translateY(101%);transition:transform .55s var(--ease-swift)}
+.btn-ghost:hover{color:var(--paper);border-color:var(--ink)}
+.btn-ghost:hover::before{transform:translateY(0)}
+
+.magnetic{display:inline-block;will-change:transform;transition:transform .3s var(--ease-out)}
+
+/* ===== Navigation ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:2rem 0;transition:all .6s var(--ease-out);mix-blend-mode:multiply}
+.nav.scrolled{background:rgba(244,240,230,.88);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);padding:1.2rem 0;mix-blend-mode:normal;box-shadow:0 1px 0 var(--line)}
+.nav.light{color:var(--paper)}
+.nav.light .nav-links>li>a,.nav.light .logo,.nav.light .logo-mark{color:var(--paper)}
+.nav.light .hamburger span{background:var(--paper)}
+.nav.scrolled.light{mix-blend-mode:normal;background:rgba(244,240,230,.88);color:var(--ink)}
+.nav.scrolled.light .nav-links>li>a,.nav.scrolled.light .logo{color:var(--ink)}
+.nav-in{max-width:1440px;margin:0 auto;padding:0 4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+@media(max-width:960px){.nav-in{padding:0 1.5rem}}
+.logo{font-family:'Fraunces',serif;font-size:1.55rem;font-weight:400;letter-spacing:.01em;display:flex;flex-direction:column;line-height:1.1;position:relative}
+.logo-main{display:flex;align-items:baseline;gap:.4rem}
+.logo-mark{font-style:italic;font-weight:300;color:var(--gold)}
+.logo-sub{font-family:'Inter',sans-serif;font-size:.56rem;font-weight:500;letter-spacing:.42em;text-transform:uppercase;opacity:.55;margin-top:.45rem}
+.nav-links{display:flex;align-items:center;gap:2.8rem;list-style:none}
+.nav-links>li>a{font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;position:relative;padding:.4rem 0;display:inline-block;overflow:hidden}
+.nav-links>li>a>span{display:inline-block;position:relative;transition:transform .45s var(--ease-swift)}
+.nav-links>li>a>span::after{content:attr(data-t);position:absolute;top:100%;left:0;color:var(--gold)}
+.nav-links>li>a:hover>span{transform:translateY(-100%)}
+.nav-cta{margin-left:1rem}
+.hamburger{display:none;width:32px;height:32px;background:transparent;border:none;padding:0;position:relative;z-index:1001}
+.hamburger span{display:block;width:24px;height:1px;background:var(--ink);margin:7px auto;transition:transform .4s var(--ease-out),opacity .4s var(--ease-out)}
+.hamburger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* ===== Hero ===== */
+.hero{background:var(--ink);color:var(--paper);min-height:100vh;padding:0;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 50% at 20% 90%,rgba(188,154,92,.15),transparent 60%),radial-gradient(ellipse 60% 40% at 90% 10%,rgba(188,154,92,.08),transparent 60%);z-index:0;pointer-events:none}
+.hero-l{padding:9rem 5rem 4rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2;border-right:1px solid rgba(244,240,230,.08)}
+.hero-l-top{display:flex;align-items:center;gap:1.2rem;opacity:0;transform:translateY(30px);transition:all 1s var(--ease-out) 1.5s}
+body.loaded .hero-l-top{opacity:1;transform:translateY(0)}
+.hero-est{font-family:'Fraunces',serif;font-style:italic;font-weight:300;color:rgba(244,240,230,.5);font-size:.95rem;letter-spacing:.02em}
+.hero-rule{flex:1;height:1px;background:rgba(244,240,230,.15);max-width:140px}
+.hero-chapter{font-size:.68rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);font-weight:500}
+
+.hero-display{font-family:'Fraunces',serif;font-weight:300;line-height:.88;letter-spacing:-.045em;color:var(--paper);font-size:clamp(4rem,14vw,11rem)}
+.hero-display .l{display:block;overflow:hidden;padding:.02em 0}
+.hero-display .l span{display:inline-block;transform:translateY(110%);transition:transform 1.3s var(--ease-out);will-change:transform}
+body.loaded .hero-display .l:nth-child(1) span{transform:translateY(0);transition-delay:.5s}
+body.loaded .hero-display .l:nth-child(2) span{transform:translateY(0);transition-delay:.7s}
+.hero-display em{font-style:italic;font-weight:400;color:var(--gold);font-feature-settings:"ss01"}
+.hero-amp{font-family:'Fraunces',serif;font-style:italic;font-weight:300;color:var(--gold)}
+
+.hero-l-bot{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:end;opacity:0;transform:translateY(30px);transition:all 1s var(--ease-out) 1.2s}
+body.loaded .hero-l-bot{opacity:1;transform:translateY(0)}
+.hero-role{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--paper);line-height:1.35;font-weight:300;font-style:italic;max-width:420px}
+.hero-role strong{font-weight:500;font-style:normal;color:var(--gold);display:block;margin-bottom:.4rem;font-size:.64rem;letter-spacing:.4em;text-transform:uppercase;font-family:'Inter',sans-serif}
+.hero-meta{text-align:right;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(244,240,230,.6);line-height:2.4;font-weight:500}
+.hero-meta b{color:var(--gold);font-weight:500}
+
+.hero-r{position:relative;overflow:hidden;background:var(--ink-2)}
+.hero-r::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,21,35,0) 0%,rgba(12,21,35,0) 60%,rgba(12,21,35,.75) 100%),linear-gradient(90deg,rgba(12,21,35,.35),rgba(12,21,35,0) 25%);z-index:2}
+.hero-r img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(.15) contrast(1.02) brightness(.92);transform:scale(1.15);opacity:0;transition:transform 2.2s var(--ease-out) .4s,opacity 1.5s var(--ease-out) .4s}
+body.loaded .hero-r img{transform:scale(1);opacity:1}
+
+.hero-badge{position:absolute;left:-60px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:center;z-index:3;font-family:'Inter',sans-serif;font-size:.56rem;letter-spacing:.55em;text-transform:uppercase;color:rgba(244,240,230,.55);font-weight:500;display:flex;align-items:center;gap:1.5rem;opacity:0;transition:opacity 1s var(--ease-out) 1.8s}
+body.loaded .hero-badge{opacity:1}
+.hero-badge::before,.hero-badge::after{content:'';width:40px;height:1px;background:rgba(244,240,230,.25)}
+
+.hero-credit{position:absolute;right:3rem;bottom:3rem;z-index:3;color:var(--paper);max-width:340px;opacity:0;transform:translateY(20px);transition:all 1s var(--ease-out) 1.8s}
+body.loaded .hero-credit{opacity:1;transform:translateY(0)}
+.hero-credit-name{font-family:'Fraunces',serif;font-size:1.5rem;line-height:1.1;font-weight:400;margin-bottom:.4rem}
+.hero-credit-name em{font-style:italic;color:var(--gold);font-weight:300}
+.hero-credit-role{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,240,230,.7);font-weight:500;margin-bottom:1rem}
+.hero-credit-bar{width:40px;height:1px;background:var(--gold);margin-bottom:1rem}
+.hero-credit-note{font-family:'Fraunces',serif;font-size:.92rem;font-style:italic;font-weight:300;color:rgba(244,240,230,.82);line-height:1.5}
+
+.hero-scroll{position:absolute;left:50%;bottom:2rem;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:.9rem;opacity:0;transition:opacity 1s var(--ease-out) 2s}
+body.loaded .hero-scroll{opacity:.85}
+.hero-scroll-txt{font-size:.56rem;letter-spacing:.48em;text-transform:uppercase;color:var(--paper);font-weight:500}
+.hero-scroll-line{width:1px;height:44px;background:linear-gradient(180deg,rgba(244,240,230,.3),var(--gold));position:relative;overflow:hidden}
+.hero-scroll-line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:40%;background:linear-gradient(180deg,transparent,var(--gold),transparent);animation:scrollDot 2s var(--ease-out) infinite}
+@keyframes scrollDot{0%{top:-40%}100%{top:100%}}
+
+/* ===== Ticker ===== */
+.ticker{background:var(--paper);color:var(--ink);padding:2rem 0;overflow:hidden;position:relative;border-bottom:1px solid var(--line)}
+.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--paper),transparent)}
+.ticker::after{right:0;background:linear-gradient(270deg,var(--paper),transparent)}
+.ticker-track{display:flex;gap:5rem;white-space:nowrap;animation:marq 48s linear infinite;will-change:transform;align-items:center}
+.ticker-track span{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--ink);font-weight:300;letter-spacing:.01em;display:inline-flex;align-items:center;gap:5rem;flex-shrink:0}
+.ticker-track span::after{content:'✦';color:var(--gold);font-family:'Inter',sans-serif;font-size:.7rem;opacity:.7}
+.ticker-track i{font-style:italic;color:var(--gold);font-weight:400}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ===== Philosophy ===== */
+.phil{background:var(--paper);padding:14rem 0 12rem;text-align:center;position:relative;overflow:hidden}
+.phil::before{content:'';position:absolute;top:10%;left:10%;right:10%;bottom:10%;background:radial-gradient(ellipse at center,rgba(188,154,92,.04),transparent 60%);pointer-events:none}
+.phil-in{max-width:1080px;margin:0 auto;padding:0 2.5rem;position:relative}
+.phil-top{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-bottom:4rem}
+.phil-top-line{width:60px;height:1px;background:var(--gold)}
+.phil-top-txt{font-size:.68rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.phil-heading{font-family:'Fraunces',serif;font-weight:300;line-height:1.1;letter-spacing:-.025em;color:var(--ink);font-size:clamp(2.5rem,6vw,5.8rem);margin-bottom:3.5rem}
+.phil-heading em{font-style:italic;color:var(--gold);font-weight:300}
+.phil-heading .l{display:block;overflow:hidden;padding:.05em 0}
+.phil-heading .l>span{display:inline-block;transform:translateY(105%);transition:transform 1.4s var(--ease-out)}
+.phil-heading.in .l:nth-child(1)>span{transform:translateY(0);transition-delay:.1s}
+.phil-heading.in .l:nth-child(2)>span{transform:translateY(0);transition-delay:.25s}
+.phil-heading.in .l:nth-child(3)>span{transform:translateY(0);transition-delay:.4s}
+.phil-sub{font-family:'Fraunces',serif;font-size:1.15rem;font-style:italic;font-weight:300;color:var(--text);max-width:620px;margin:0 auto;line-height:1.6}
+.phil-mark{margin:3.5rem auto 0;width:1px;height:70px;background:linear-gradient(180deg,var(--gold),transparent)}
+.phil-dropcap{display:inline-block;float:left;font-family:'Fraunces',serif;font-weight:300;font-size:5.5rem;line-height:.78;color:var(--gold);padding:.22em .18em 0 0;margin-top:.05em}
+
+/* ===== About editorial ===== */
+.about{background:var(--paper);padding:6rem 0 12rem;position:relative}
+.about-grid{max-width:1440px;margin:0 auto;padding:0 4rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;position:relative}
+@media(max-width:1040px){.about-grid{grid-template-columns:1fr;gap:3rem;padding:0 1.5rem}}
+.about-media{position:sticky;top:8rem;height:calc(100vh - 12rem);min-height:620px;max-height:820px;display:flex;flex-direction:column;gap:1.5rem}
+@media(max-width:1040px){.about-media{position:static;height:auto;min-height:auto;max-height:none}}
+.about-img-1{flex:1.8;overflow:hidden;position:relative;background:var(--ink)}
+.about-img-1 img{width:100%;height:100%;object-fit:cover;object-position:center 25%;filter:grayscale(.1) contrast(1.02)}
+.about-img-1::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(12,21,35,.7))}
+.about-img-caption{position:absolute;left:2rem;right:2rem;bottom:2rem;color:var(--paper);z-index:2;display:flex;justify-content:space-between;align-items:end;gap:1rem}
+.about-img-caption-l{font-family:'Fraunces',serif;font-weight:300;font-size:1rem;font-style:italic;opacity:.9}
+.about-img-caption-r{font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.about-row{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.about-img-2,.about-img-3{overflow:hidden;background:var(--ink-2);position:relative}
+.about-img-2 img,.about-img-3 img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2) contrast(1.02);transition:transform 1.5s var(--ease-out)}
+.about-img-2:hover img,.about-img-3:hover img{transform:scale(1.05)}
+
+.about-content{padding-top:2rem}
+.about-content .chapter{margin-bottom:4rem}
+.about-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(2.2rem,4.5vw,4.2rem);line-height:1.04;letter-spacing:-.025em;margin-bottom:3rem;color:var(--ink)}
+.about-h em{font-style:italic;color:var(--gold);font-weight:300}
+.about-lede{font-family:'Fraunces',serif;font-size:1.25rem;line-height:1.6;font-weight:400;color:var(--ink-2);margin-bottom:3.5rem;letter-spacing:-.005em;font-feature-settings:"ss01"}
+.about-lede::first-letter{font-family:'Fraunces',serif;font-weight:300;font-size:4.5rem;line-height:.78;color:var(--gold);float:left;padding:.16em .14em 0 0;font-style:italic}
+
+.about-points{display:flex;flex-direction:column;gap:0;margin-bottom:4rem}
+.about-point{padding:2.2rem 0;border-top:1px solid var(--line);position:relative;display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start}
+.about-point:last-child{border-bottom:1px solid var(--line)}
+.about-point-n{font-family:'Fraunces',serif;font-style:italic;font-weight:300;color:var(--gold);font-size:1.6rem;line-height:1;letter-spacing:-.02em;min-width:60px;padding-top:.35rem}
+.about-point-body h4{font-family:'Fraunces',serif;font-size:1.55rem;color:var(--ink);margin-bottom:.75rem;font-weight:400;letter-spacing:-.015em;line-height:1.2;transition:transform .5s var(--ease-out)}
+.about-point:hover .about-point-body h4{transform:translateX(8px)}
+.about-point-body p{font-size:.97rem;color:var(--text-2);line-height:1.75}
+
+.about-quote{background:var(--ink);color:var(--paper);padding:4.5rem 3.5rem;position:relative;overflow:hidden;margin-top:4rem}
+.about-quote::before{content:'"';position:absolute;top:-2.5rem;left:2rem;font-family:'Fraunces',serif;font-weight:400;font-size:14rem;color:var(--gold);opacity:.14;line-height:1}
+.about-quote::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 100% 0%,rgba(188,154,92,.12),transparent 60%);pointer-events:none}
+.about-quote-in{position:relative;z-index:1}
+.about-quote p{font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.38;color:var(--paper);margin-bottom:2rem;letter-spacing:-.01em}
+.about-quote-by{display:flex;align-items:center;gap:1.2rem;color:var(--gold);font-size:.66rem;letter-spacing:.35em;text-transform:uppercase;font-weight:500}
+.about-quote-by::before{content:'';width:38px;height:1px;background:var(--gold)}
+
+/* ===== Procedures (editorial list + image reveal) ===== */
+.procs{background:var(--ink);color:var(--paper);padding:10rem 0;position:relative;overflow:hidden}
+.procs::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(188,154,92,.08),transparent 70%);border-radius:50%;pointer-events:none}
+.procs .chapter-l{color:rgba(244,240,230,.55);border-color:rgba(244,240,230,.15)}
+.procs .chapter-n{color:var(--gold)}
+.procs-head{max-width:1440px;margin:0 auto 6rem;padding:0 4rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end}
+.procs-h{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.5rem,5.5vw,5rem);line-height:1;letter-spacing:-.03em;color:var(--paper)}
+.procs-h em{font-style:italic;color:var(--gold);font-weight:300}
+.procs-intro{font-family:'Fraunces',serif;font-size:1.1rem;font-style:italic;font-weight:300;color:rgba(244,240,230,.75);line-height:1.65;max-width:480px;justify-self:end}
+@media(max-width:960px){.procs-head{grid-template-columns:1fr;gap:2rem;padding:0 1.5rem}.procs-intro{justify-self:start}}
+
+.procs-list{max-width:1440px;margin:0 auto;padding:0 4rem;position:relative}
+@media(max-width:960px){.procs-list{padding:0 1.5rem}}
+.proc-row{display:grid;grid-template-columns:80px 1fr auto 60px;gap:2.5rem;align-items:center;padding:2.6rem 0;border-top:1px solid rgba(244,240,230,.1);cursor:none;position:relative;transition:padding .55s var(--ease-out)}
+@media(hover:none){.proc-row{cursor:pointer}}
+.proc-row:last-child{border-bottom:1px solid rgba(244,240,230,.1)}
+.proc-row-n{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.2rem;color:var(--gold);letter-spacing:.02em}
+.proc-row-name{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.8rem,3.5vw,3.2rem);color:var(--paper);letter-spacing:-.02em;line-height:1.05;transition:transform .6s var(--ease-out),color .4s var(--ease-out)}
+.proc-row:hover .proc-row-name{transform:translateX(20px);color:var(--gold)}
+.proc-row-desc{font-family:'Inter',sans-serif;font-size:.8rem;color:rgba(244,240,230,.55);max-width:320px;letter-spacing:.02em;line-height:1.6;text-align:right;transition:opacity .5s var(--ease-out)}
+@media(max-width:900px){.proc-row-desc{display:none}}
+.proc-row-arr{width:60px;height:14px;position:relative;opacity:.4;transition:opacity .4s var(--ease-out),transform .6s var(--ease-out)}
+.proc-row-arr::after{content:'';position:absolute;top:50%;right:0;width:100%;height:1px;background:var(--paper);transform:translateY(-50%);transition:background .4s var(--ease-out)}
+.proc-row-arr::before{content:'';position:absolute;top:50%;right:0;width:8px;height:8px;border-top:1px solid var(--paper);border-right:1px solid var(--paper);transform:translateY(-50%) rotate(45deg);transition:border-color .4s var(--ease-out)}
+.proc-row:hover .proc-row-arr{opacity:1;transform:translateX(8px)}
+.proc-row:hover .proc-row-arr::after,.proc-row:hover .proc-row-arr::before{background:var(--gold);border-color:var(--gold)}
+
+.proc-hover{position:fixed;pointer-events:none;z-index:50;width:340px;height:440px;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.85);transition:opacity .4s var(--ease-out),transform .6s var(--ease-out);will-change:transform,opacity;background:var(--ink-2)}
+.proc-hover.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.proc-hover img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.05)}
+.proc-hover-label{position:absolute;left:1.2rem;bottom:1.2rem;color:var(--paper);font-family:'Fraunces',serif;font-style:italic;font-size:.95rem;font-weight:300;z-index:2}
+
+/* ===== Results ===== */
+.results{background:var(--paper);padding:10rem 0}
+.results-head{max-width:1440px;margin:0 auto 5rem;padding:0 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end}
+@media(max-width:960px){.results-head{grid-template-columns:1fr;gap:2rem;padding:0 1.5rem}}
+.results-h{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.5rem,5.5vw,5rem);line-height:1;letter-spacing:-.03em}
+.results-h em{font-style:italic;color:var(--gold);font-weight:300}
+.results-intro{font-family:'Fraunces',serif;font-size:1.1rem;font-style:italic;font-weight:300;color:var(--text);line-height:1.6;max-width:460px;justify-self:end}
+@media(max-width:960px){.results-intro{justify-self:start}}
+.results-grid{max-width:1440px;margin:0 auto;padding:0 4rem;display:grid;grid-template-columns:repeat(6,1fr);gap:1.5rem}
+@media(max-width:960px){.results-grid{grid-template-columns:repeat(2,1fr);padding:0 1.5rem;gap:1rem}}
+.res{position:relative;overflow:hidden;background:var(--paper-2);cursor:none}
+@media(hover:none){.res{cursor:pointer}}
+.res-1{grid-column:span 4;aspect-ratio:4/3}
+.res-2{grid-column:span 2;aspect-ratio:3/4}
+.res-3{grid-column:span 2;aspect-ratio:3/4}
+.res-4{grid-column:span 4;aspect-ratio:4/3}
+.res-5{grid-column:span 3;aspect-ratio:1}
+.res-6{grid-column:span 3;aspect-ratio:1}
+@media(max-width:960px){.res-1,.res-2,.res-3,.res-4,.res-5,.res-6{grid-column:span 1;aspect-ratio:1}}
+.res-pair{display:grid;grid-template-columns:1fr 1fr;width:100%;height:100%;position:relative}
+.res-pair::after{content:'';position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--paper);transform:translateX(-50%);z-index:2}
+.res-pair figure{position:relative;overflow:hidden}
+.res-pair img{width:100%;height:100%;object-fit:cover;transition:transform 1.5s var(--ease-out);filter:grayscale(.08)}
+.res:hover .res-pair img{transform:scale(1.06)}
+.res-pair figcaption{position:absolute;top:1rem;left:1rem;background:rgba(12,21,35,.85);color:var(--paper);font-size:.58rem;padding:.4rem .7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;backdrop-filter:blur(6px);z-index:3}
+.res-pair figure:last-child figcaption{background:var(--gold);color:var(--ink)}
+.res-meta{position:absolute;bottom:0;left:0;right:0;padding:1.4rem;color:var(--paper);z-index:4;transform:translateY(100%);transition:transform .6s var(--ease-out);background:linear-gradient(180deg,transparent,rgba(12,21,35,.9))}
+.res:hover .res-meta{transform:translateY(0)}
+.res-meta-n{font-family:'Fraunces',serif;font-weight:400;font-size:1.1rem;letter-spacing:-.01em;line-height:1.2}
+.res-meta-d{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(244,240,230,.75);margin-top:.3rem;font-weight:500}
+.results-note{max-width:1440px;margin:4rem auto 0;padding:0 4rem;text-align:center}
+.results-note p{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:.95rem;color:var(--text-3);letter-spacing:.02em}
+@media(max-width:960px){.results-note{padding:0 1.5rem}}
+
+/* ===== Credentials ===== */
+.creds{background:var(--ink);color:var(--paper);padding:12rem 0;text-align:center;position:relative;overflow:hidden}
+.creds::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 100%,rgba(188,154,92,.1),transparent 70%);pointer-events:none}
+.creds-top{font-size:.68rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:2rem}
+.creds-h{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2rem,4.5vw,3.8rem);line-height:1.1;letter-spacing:-.02em;max-width:920px;margin:0 auto 4rem;color:var(--paper)}
+.creds-h em{font-style:italic;color:var(--gold);font-weight:300}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:0;max-width:1100px;margin:0 auto 4rem;border-top:1px solid rgba(244,240,230,.12);border-bottom:1px solid rgba(244,240,230,.12)}
+.badge{padding:1.6rem 2.2rem;font-family:'Fraunces',serif;font-size:1.15rem;font-weight:300;font-style:italic;color:var(--gold);letter-spacing:.02em;position:relative;transition:background .4s var(--ease-out)}
+.badge:not(:last-child)::after{content:'';position:absolute;right:0;top:20%;bottom:20%;width:1px;background:rgba(244,240,230,.12)}
+.badge:hover{background:rgba(188,154,92,.08)}
+.creds-training{max-width:720px;margin:0 auto;padding:0 2rem;font-family:'Fraunces',serif;font-weight:300;font-style:italic;font-size:1.2rem;line-height:1.6;color:rgba(244,240,230,.8)}
+.creds-training em{color:var(--gold);font-style:italic}
+
+/* ===== Testimonials (carousel) ===== */
+.testimonials{background:var(--paper);padding:12rem 0;overflow:hidden;position:relative}
+.test-wrap{max-width:1200px;margin:0 auto;padding:0 4rem;position:relative}
+@media(max-width:960px){.test-wrap{padding:0 1.5rem}}
+.test-head{margin-bottom:5rem}
+.test-h{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.5rem,5.5vw,5rem);line-height:1;letter-spacing:-.03em}
+.test-h em{font-style:italic;color:var(--gold);font-weight:300}
+.test-stage{position:relative;min-height:380px}
+.test-slide{position:absolute;inset:0;opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease-out),transform 1s var(--ease-out);pointer-events:none}
+.test-slide.active{opacity:1;transform:translateY(0);pointer-events:auto}
+.test-quote{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.5rem,3.2vw,2.6rem);line-height:1.35;letter-spacing:-.012em;color:var(--ink);margin-bottom:3rem;max-width:1040px;font-feature-settings:"ss01"}
+.test-quote::before{content:'"';color:var(--gold);font-weight:400}
+.test-quote::after{content:'"';color:var(--gold);font-weight:400}
+.test-quote em{font-style:italic;color:var(--gold)}
+.test-author{display:flex;align-items:center;gap:2rem;padding-top:2rem;border-top:1px solid var(--line)}
+.test-init{width:54px;height:54px;border-radius:50%;background:var(--ink);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:400;font-size:1.3rem;flex-shrink:0}
+.test-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:400;color:var(--ink);letter-spacing:-.01em}
+.test-loc{font-size:.64rem;color:var(--text-3);letter-spacing:.3em;text-transform:uppercase;margin-top:.3rem;font-weight:500}
+.test-stars{margin-left:auto;color:var(--gold);font-size:.9rem;letter-spacing:.2em}
+.test-nav{display:flex;align-items:center;gap:2rem;margin-top:4rem}
+.test-dots{display:flex;gap:.8rem;flex:1}
+.test-dot{width:32px;height:1px;background:var(--line);transition:background .4s var(--ease-out),width .4s var(--ease-out);cursor:none;border:none;padding:0}
+@media(hover:none){.test-dot{cursor:pointer}}
+.test-dot.active{background:var(--gold);width:60px}
+.test-counter{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.1rem;color:var(--text-3);letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.test-counter b{color:var(--ink);font-weight:400;font-style:normal;font-family:'Fraunces',serif}
+.test-arrows{display:flex;gap:.5rem}
+.test-arr{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:transparent;display:flex;align-items:center;justify-content:center;transition:all .4s var(--ease-out);position:relative}
+.test-arr:hover{background:var(--ink);border-color:var(--ink)}
+.test-arr::before{content:'';position:absolute;top:50%;left:50%;width:16px;height:1px;background:var(--ink);transform:translate(-50%,-50%);transition:background .4s var(--ease-out)}
+.test-arr::after{content:'';position:absolute;top:50%;width:8px;height:8px;border-top:1px solid var(--ink);border-right:1px solid var(--ink);transition:border-color .4s var(--ease-out)}
+.test-arr:hover::before{background:var(--paper)}
+.test-arr:hover::after{border-color:var(--paper)}
+.test-arr.prev::after{left:32%;transform:translateY(-50%) rotate(-135deg)}
+.test-arr.next::after{right:32%;transform:translateY(-50%) rotate(45deg)}
+
+/* ===== Process ===== */
+.process{background:var(--paper-2);padding:12rem 0;position:relative}
+.proc-head-wrap{max-width:1440px;margin:0 auto 5rem;padding:0 4rem}
+@media(max-width:960px){.proc-head-wrap{padding:0 1.5rem}}
+.proc-head-h{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.5rem,5.5vw,5rem);line-height:1;letter-spacing:-.03em;max-width:900px}
+.proc-head-h em{font-style:italic;color:var(--gold);font-weight:300}
+.steps-list{max-width:1440px;margin:0 auto;padding:0 4rem}
+@media(max-width:960px){.steps-list{padding:0 1.5rem}}
+.step-row{display:grid;grid-template-columns:100px 1fr 2fr 200px;gap:3rem;align-items:start;padding:3.5rem 0;border-top:1px solid var(--line);transition:all .5s var(--ease-out)}
+.step-row:last-child{border-bottom:1px solid var(--line)}
+.step-row:hover{background:var(--paper)}
+.step-row-n{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:2.6rem;color:var(--gold);letter-spacing:-.02em;line-height:1}
+.step-row-h{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.4rem,2.3vw,2rem);color:var(--ink);letter-spacing:-.015em;line-height:1.2}
+.step-row-p{color:var(--text-2);line-height:1.75;font-size:.95rem}
+.step-row-time{text-align:right}
+.step-row-time-l{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.5rem}
+.step-row-time-v{font-family:'Fraunces',serif;font-weight:400;font-size:1.1rem;color:var(--ink);letter-spacing:-.01em}
+@media(max-width:960px){.step-row{grid-template-columns:1fr;gap:1rem;padding:2rem 0}.step-row-time{text-align:left}}
+
+.proc-cta{max-width:1440px;margin:5rem auto 0;padding:0 4rem;text-align:center}
+@media(max-width:960px){.proc-cta{padding:0 1.5rem}}
+.proc-cta p{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.2rem;color:var(--text);margin-bottom:2rem}
+
+/* ===== FAQ ===== */
+.faq{background:var(--paper);padding:10rem 0}
+.faq-wrap{max-width:1080px;margin:0 auto;padding:0 4rem}
+@media(max-width:960px){.faq-wrap{padding:0 1.5rem}}
+.faq-head{margin-bottom:4rem}
+.faq-h{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.5rem,5.5vw,5rem);line-height:1;letter-spacing:-.03em}
+.faq-h em{font-style:italic;color:var(--gold);font-weight:300}
+.faq-item{border-top:1px solid var(--line);overflow:hidden;transition:background .4s var(--ease-out)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-item.open{background:rgba(188,154,92,.04)}
+.faq-q{padding:2.2rem 0;display:grid;grid-template-columns:40px 1fr 40px;gap:2rem;align-items:center;cursor:none;font-family:'Fraunces',serif;font-size:clamp(1.1rem,1.9vw,1.5rem);color:var(--ink);font-weight:400;letter-spacing:-.01em;transition:color .3s var(--ease-out);text-align:left;border:none;background:transparent;width:100%;line-height:1.3}
+@media(hover:none){.faq-q{cursor:pointer}}
+.faq-q:hover{color:var(--gold)}
+.faq-item.open .faq-q{color:var(--gold)}
+.faq-q-n{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1rem;color:var(--gold);padding-left:1.5rem}
+.faq-q-icon{position:relative;width:24px;height:24px;margin-left:auto}
+.faq-q-icon::before,.faq-q-icon::after{content:'';position:absolute;top:50%;left:50%;background:currentColor;transition:transform .45s var(--ease-out)}
+.faq-q-icon::before{width:16px;height:1px;transform:translate(-50%,-50%)}
+.faq-q-icon::after{width:1px;height:16px;transform:translate(-50%,-50%)}
+.faq-item.open .faq-q-icon::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease-out)}
+.faq-a-in{padding:0 0 2.5rem 3.5rem;max-width:780px;font-size:.98rem;color:var(--text-2);line-height:1.8}
+@media(max-width:700px){.faq-q{grid-template-columns:30px 1fr 24px;gap:1rem}.faq-q-n{padding-left:0;font-size:.85rem}.faq-a-in{padding-left:1.5rem;padding-right:0}}
+
+/* ===== Contact ===== */
+.contact{background:var(--ink);color:var(--paper);padding:10rem 0 0;position:relative;overflow:hidden}
+.contact::before{content:'';position:absolute;top:0;left:0;right:0;height:60%;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(188,154,92,.08),transparent 60%);pointer-events:none}
+.contact-head{max-width:1440px;margin:0 auto 5rem;padding:0 4rem;text-align:center;position:relative}
+@media(max-width:960px){.contact-head{padding:0 1.5rem}}
+.contact-h{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.5rem,6vw,5.5rem);line-height:1.05;letter-spacing:-.03em;color:var(--paper);margin-bottom:1.5rem}
+.contact-h em{font-style:italic;color:var(--gold);font-weight:300}
+.contact-sub{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.2rem;color:rgba(244,240,230,.7);max-width:620px;margin:0 auto}
+
+.contact-grid{max-width:1440px;margin:0 auto;padding:0 4rem;display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;position:relative}
+@media(max-width:1040px){.contact-grid{grid-template-columns:1fr;gap:2rem;padding:0 1.5rem}}
+.contact-info{padding:2rem 0}
+.contact-info-h{font-family:'Fraunces',serif;font-weight:400;font-size:2rem;color:var(--paper);margin-bottom:.3rem;letter-spacing:-.02em}
+.contact-info-sub{font-family:'Fraunces',serif;font-style:italic;font-weight:300;color:var(--gold);font-size:1rem;margin-bottom:3rem}
+.info-row{padding:1.75rem 0;border-top:1px solid rgba(244,240,230,.1);display:grid;grid-template-columns:140px 1fr;gap:2rem;align-items:baseline}
+.info-row:last-child{border-bottom:1px solid rgba(244,240,230,.1)}
+.info-label{font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.info-val{font-family:'Fraunces',serif;font-weight:400;font-size:1.1rem;color:var(--paper);line-height:1.5;letter-spacing:-.01em}
+.info-val a{color:var(--paper);border-bottom:1px solid transparent;transition:all .3s var(--ease-out)}
+.info-val a:hover{color:var(--gold);border-color:var(--gold)}
+.contact-note{margin-top:2rem;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1rem;color:rgba(244,240,230,.65);line-height:1.6}
+.contact-cta{margin-top:3rem}
+
+.map{overflow:hidden;min-height:600px;position:relative;border:1px solid rgba(244,240,230,.1)}
+.map iframe{width:100%;height:100%;min-height:600px;border:0;display:block;filter:invert(.92) grayscale(.8) contrast(.85) hue-rotate(170deg)}
+.map-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,21,35,.25) 0%,transparent 30%,transparent 70%,rgba(12,21,35,.4) 100%);pointer-events:none;z-index:2}
+.map-pin{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;pointer-events:none;color:var(--gold);font-family:'Fraunces',serif;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;font-weight:600;text-align:center}
+.map-pin-dot{width:14px;height:14px;border-radius:50%;background:var(--gold);margin:0 auto .6rem;position:relative;box-shadow:0 0 0 0 var(--gold);animation:pin 2.5s var(--ease-out) infinite}
+.map-pin-dot::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--gold);opacity:.5}
+@keyframes pin{0%,100%{box-shadow:0 0 0 0 rgba(188,154,92,.5)}50%{box-shadow:0 0 0 18px rgba(188,154,92,0)}}
+
+/* ===== Final CTA ===== */
+.final{background:var(--ink);color:var(--paper);padding:10rem 0;text-align:center;position:relative;overflow:hidden;margin-top:6rem;border-top:1px solid rgba(244,240,230,.08)}
+.final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(188,154,92,.1),transparent 60%);pointer-events:none}
+.final-in{max-width:920px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+.final-top{font-size:.68rem;letter-spacing:.48em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:2.5rem}
+.final-h{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;letter-spacing:-.03em;color:var(--paper);margin-bottom:2rem}
+.final-h em{font-style:italic;color:var(--gold);font-weight:300}
+.final-sub{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.2rem;color:rgba(244,240,230,.78);max-width:620px;margin:0 auto 3.5rem;line-height:1.55}
+
+/* ===== Footer ===== */
+.footer{background:#080F1A;color:rgba(244,240,230,.6);padding:5rem 0 2.5rem;position:relative}
+.foot-grid{max-width:1440px;margin:0 auto;padding:0 4rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(244,240,230,.08)}
+@media(max-width:960px){.foot-grid{grid-template-columns:1fr;gap:2.5rem;padding-left:1.5rem;padding-right:1.5rem}}
+.foot-logo{display:block;margin-bottom:1.5rem}
+.foot-logo .logo-main{color:var(--paper)}
+.foot-logo .logo-mark{color:var(--gold)}
+.foot-logo .logo-sub{color:rgba(244,240,230,.5)}
+.foot-tag{font-family:'Fraunces',serif;font-style:italic;font-weight:300;color:var(--gold);font-size:1.15rem;margin-bottom:1.5rem;letter-spacing:.01em}
+.foot-addr{font-size:.88rem;line-height:1.75;color:rgba(244,240,230,.6)}
+.foot-addr a{color:rgba(244,240,230,.8);transition:color .3s var(--ease-out)}
+.foot-addr a:hover{color:var(--gold)}
+.foot-h{color:var(--paper);font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;margin-bottom:1.8rem;font-weight:600}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:.85rem}
+.foot-links a{font-size:.88rem;color:rgba(244,240,230,.65);transition:all .3s var(--ease-out);display:inline-block}
+.foot-links a:hover{color:var(--gold);transform:translateX(6px)}
+.foot-reg p{font-size:.84rem;line-height:1.8;color:rgba(244,240,230,.65);margin-bottom:.75rem}
+.foot-reg strong{color:var(--paper);font-weight:500}
+.foot-bar{max-width:1440px;margin:0 auto;padding:2.5rem 4rem 0;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:rgba(244,240,230,.45);flex-wrap:wrap;gap:1rem}
+@media(max-width:960px){.foot-bar{padding:2rem 1.5rem 0;flex-direction:column;text-align:center}}
+.foot-bar-links{display:flex;gap:2rem}
+.foot-bar a{color:rgba(244,240,230,.6);transition:color .3s var(--ease-out)}
+.foot-bar a:hover{color:var(--gold)}
+.foot-cqc{text-align:center;font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:.95rem;color:rgba(244,240,230,.55);margin-bottom:2rem;padding:0 2rem}
+
+/* ===== Mobile ===== */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-l{padding:7rem 1.5rem 3rem;border-right:none}
+  .hero-r{aspect-ratio:4/5}
+  .hero-badge{display:none}
+  .hero-credit{position:static;padding:2rem 1.5rem;max-width:none;opacity:1;transform:none}
+  .hero-scroll{display:none}
+  .hero-display{font-size:clamp(3rem,14vw,5.5rem)}
+  .hero-l-bot{grid-template-columns:1fr}
+  .hero-meta{text-align:left}
+  .nav-in{padding:0 1.5rem}
+  .nav-links{display:none;position:fixed;inset:0;background:var(--paper);flex-direction:column;justify-content:center;align-items:center;gap:2.4rem;z-index:1000;padding:3rem}
+  .nav-links.open{display:flex}
+  .nav-links>li>a{font-size:1.2rem;color:var(--ink) !important}
+  .nav-cta{display:none}
+  .hamburger{display:block}
+  .chapter{margin-bottom:2rem}
+  .chapter-n{font-size:2.5rem}
+  .phil{padding:7rem 0 6rem}
+  .about,.procs,.results,.creds,.testimonials,.process,.faq,.contact,.final{padding:6rem 0}
+  .about{padding-bottom:6rem}
+  .info-row{grid-template-columns:1fr;gap:.5rem}
+  .badges{flex-direction:column}
+  .badge{padding:1.2rem;text-align:center}
+  .badge:not(:last-child)::after{display:none}
+  .proc-row{grid-template-columns:40px 1fr 40px;gap:1rem;padding:1.6rem 0}
+  .proc-row-arr{display:none}
+  .step-row{grid-template-columns:50px 1fr;padding:2rem 0}
+  .step-row-p,.step-row-time{grid-column:1/-1}
+  .step-row-time{margin-top:.5rem}
+  .about-quote{padding:2.5rem 1.8rem}
+  .about-quote::before{font-size:9rem;top:-1.5rem;left:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Grain -->
+<div class="grain"></div>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+  <div class="pre-wrap">
+    <div class="pre-brand"><span>Whitfield</span>&nbsp;<em>Aesthetics</em></div>
+    <div class="pre-sub">Harley Street · London · Est. 2006</div>
+  </div>
+  <div class="pre-count"><span id="preCount">00</span></div>
+</div>
+
+<!-- Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-label" id="cursorLabel"></div>
+
+<!-- Scroll progress -->
+<div class="prog"><div class="prog-bar" id="progBar"></div></div>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav light" id="nav">
+  <div class="nav-in">
+    <a href="#top" class="logo">
+      <div class="logo-main">Whitfield <span class="logo-mark">Aesthetics</span></div>
+      <span class="logo-sub">Harley Street · London</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about"><span data-t="Practice">Practice</span></a></li>
+      <li><a href="#procedures"><span data-t="Procedures">Procedures</span></a></li>
+      <li><a href="#results"><span data-t="Results">Results</span></a></li>
+      <li><a href="#testimonials"><span data-t="Testimony">Testimony</span></a></li>
+      <li><a href="#contact"><span data-t="Contact">Contact</span></a></li>
+      <li class="nav-cta"><a href="#contact" class="btn-solid">Book a Consultation <span class="btn-arr"></span></a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top" data-nav="light">
+  <div class="hero-l">
+    <div class="hero-l-top">
+      <span class="hero-chapter">Chapter I</span>
+      <span class="hero-rule"></span>
+      <span class="hero-est">Est. 2006</span>
+    </div>
+
+    <div>
+      <h1 class="hero-display">
+        <span class="l"><span>Whitfield<span class="hero-amp">,</span></span></span>
+        <span class="l"><span><em>Aesthetics.</em></span></span>
+      </h1>
+    </div>
+
+    <div class="hero-l-bot">
+      <div class="hero-role">
+        <strong>The Practice</strong>
+        Consultant Plastic &amp; Cosmetic Surgery, conducted by a single principal surgeon, in a private Harley Street consulting room.
+      </div>
+      <div class="hero-meta">
+        <div><b>W1G 9PF</b></div>
+        <div>No. 4823761</div>
+        <div>Eighteen Years</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-r">
+    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1400&q=90&auto=format&fit=crop" alt="Dr. James Whitfield" onerror="this.style.opacity='0'">
+    <div class="hero-badge"><span>FRCS (Plast) · GMC Registered · BAAPS · BAPRAS · Royal College of Surgeons</span></div>
+    <div class="hero-credit">
+      <div class="hero-credit-role">Principal Surgeon</div>
+      <div class="hero-credit-name">Dr. James <em>Whitfield</em></div>
+      <div class="hero-credit-bar"></div>
+      <div class="hero-credit-note">"My job is to listen first. The procedure comes second."</div>
+    </div>
+    <div class="hero-scroll">
+      <span class="hero-scroll-txt">Scroll</span>
+      <span class="hero-scroll-line"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Press ticker ===== -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>As featured in <i>Vogue</i></span>
+    <span><i>Tatler</i></span>
+    <span><i>Harper's Bazaar</i></span>
+    <span><i>The Times</i></span>
+    <span><i>Financial Times</i></span>
+    <span><i>Harrods Magazine</i></span>
+    <span><i>Country &amp; Town House</i></span>
+    <span><i>The Sunday Telegraph</i></span>
+    <span>As featured in <i>Vogue</i></span>
+    <span><i>Tatler</i></span>
+    <span><i>Harper's Bazaar</i></span>
+    <span><i>The Times</i></span>
+    <span><i>Financial Times</i></span>
+    <span><i>Harrods Magazine</i></span>
+    <span><i>Country &amp; Town House</i></span>
+    <span><i>The Sunday Telegraph</i></span>
+  </div>
+</div>
+
+<!-- ===== Philosophy ===== -->
+<section class="phil">
+  <div class="phil-in">
+    <div class="phil-top rv">
+      <div class="phil-top-line"></div>
+      <div class="phil-top-txt">A Practice Built On</div>
+      <div class="phil-top-line"></div>
+    </div>
+    <h2 class="phil-heading rv">
+      <span class="l"><span>Precision.</span></span>
+      <span class="l"><span><em>Discretion.</em></span></span>
+      <span class="l"><span>Results.</span></span>
+    </h2>
+    <p class="phil-sub rv d3">The private Harley Street practice of <strong>Dr. James Whitfield</strong> — Consultant Plastic &amp; Cosmetic Surgeon, FRCS (Plast), GMC registered, with eighteen years of considered, unhurried surgical work behind him.</p>
+    <div class="phil-mark rv d4"></div>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-media rv">
+      <div class="about-img-1 clip-up">
+        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=900&q=90&auto=format&fit=crop" alt="Dr. James Whitfield at work" onerror="this.style.display='none'">
+        <div class="about-img-caption">
+          <div class="about-img-caption-l">Dr. James <em>Whitfield</em></div>
+          <div class="about-img-caption-r">Portrait · 2024</div>
+        </div>
+      </div>
+      <div class="about-row">
+        <div class="about-img-2 clip-up">
+          <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=600&q=85&auto=format&fit=crop" alt="Consulting room" onerror="this.style.display='none'">
+        </div>
+        <div class="about-img-3 clip-up">
+          <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=600&q=85&auto=format&fit=crop" alt="Harley Street interior" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <div class="chapter rv">
+        <span class="chapter-n">II.</span>
+        <span class="chapter-l">On the Practice</span>
+      </div>
+
+      <h2 class="about-h rv d1">
+        Why patients choose <em>Dr. Whitfield.</em>
+      </h2>
+
+      <p class="about-lede rv d2">A quiet Harley Street practice. No billboards. No celebrity endorsements. Just an unhurried consulting room, a single principal surgeon, and a philosophy built around restraint — results that should refine, never announce themselves.</p>
+
+      <div class="about-points rv d3">
+        <div class="about-point">
+          <div class="about-point-n">i.</div>
+          <div class="about-point-body">
+            <h4>A philosophy of natural results</h4>
+            <p>Surgery should refine, never announce itself. Dr. Whitfield's work is grounded in restraint — results that look natural, never operated on. Patients leave the clinic looking refreshed, not different.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-n">ii.</div>
+          <div class="about-point-body">
+            <h4>Considered, unhurried consultation</h4>
+            <p>A full consultation always comes before any procedure is discussed. Surgery is a significant decision, and every patient deserves time to understand their options, their anatomy, and what is realistic for them.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-n">iii.</div>
+          <div class="about-point-body">
+            <h4>Complete discretion, always</h4>
+            <p>Many patients are professionals and public figures who value privacy above everything else. Every aspect of the clinic — from consultation to recovery — is designed around that expectation.</p>
+          </div>
+        </div>
+      </div>
+
+      <blockquote class="about-quote rv d4">
+        <div class="about-quote-in">
+          <p>My job is to listen first. The procedure comes second. The finest outcomes I have delivered all began the same way — with a patient who felt heard.</p>
+          <div class="about-quote-by">Dr. James Whitfield · FRCS (Plast)</div>
+        </div>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Procedures ===== -->
+<section class="procs" id="procedures" data-nav="light">
+  <div class="procs-head">
+    <div class="rv">
+      <div class="chapter">
+        <span class="chapter-n">III.</span>
+        <span class="chapter-l">Specialist Procedures</span>
+      </div>
+      <h2 class="procs-h">A focused practice. <em>Surgery done carefully.</em></h2>
+    </div>
+    <p class="procs-intro rv d2">Six procedures performed regularly and exceptionally well — rather than a long menu of everything. Every plan is tailored to the patient, never the other way round.</p>
+  </div>
+
+  <div class="procs-list" id="procsList">
+    <div class="proc-row rv" data-img="https://images.unsplash.com/photo-1595175220029-8cefd85d0720?w=600&q=85&auto=format&fit=crop" data-name="Rhinoplasty">
+      <div class="proc-row-n">i.</div>
+      <div class="proc-row-name">Rhinoplasty</div>
+      <div class="proc-row-desc">Open and closed rhinoplasty tailored to the face — refining proportion, correcting function, preserving character.</div>
+      <div class="proc-row-arr"></div>
+    </div>
+    <div class="proc-row rv d1" data-img="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=85&auto=format&fit=crop" data-name="Facelift">
+      <div class="proc-row-n">ii.</div>
+      <div class="proc-row-name">Facelift</div>
+      <div class="proc-row-desc">Deep-plane techniques that reposition rather than pull. A natural, rested appearance that ages gracefully.</div>
+      <div class="proc-row-arr"></div>
+    </div>
+    <div class="proc-row rv d2" data-img="https://images.unsplash.com/photo-1607748862156-7c548e7e98f4?w=600&q=85&auto=format&fit=crop" data-name="Blepharoplasty">
+      <div class="proc-row-n">iii.</div>
+      <div class="proc-row-name">Blepharoplasty</div>
+      <div class="proc-row-desc">Upper and lower eyelid surgery to restore a brighter, more rested expression — without altering character.</div>
+      <div class="proc-row-arr"></div>
+    </div>
+    <div class="proc-row rv d3" data-img="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=85&auto=format&fit=crop" data-name="Liposuction">
+      <div class="proc-row-n">iv.</div>
+      <div class="proc-row-name">Liposuction</div>
+      <div class="proc-row-desc">Precision body contouring for stubborn, exercise-resistant areas — planned for a balanced, natural silhouette.</div>
+      <div class="proc-row-arr"></div>
+    </div>
+    <div class="proc-row rv d4" data-img="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=85&auto=format&fit=crop" data-name="Breast Augmentation">
+      <div class="proc-row-n">v.</div>
+      <div class="proc-row-name">Breast Augmentation</div>
+      <div class="proc-row-desc">Consultative approach with 3D imaging and implant sizing — proportionate, appropriate, entirely yours.</div>
+      <div class="proc-row-arr"></div>
+    </div>
+    <div class="proc-row rv d5" data-img="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=85&auto=format&fit=crop" data-name="Skin Resurfacing">
+      <div class="proc-row-n">vi.</div>
+      <div class="proc-row-name">Skin Resurfacing</div>
+      <div class="proc-row-desc">Medical-grade laser and peel programmes — delivered and supervised within the clinic.</div>
+      <div class="proc-row-arr"></div>
+    </div>
+  </div>
+
+  <div class="proc-hover" id="procHover">
+    <img id="procHoverImg" src="" alt="">
+    <div class="proc-hover-label" id="procHoverLabel"></div>
+  </div>
+</section>
+
+<!-- ===== Results ===== -->
+<section class="results" id="results">
+  <div class="results-head">
+    <div class="rv">
+      <div class="chapter">
+        <span class="chapter-n">IV.</span>
+        <span class="chapter-l">Patient Outcomes</span>
+      </div>
+      <h2 class="results-h">Results that speak <em>for themselves.</em></h2>
+    </div>
+    <p class="results-intro rv d2">A small selection of outcomes shared with the express consent of patients. Every image is unretouched.</p>
+  </div>
+
+  <div class="results-grid">
+    <div class="res res-1 rv">
+      <div class="res-pair">
+        <figure><figcaption>Before</figcaption><img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+        <figure><figcaption>After</figcaption><img src="https://images.unsplash.com/photo-1570696516188-ade861b84a49?w=800&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+      </div>
+      <div class="res-meta"><div class="res-meta-n">Rhinoplasty</div><div class="res-meta-d">6 months post-op · Female, 34</div></div>
+    </div>
+    <div class="res res-2 rv d1">
+      <div class="res-pair">
+        <figure><figcaption>Before</figcaption><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+        <figure><figcaption>After</figcaption><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+      </div>
+      <div class="res-meta"><div class="res-meta-n">Facelift</div><div class="res-meta-d">9 months · Female, 58</div></div>
+    </div>
+    <div class="res res-3 rv d2">
+      <div class="res-pair">
+        <figure><figcaption>Before</figcaption><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+        <figure><figcaption>After</figcaption><img src="https://images.unsplash.com/photo-1507038772120-7fff76f79d79?w=500&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+      </div>
+      <div class="res-meta"><div class="res-meta-n">Blepharoplasty</div><div class="res-meta-d">4 months · Male, 51</div></div>
+    </div>
+    <div class="res res-4 rv">
+      <div class="res-pair">
+        <figure><figcaption>Before</figcaption><img src="https://images.unsplash.com/photo-1542884748-2b87b36c6b90?w=800&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+        <figure><figcaption>After</figcaption><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+      </div>
+      <div class="res-meta"><div class="res-meta-n">Liposuction · Abdomen &amp; Flanks</div><div class="res-meta-d">12 months · Female, 47</div></div>
+    </div>
+    <div class="res res-5 rv d1">
+      <div class="res-pair">
+        <figure><figcaption>Before</figcaption><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+        <figure><figcaption>After</figcaption><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+      </div>
+      <div class="res-meta"><div class="res-meta-n">Medical Skin Resurfacing</div><div class="res-meta-d">8 weeks · Female, 42</div></div>
+    </div>
+    <div class="res res-6 rv d2">
+      <div class="res-pair">
+        <figure><figcaption>Before</figcaption><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+        <figure><figcaption>After</figcaption><img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=600&q=85&auto=format&fit=crop" alt="" onerror="this.style.display='none'"></figure>
+      </div>
+      <div class="res-meta"><div class="res-meta-n">Breast Augmentation</div><div class="res-meta-d">6 months · Female, 36</div></div>
+    </div>
+  </div>
+
+  <div class="results-note rv">
+    <p>Results vary by individual. All images shared with patient consent.</p>
+  </div>
+</section>
+
+<!-- ===== Credentials ===== -->
+<section class="creds" data-nav="light">
+  <div class="rv">
+    <div class="creds-top">— Credentials —</div>
+    <h2 class="creds-h">A fully accredited Consultant Plastic Surgeon, registered with every major <em>UK professional body.</em></h2>
+  </div>
+
+  <div class="badges rv d2">
+    <div class="badge">GMC Registered</div>
+    <div class="badge">FRCS (Plast)</div>
+    <div class="badge">BAAPS</div>
+    <div class="badge">BAPRAS</div>
+    <div class="badge">Royal College of Surgeons</div>
+    <div class="badge">CQC Registered</div>
+  </div>
+
+  <p class="creds-training rv d3">Dr. Whitfield completed his surgical training at <em>St Thomas' Hospital London</em> and undertook a fellowship in reconstructive surgery at the <em>Cleveland Clinic, Ohio.</em></p>
+</section>
+
+<!-- ===== Testimonials ===== -->
+<section class="testimonials" id="testimonials">
+  <div class="test-wrap">
+    <div class="test-head rv">
+      <div class="chapter">
+        <span class="chapter-n">V.</span>
+        <span class="chapter-l">Patient Testimony</span>
+      </div>
+      <h2 class="test-h">What patients <em>say.</em></h2>
+    </div>
+
+    <div class="test-stage" id="testStage">
+      <div class="test-slide active">
+        <div class="test-quote">I was nervous for months before booking. Dr. Whitfield spent a full hour with me before we even discussed a procedure. Six months later I wish I hadn't waited so long.</div>
+        <div class="test-author">
+          <div class="test-init">S</div>
+          <div>
+            <div class="test-name">Sarah M.</div>
+            <div class="test-loc">London</div>
+          </div>
+          <div class="test-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="test-slide">
+        <div class="test-quote">The level of discretion and professionalism here is unlike anything I have experienced. I felt safe from the first consultation to my final follow-up.</div>
+        <div class="test-author">
+          <div class="test-init">J</div>
+          <div>
+            <div class="test-name">James R.</div>
+            <div class="test-loc">Edinburgh</div>
+          </div>
+          <div class="test-stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="test-slide">
+        <div class="test-quote">I did not want to look different. I wanted to look like myself again. Dr. Whitfield understood that immediately. The results are everything I hoped for.</div>
+        <div class="test-author">
+          <div class="test-init">C</div>
+          <div>
+            <div class="test-name">Claire T.</div>
+            <div class="test-loc">Manchester</div>
+          </div>
+          <div class="test-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="test-nav">
+      <div class="test-dots">
+        <button class="test-dot active" data-idx="0" aria-label="1"></button>
+        <button class="test-dot" data-idx="1" aria-label="2"></button>
+        <button class="test-dot" data-idx="2" aria-label="3"></button>
+      </div>
+      <div class="test-counter"><b id="testCur">01</b> / 03</div>
+      <div class="test-arrows">
+        <button class="test-arr prev" id="testPrev" aria-label="Previous"></button>
+        <button class="test-arr next" id="testNext" aria-label="Next"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Process ===== -->
+<section class="process">
+  <div class="proc-head-wrap rv">
+    <div class="chapter">
+      <span class="chapter-n">VI.</span>
+      <span class="chapter-l">Your Journey</span>
+    </div>
+    <h2 class="proc-head-h">No pressure. No obligation. <em>Just clarity.</em></h2>
+  </div>
+
+  <div class="steps-list">
+    <div class="step-row rv">
+      <div class="step-row-n">i.</div>
+      <div class="step-row-h">Book your private consultation</div>
+      <div class="step-row-p">An unhurried, one-to-one consultation with Dr. Whitfield at the Harley Street clinic. No sales team. No pressure. A complimentary 45-minute appointment arranged at a time that suits you.</div>
+      <div class="step-row-time">
+        <div class="step-row-time-l">Duration</div>
+        <div class="step-row-time-v">45 minutes · Free</div>
+      </div>
+    </div>
+    <div class="step-row rv d1">
+      <div class="step-row-n">ii.</div>
+      <div class="step-row-h">Discuss your goals openly and honestly</div>
+      <div class="step-row-p">We talk through what you want to change, what is realistic, and what the alternatives are — including doing nothing at all. Examination and imaging where relevant.</div>
+      <div class="step-row-time">
+        <div class="step-row-time-l">Setting</div>
+        <div class="step-row-time-v">In Clinic · 10 Harley St</div>
+      </div>
+    </div>
+    <div class="step-row rv d2">
+      <div class="step-row-n">iii.</div>
+      <div class="step-row-h">Receive your personalised treatment plan</div>
+      <div class="step-row-p">A written plan arrives with full costs, timelines and recovery — posted and emailed. Space to read, reflect, and decide in your own time. No follow-up sales call unless requested.</div>
+      <div class="step-row-time">
+        <div class="step-row-time-l">Delivery</div>
+        <div class="step-row-time-v">Within 48 hours</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proc-cta rv">
+    <p>Ready to start the conversation?</p>
+    <div class="magnetic"><a href="#contact" class="btn-solid">Book Your Consultation <span class="btn-arr"></span></a></div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="faq-wrap">
+    <div class="faq-head rv">
+      <div class="chapter">
+        <span class="chapter-n">VII.</span>
+        <span class="chapter-l">Frequently Asked</span>
+      </div>
+      <h2 class="faq-h">Answered <em>honestly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item rv">
+        <button class="faq-q" type="button"><span class="faq-q-n">i.</span><span>How much does a consultation cost?</span><span class="faq-q-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-in">Your initial consultation with Dr. Whitfield is complimentary. It typically lasts 45 minutes, and there is no pressure or obligation to proceed.</div></div>
+      </div>
+      <div class="faq-item rv d1">
+        <button class="faq-q" type="button"><span class="faq-q-n">ii.</span><span>Are procedures performed by Dr. Whitfield personally?</span><span class="faq-q-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-in">Yes. Dr. Whitfield is the principal and only operating surgeon. Every consultation, procedure, and follow-up is conducted by him personally. This is central to the practice philosophy.</div></div>
+      </div>
+      <div class="faq-item rv d2">
+        <button class="faq-q" type="button"><span class="faq-q-n">iii.</span><span>How discreet is the clinic?</span><span class="faq-q-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-in">Very. The clinic is privately located on Harley Street with a dedicated patient entrance, private parking, and scheduling designed to prevent patient contact in waiting areas. Many of our patients are professionals and public figures.</div></div>
+      </div>
+      <div class="faq-item rv d3">
+        <button class="faq-q" type="button"><span class="faq-q-n">iv.</span><span>Where are surgical procedures carried out?</span><span class="faq-q-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-in">All surgical procedures are performed at a CQC-registered private hospital in central London. Minor in-clinic treatments are performed at our Harley Street rooms under full medical protocol.</div></div>
+      </div>
+      <div class="faq-item rv d4">
+        <button class="faq-q" type="button"><span class="faq-q-n">v.</span><span>What should I expect during recovery?</span><span class="faq-q-icon"></span></button>
+        <div class="faq-a"><div class="faq-a-in">Recovery varies by procedure. You will receive a detailed written recovery plan following your consultation, and Dr. Whitfield personally conducts all follow-up appointments throughout your healing.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact" id="contact" data-nav="light">
+  <div class="contact-head rv">
+    <div class="creds-top">— Visit —</div>
+    <h2 class="contact-h">Ten, <em>Harley Street.</em></h2>
+    <p class="contact-sub">Privately located in the heart of London's medical quarter. By appointment only.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info rv">
+      <div class="contact-info-h">Whitfield Aesthetics</div>
+      <div class="contact-info-sub">Private Consultation Suite</div>
+
+      <div class="info-row">
+        <div class="info-label">Address</div>
+        <div class="info-val">10 Harley Street<br>London W1G 9PF</div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Telephone</div>
+        <div class="info-val"><a href="tel:+442079460823">+44 20 7946 0823</a></div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Appointments</div>
+        <div class="info-val"><a href="mailto:appointments@whitfieldaesthetics.co.uk">appointments@whitfieldaesthetics.co.uk</a></div>
+      </div>
+      <div class="info-row">
+        <div class="info-label">Clinic Hours</div>
+        <div class="info-val">Mon – Fri · 9am to 6pm<br>Saturday · 10am to 2pm</div>
+      </div>
+
+      <p class="contact-note">Private parking available. Discretely located in the heart of Harley Street.</p>
+
+      <div class="contact-cta">
+        <div class="magnetic"><a href="#top" class="btn-solid" style="background:var(--gold);color:var(--ink);border-color:var(--gold)">Book a Consultation <span class="btn-arr"></span></a></div>
+      </div>
+    </div>
+
+    <div class="map rv d1">
+      <iframe src="https://www.google.com/maps?q=10+Harley+Street,+London+W1G+9PF&output=embed&z=16" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="10 Harley Street, London W1G 9PF"></iframe>
+      <div class="map-overlay"></div>
+      <div class="map-pin">
+        <div class="map-pin-dot"></div>
+        Whitfield Aesthetics
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Final CTA ===== -->
+  <div class="final">
+    <div class="final-in rv">
+      <div class="final-top">— Ready When You Are —</div>
+      <h2 class="final-h">Begin your <em>conversation</em> today.</h2>
+      <p class="final-sub">No pressure. No pitch. A private, unhurried consultation with one of Harley Street's most trusted consultant plastic surgeons.</p>
+      <div class="magnetic"><a href="#top" class="btn-solid">Book a Consultation <span class="btn-arr"></span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#top" class="foot-logo logo">
+        <div class="logo-main">Whitfield <span class="logo-mark">Aesthetics</span></div>
+        <span class="logo-sub">Harley Street · London</span>
+      </a>
+      <p class="foot-tag">Precision. Discretion. Results.</p>
+      <p class="foot-addr">
+        10 Harley Street, London W1G 9PF<br>
+        <a href="tel:+442079460823">+44 20 7946 0823</a><br>
+        <a href="mailto:appointments@whitfieldaesthetics.co.uk">appointments@whitfieldaesthetics.co.uk</a>
+      </p>
+    </div>
+    <div>
+      <div class="foot-h">Practice</div>
+      <ul class="foot-links">
+        <li><a href="#about">About Dr. Whitfield</a></li>
+        <li><a href="#procedures">Procedures</a></li>
+        <li><a href="#results">Patient Results</a></li>
+        <li><a href="#testimonials">Testimony</a></li>
+        <li><a href="#contact">Book a Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-h">Procedures</div>
+      <ul class="foot-links">
+        <li><a href="#procedures">Rhinoplasty</a></li>
+        <li><a href="#procedures">Facelift</a></li>
+        <li><a href="#procedures">Blepharoplasty</a></li>
+        <li><a href="#procedures">Liposuction</a></li>
+        <li><a href="#procedures">Breast Augmentation</a></li>
+        <li><a href="#procedures">Skin Resurfacing</a></li>
+      </ul>
+    </div>
+    <div class="foot-reg">
+      <div class="foot-h">Registration</div>
+      <p><strong>GMC:</strong> 4823761</p>
+      <p><strong>CQC Registered</strong><br>Independent Healthcare Provider</p>
+      <p style="margin-top:1rem"><strong>Memberships:</strong><br>BAAPS · BAPRAS · RCS</p>
+    </div>
+  </div>
+  <p class="foot-cqc">Whitfield Aesthetics is registered with the Care Quality Commission.</p>
+  <div class="foot-bar">
+    <div>© 2024 Whitfield Aesthetics. All rights reserved.</div>
+    <div class="foot-bar-links"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a><a href="#">Terms of Service</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  // Preloader with counter
+  const pre = document.getElementById('preloader');
+  const preCount = document.getElementById('preCount');
+  let c = 0;
+  const ci = setInterval(() => {
+    c += Math.floor(Math.random() * 9) + 2;
+    if (c >= 100) { c = 100; clearInterval(ci); }
+    preCount.textContent = String(c).padStart(2, '0');
+  }, 60);
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      pre.classList.add('gone');
+      document.body.classList.add('loaded');
+    }, 1700);
+  });
+
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const cursorLabel = document.getElementById('cursorLabel');
+  if (window.matchMedia('(hover:hover)').matches) {
+    let x = 0, y = 0;
+    document.addEventListener('mousemove', e => {
+      x = e.clientX; y = e.clientY;
+      cursor.style.transform = `translate(${x}px,${y}px) translate(-50%,-50%)`;
+      cursorLabel.style.transform = `translate(${x}px,${y - 50}px) translate(-50%,-50%)`;
+    });
+    document.querySelectorAll('a, button, .faq-q, .proc-row, .res, .about-point').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+      });
+    });
+    document.querySelectorAll('.proc-row').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('view');
+        cursorLabel.textContent = 'View';
+        cursorLabel.classList.add('show');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('view');
+        cursorLabel.classList.remove('show');
+      });
+    });
+  }
+
+  // Nav state + light/dark detection
+  const nav = document.getElementById('nav');
+  const progBar = document.getElementById('progBar');
+  const lightSections = Array.from(document.querySelectorAll('[data-nav="light"]'));
+  const updateNav = () => {
+    const sy = window.scrollY;
+    nav.classList.toggle('scrolled', sy > 80);
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progBar.style.width = (sy / h * 100) + '%';
+    const navBottom = sy + 70;
+    let onLight = false;
+    for (const s of lightSections) {
+      const top = s.offsetTop;
+      const bot = top + s.offsetHeight;
+      if (navBottom >= top && navBottom < bot) { onLight = true; break; }
+    }
+    nav.classList.toggle('light', onLight);
+  };
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  // Mobile menu
+  const hamb = document.getElementById('hamburger');
+  const links = document.getElementById('navLinks');
+  hamb.addEventListener('click', () => {
+    hamb.classList.toggle('open');
+    links.classList.toggle('open');
+    document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    hamb.classList.remove('open');
+    links.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  // Reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.rv, .clip-up, .line-mask, .phil-heading').forEach(el => io.observe(el));
+
+  // Procedure hover image
+  const procHover = document.getElementById('procHover');
+  const procHoverImg = document.getElementById('procHoverImg');
+  const procHoverLabel = document.getElementById('procHoverLabel');
+  const procsList = document.getElementById('procsList');
+  if (procsList && window.matchMedia('(hover:hover)').matches) {
+    let mx = 0, my = 0, active = false, raf;
+    procsList.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      procHover.style.left = mx + 'px';
+      procHover.style.top = my + 'px';
+    });
+    document.querySelectorAll('.proc-row').forEach(row => {
+      row.addEventListener('mouseenter', () => {
+        procHoverImg.src = row.dataset.img;
+        procHoverLabel.textContent = row.dataset.name;
+        procHover.classList.add('show');
+      });
+      row.addEventListener('mouseleave', () => {
+        procHover.classList.remove('show');
+      });
+    });
+  }
+
+  // Testimonials
+  const slides = document.querySelectorAll('.test-slide');
+  const dots = document.querySelectorAll('.test-dot');
+  const cur = document.getElementById('testCur');
+  let idx = 0;
+  const show = i => {
+    idx = (i + slides.length) % slides.length;
+    slides.forEach((s, j) => s.classList.toggle('active', j === idx));
+    dots.forEach((d, j) => d.classList.toggle('active', j === idx));
+    cur.textContent = String(idx + 1).padStart(2, '0');
+  };
+  dots.forEach((d, j) => d.addEventListener('click', () => show(j)));
+  document.getElementById('testPrev').addEventListener('click', () => show(idx - 1));
+  document.getElementById('testNext').addEventListener('click', () => show(idx + 1));
+  let auto = setInterval(() => show(idx + 1), 7000);
+  document.getElementById('testStage').addEventListener('mouseenter', () => clearInterval(auto));
+  document.getElementById('testStage').addEventListener('mouseleave', () => { auto = setInterval(() => show(idx + 1), 7000); });
+
+  // FAQ
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => {
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = '0';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Magnetic
+  if (window.matchMedia('(hover:hover)').matches) {
+    document.querySelectorAll('.magnetic').forEach(wrap => {
+      wrap.addEventListener('mousemove', e => {
+        const r = wrap.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width / 2;
+        const y = e.clientY - r.top - r.height / 2;
+        wrap.style.transform = `translate(${x * .2}px, ${y * .3}px)`;
+      });
+      wrap.addEventListener('mouseleave', () => { wrap.style.transform = ''; });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

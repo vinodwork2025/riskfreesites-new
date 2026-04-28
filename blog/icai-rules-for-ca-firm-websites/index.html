@@ -105,8 +105,9 @@
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" /></noscript>
+  <link rel="stylesheet" href="/tw.css" />
 
   <style>
     :root{--sand:#faf9f6;--sand-100:#f3f2ee;--sand-200:#eae8e2;--border:#e4e2dc;--text:#1a1918;--text-2:#4a4a52;--text-3:#78787f;}

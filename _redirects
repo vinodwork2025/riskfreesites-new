@@ -1,0 +1,23 @@
+# Trailing-slash canonicalization — prevents Cloudflare's auto-redirect being flagged as "redirect error" in GSC
+/interior-designer-website                  /interior-designer-website/                   301
+/fitness-coach-website-australia            /fitness-coach-website-australia/             301
+/real-estate-agent-website-canada           /real-estate-agent-website-canada/            301
+/dentist-website-design-uk                  /dentist-website-design-uk/                   301
+/interior-designer-website-bangalore        /interior-designer-website-bangalore/         301
+/interior-designer-website-hyderabad        /interior-designer-website-hyderabad/         301
+/interior-designers                         /interior-designers/                          301
+/clinic-website-bangalore                   /clinic-website-bangalore/                    301
+/clinic-website-hyderabad                   /clinic-website-hyderabad/                    301
+/clinic-website-design                      /clinic-website-design/                       301
+/ca-website-design-india                    /ca-website-design-india/                     301
+/real-estate-website-design                 /real-estate-website-design/                  301
+/real-estate-website-hyderabad              /real-estate-website-hyderabad/               301
+/real-estate-website-mumbai                 /real-estate-website-mumbai/                  301
+/therapist-website-design-usa               /therapist-website-design-usa/                301
+/website-for-small-business-usa             /website-for-small-business-usa/              301
+/website-vs-facebook-page                   /website-vs-facebook-page/                    301
+/website-vs-instagram-for-business          /website-vs-instagram-for-business/           301
+/why-clinics-need-websites                  /why-clinics-need-websites/                   301
+/why-interior-designers-need-a-website      /why-interior-designers-need-a-website/       301
+/do-you-need-a-website-for-business         /do-you-need-a-website-for-business/          301
+/blog                                       /blog/                                        301

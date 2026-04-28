@@ -1,3 +1,9 @@
 # Local build/audit tooling — not part of the deployed site
 *.py
 GEO-AUDIT-REPORT.md
+
+# Tailwind build tooling
+tailwindcss.exe
+logo_backup.png
+logo_opt.png
+node_modules/
