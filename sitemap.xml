@@ -17,6 +17,12 @@
 
   <!-- Industry landing pages -->
   <url>
+    <loc>https://riskfreesites.com/interior-designers/</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://riskfreesites.com/interior-designer-website/</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
