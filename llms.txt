@@ -7,28 +7,45 @@ RiskFreeSites builds custom websites for small businesses with zero upfront paym
 
 ## Core Pages
 - [Homepage](https://riskfreesites.com/): Overview, pricing, how it works, FAQ
-- [Compare Options](https://riskfreesites.com/compare/): RiskFreeSites vs Wix vs Freelancer vs Agency
+- [Compare Options](https://riskfreesites.com/compare/): RiskFreeSites vs Wix vs Freelancer vs Agency — side-by-side cost, timeline, and risk comparison
+- [Risk-Free Website Design](https://riskfreesites.com/risk-free-website-design/): How the risk-free model works — site built first, payment only after client approval
 
 ## Services
-- [Interior Designer Websites](https://riskfreesites.com/interior-designer-website/)
-- [Interior Designers Landing](https://riskfreesites.com/interior-designers/)
-- [Clinic Website Design](https://riskfreesites.com/clinic-website-design/)
-- [Real Estate Website Design](https://riskfreesites.com/real-estate-website-design/)
+- [Interior Designer Websites](https://riskfreesites.com/interior-designer-website/): Portfolio websites for interior designers — project gallery, service pages, lead capture form, built in 48 hours
+- [Interior Designers Landing](https://riskfreesites.com/interior-designers/): Overview page for interior design website packages
+- [Clinic Website Design](https://riskfreesites.com/clinic-website-design/): Websites for clinics and healthcare practices — appointment booking, doctor profiles, patient trust signals
+- [Real Estate Website Design](https://riskfreesites.com/real-estate-website-design/): Property listing websites for real estate agents and brokers — property search, lead forms, agent profiles
 - [CA Website Design India](https://riskfreesites.com/ca-website-design-india/): ICAI-compliant websites for Chartered Accountants and CA firms in India. Built within the ICAI Council Guidelines on Posting of Particulars on the Website. No upfront cost; firm pays only after approving a 48-hour preview build.
+- [Therapist Website Design USA](https://riskfreesites.com/therapist-website-design-usa/): Websites for therapists, counsellors, and mental health practices in the United States — HIPAA-aware design, intake forms, speciality pages
+- [Dentist Website Design UK](https://riskfreesites.com/dentist-website-design-uk/): Dental practice websites for UK dentists — NHS/private split, treatment pages, online booking, CQC-aware copy
+- [Fitness Coach Website Australia](https://riskfreesites.com/fitness-coach-website-australia/): Websites for personal trainers and fitness coaches in Australia — programme pages, transformation gallery, online enquiry
 
-## City & Geo Pages
+## City & Industry Pages
+- [Interior Designer Website Bangalore](https://riskfreesites.com/interior-designer-website-bangalore/): Portfolio websites for interior designers in Bangalore — project gallery, service areas, WhatsApp lead capture
+- [Interior Designer Website Hyderabad](https://riskfreesites.com/interior-designer-website-hyderabad/): Portfolio websites for interior designers in Hyderabad
+- [Clinic Website Bangalore](https://riskfreesites.com/clinic-website-bangalore/): Clinic and healthcare practice websites for Bangalore — appointment booking, doctor profiles, Google Maps integration
+- [Clinic Website Hyderabad](https://riskfreesites.com/clinic-website-hyderabad/): Clinic websites for Hyderabad practices
+- [Real Estate Website Mumbai](https://riskfreesites.com/real-estate-website-mumbai/): Property listing and lead-gen websites for Mumbai real estate agents
+- [Real Estate Website Hyderabad](https://riskfreesites.com/real-estate-website-hyderabad/): Real estate agent and broker websites for Hyderabad
 - [Website Design in Hosur](https://riskfreesites.com/website-design-hosur/): Custom website design for Hosur businesses, Tamil Nadu. See finished site before paying.
 - [Website Design Cost in Hosur](https://riskfreesites.com/website-design-cost-hosur/): 2026 pricing guide for website design in Hosur. ₹5,000–₹2,00,000+ breakdown by type (basic, business, ecommerce), what affects cost, and how to get a site without paying upfront.
 - [Website Design in Bangalore](https://riskfreesites.com/website-design-bangalore/): Website design for Bangalore businesses.
 - [Website Design Cost in Bangalore](https://riskfreesites.com/website-design-cost-bangalore/): 2026 pricing guide. ₹10,000–₹2,00,000+ breakdown, why agencies charge so much, what startups and small businesses actually need, and risk-free alternative.
 - [Website Redesign Services in Bangalore](https://riskfreesites.com/website-redesign-bangalore/): For Bangalore businesses whose current website isn't generating leads. Covers symptoms of a broken site, conversion architecture, before/after comparison, and risk-free redesign offer.
 
-## Comparisons
-- [Website vs Facebook Page](https://riskfreesites.com/website-vs-facebook-page/)
+## International Pages
+- [Website for Small Business USA](https://riskfreesites.com/website-for-small-business-usa/): Website design for US small businesses — local service pages, Google Business integration, mobile-first design
+- [Real Estate Agent Website Canada](https://riskfreesites.com/real-estate-agent-website-canada/): Real estate agent websites for Canadian markets — MLS-aware design, neighbourhood pages, lead capture
+
+## Comparisons & Informational
+- [Website vs Facebook Page](https://riskfreesites.com/website-vs-facebook-page/): Why a website outperforms a Facebook Page for small business lead generation — SEO, ownership, credibility
+- [Website vs Instagram for Business](https://riskfreesites.com/website-vs-instagram-for-business/): Website vs Instagram — what each channel does well, why both together beats either alone
+- [Why Interior Designers Need a Website](https://riskfreesites.com/why-interior-designers-need-a-website/): Reasons interior designers lose clients without a website — portfolio credibility, SEO, referral conversion
+- [Why Clinics Need Websites](https://riskfreesites.com/why-clinics-need-websites/): Why healthcare practices without a website lose patients to competitors — trust signals, appointment booking, local SEO
+- [Do You Need a Website for Business?](https://riskfreesites.com/blog/do-you-need-a-website-for-business/): Answers the question of whether small businesses still need a website in 2026 — covers social media dependence risk, SEO, credibility, and lead capture
 
 ## Blog
 - [How Much Does a Website Cost?](https://riskfreesites.com/blog/how-much-does-a-website-cost/)
-- [Do You Need a Website?](https://riskfreesites.com/blog/do-you-need-a-website-for-business/)
 - [Why Your Website Is Not Getting Leads](https://riskfreesites.com/blog/why-your-website-is-not-getting-leads/)
 - [ICAI Rules for CA Firm Websites in India: A 2026 Guide](https://riskfreesites.com/blog/icai-rules-for-ca-firm-websites/): Plain-language guide to what Chartered Accountants in India can and cannot put on a website under the ICAI Council Guidelines on Posting of Particulars on the Website. Covers Clauses 6 and 7 of the First Schedule of the CA Act 1949, what is allowed (firm details, partner profiles, areas of practice, articles, enquiry form), what is not (testimonials, fee schedules, paid advertising, superlatives), compliant vs non-compliant copy examples, and the five common mistakes generic web designers make on CA firm sites.
 

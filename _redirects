@@ -19,7 +19,6 @@
 /website-vs-instagram-for-business          /website-vs-instagram-for-business/           301
 /why-clinics-need-websites                  /why-clinics-need-websites/                   301
 /why-interior-designers-need-a-website      /why-interior-designers-need-a-website/       301
-/do-you-need-a-website-for-business         /do-you-need-a-website-for-business/          301
 /blog                                       /blog/                                        301
 /website-design-hosur                       /website-design-hosur/                        301
 /website-design-bangalore                   /website-design-bangalore/                    301
@@ -28,3 +27,7 @@
 /website-design-cost-bangalore              /website-design-cost-bangalore/               301
 /website-design-cost-hosur                  /website-design-cost-hosur/                   301
 /website-redesign-bangalore                 /website-redesign-bangalore/                  301
+
+# Duplicate page consolidation — root version redirects to canonical blog post
+/do-you-need-a-website-for-business         /blog/do-you-need-a-website-for-business/     301
+/do-you-need-a-website-for-business/        /blog/do-you-need-a-website-for-business/     301
